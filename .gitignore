@@ -324,3 +324,10 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+/Arbeitsmaterial_fos12_1_6_ma/%1-epub3/META-INF/container.xml
+*.css
+*.ncx
+*.tmp
+/Arbeitsmaterial_fos12_1_6_ma/%1-epub3/mimetype
+*.xhtml
+*.opf
