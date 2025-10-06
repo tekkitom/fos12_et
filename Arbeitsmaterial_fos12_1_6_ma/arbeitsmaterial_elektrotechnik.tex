@@ -1,40 +1,84 @@
-\documentclass[a4paper,10pt]{scrreprt}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{amsmath}
-\usepackage[siunitx,european]{circuitikz}
+\documentclass[aspectratio=169, ignorenonframetext]{beamer}
+% \documentclass[a4paper,10pt]{scrartcl}
+% \usepackage{beamerarticle}
+%\documentclass[ignorenonframetext,red]{beamer}
+
+% everyone:
+\usepackage{pgf}
+
+
 \usepackage[german]{babel}
 \usepackage[utf8]{inputenc}
-% \usepackage[sc]{mathpazo}
-% \linespread{1.05}   % Palladio needs more leading (space between lines)
-% \usepackage{fourier}
-% \usepackage{tgschola}
-% \usepackage{times}
+\usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{eurosym}
 \usepackage{graphicx}
 \usepackage{ulem}
+\usepackage{listings}
+% \usepackage{beamerfoils}
 \usepackage{hyperref}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = html}
+% \usepackage[markup=nocolor,deletedmarkup=xout]{changes}
 
-% \usepackage{listings}
-% Title Page
-\begin{document}
-  \title{Arbeitsunterlagen zu FOS ET (12.1 und 12.6)}
-\author{Thomas Maul}
-\date{V 0.1 - im Aufbau\\ Stand: \today}
-\publishers{Für eigene Teile des Werks gilt: \includegraphics[height=1.5em]{../../../bilder/cc_by-nc_eu.png}
-% cc_by-nc_eu.png: 403x141 px, 72dpi, 14.22x4.97 cm, bb=0 0 403 141
+\mode<article>{\usepackage{fullpage}}
+\mode<presentation>{
+  %\usetheme{Frankfurt}
+  %\usetheme{Montpellier}
+  \usetheme[hideothersubsections, width=2cm]{Hannover}
+  \setbeamertemplate{section in toc}[default]
+% \usetheme[compress]{Dresden}
+%   \usetheme[compress]{Berlin}
+%    \usecolortheme{spruce}
+% \usecolortheme[RGB={32,128, 128}]{structure}
+%  \usecolortheme[RGB={71,92, 159}]{structure}
+%  \usetheme{metropolis}
 }
+\author{Thomas Maul}
+\title{Arbeitsunterlagen zu FOS ET (12.1 und 12.6)}
+\date{V 0.1 - im Aufbau\\ Stand: \today}%\\ 
+
+\institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
+
+%\logo{\includegraphics[height=1cm]{~/schule/material/bilder/bwslogo_3.png}}
+
+\begin{document}
 
 \maketitle
 \tableofcontents
+\clearpage
+  %\begin{frame}<beamer>
+   % \titlepage
+    % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
+  %\end{frame}
+%   \part{Strings}
 
+\AtBeginPart{
+\begin{frame}
+\partpage
+\end{frame}
+}
+\AtBeginSection[]
+  {
+    \sectionpage
+%     \begin{frame}<beamer>
+%       \frametitle{Inhalt}
+%       \tableofcontents[currentsection, hideothersubsections]
+%     \end{frame}
+  }
+%
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \tableofcontents[currentsection, hideothersubsections]
+  \end{frame}
+}
 
-\chapter{Themenfeld 12.1 - Gleichstromnetzanalyse}
+\part{Themenfeld 12.1 - Gleichstromnetzanalyse}
 \section{Zweipole}
 % \section{Aufgabe 1}
 In der Elektrotechnik werden Bauteile, die zwei Abschlüsse haben als Zweipole bezeichnet. Dies können jeweils einzelne Widerstände, Spulen und Kondensatoren sein. Manchmal ist es praktisch eine (Teil-)Schaltung als einen Zweipol darzustellen und in Berechnungen als ein virtuelles Bauteil zu verwenden.
-
+\begin{Frame}
 In \ref{fig:Schaltung1} sollen die Widerstände $R_3$ bis $R_5$ als ein virtuelles Bauteil dargestellt werden.
 \begin{figure}[h]
   \begin{circuitikz}
@@ -50,16 +94,19 @@ In \ref{fig:Schaltung1} sollen die Widerstände $R_3$ bis $R_5$ als ein virtuell
   \caption{Schaltung 1}
   \label{fig:Schaltung1}
 \end{figure}
-
+\end{Frame}
 Es soll so aussehen, als ob nur ein Widerstand rechts von den Punkten C und D wäre. Durch Reihenschaltung von $R_4$ und $R_5$ zu $R_{45}$ und anschließender Parallelschaltung mit $R_3$ kann ich dies erreichen (siehe Bild \ref{fig:Schaltung2}). Der Widerstand $R_{3||45}$ verhält sich für die Schaltung wie die Widerstände $R_3$, $R_4$ und $R_5$.
 
-Wenn ich für die Widerstände folgende Werte festlege:\\ $R_1 = 10 \Omega$\\ $R_2 = 20 \Omega$\\ $ R_3 = 30 \Omega$\\ $ R_4 = 40 \Omega$\\ $ R_5 = 50 \Omega$\\
+\begin{frame}
+Wenn ich für die Widerstände folgende Werte festlege:\\ 
+$R_1 = 10 \Omega$\\ $R_2 = 20 \Omega$\\ $ R_3 = 30 \Omega$\\ $ R_4 = 40 \Omega$\\ $ R_5 = 50 \Omega$\\
 \label{comp:WiderstaendeSchaltung1}
 kann ich den Gesamtwiderstand $R_{3||45}$ berechnen.
 \begin{align}
 U_{q1} &= 5V\\
  U_{q2} &= 12V
 \end{align}
+\end{frame}
 
 \begin{align}
 R_{45} &= R4 + R5\\
@@ -193,7 +240,7 @@ Zum Abschluss werden die beiden Teilspannungen addiert.
 % \end{array}$
 % \section{Knotenpotentialanalyse}
 
-\chapter{Themenfeld 12.6 - Elektrisches und magnetisches Feld}
+\part{Themenfeld 12.6 - Elektrisches und magnetisches Feld}
 Die Materie besteht aus Atomen. Diese wiederum aus einem Kern mit Protonen und Neutronen und einer Hülle aus Elektronen. Bei einigen Atomen, zum Beispiel Metalle sind, ist es leicht möglich einzelne Elektronen aus der Hülle zu entfernen. Dies führt zur elektrischen Leitung - dem elektrischen Strom.
 
 Bei Stoffen, die nicht leitend sind, lassen sich die Elektronen nicht oder nur schwer aus der Hülle entfernen.
@@ -232,14 +279,14 @@ Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen inne
 
 
 
-\chapter{Literatur}
-
+\section{Literatur}
+\begin{frame}{Literatur}
 \begin{description}
  \item[Wikibooks] https://de.wikibooks.org/wiki/Elektrostatik
  \item[Marinescu, Marlene]  Elektrische und magnetische Felder,
  Eine praxisorientierte Einführung; A 3 (2012); Springer
 \end{description}
-
+\end{frame}
 
 
 
@@ -260,4 +307,7 @@ Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen inne
 
 \listoffigures
 % \listoftables
+
+
+\label{LastPage}
 \end{document}
