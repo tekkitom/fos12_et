@@ -1,6 +1,6 @@
-\documentclass[a4paper, 10pt]{scrartcl}
-\usepackage{beamerarticle}
-% \documentclass[aspectratio=169, ignorenonframetext]{beamer}
+% \documentclass[a4paper, 10pt]{scrartcl}
+% \usepackage{beamerarticle}
+\documentclass[aspectratio=169, ignorenonframetext]{beamer}
 \usepackage{pgf}
 
 \mode<article>{
@@ -366,16 +366,166 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   \frametitle{Inhalt}
   \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
+
+\begin{frame}[label=messbrueckeFrame]
+  \frametitle{Messbrücke}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+      \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=R6] (4,2);
+      \only<2>{\draw[red, thick] (1.6,1.7) rectangle
+        (4.9,4.2);}
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:Messbruecke1}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Messbrücke - Stern-Dreieck}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*]  node[above]{C} (3,4);
+      \draw (2,2) to[R=$R_{AC}$] (3,4);
+      \draw (2,2) node[circ]{} node[left]{A};
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (3,4) to[R=$R_{BC}$] (4,2) to[short, -*]  node[right]{B} (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=$R_{AB}$] (4,2);
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:Messbruecke1aMarkierung}
+  \end{figure}
+\end{column}
+\begin{column}{.5\textwidth}
+  \begin{align*}
+  R_{AC} &= R3\\ R_{AB} &= R6 \\ R_{BC} &= R5
+  \end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Dreieck -> Stern}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,5);
+      \draw (0,5) to[R=R1] (2,5) -- (3.5,5) node[above]{C};
+      \draw (3.5,3) to[R=$R_C$] (3.5,5);
+      \draw (3.5,3) node[circ]{} ;
+      \draw (2,2) to[R=R2] (2,0) to[short, -*](2,0);
+      \draw (3.5,3) to[R=$R_B$] node[right]{B} (5,2) ;
+      \draw (5,2) to[R=R4] (5,0) -- (0,0);
+      \draw (2,2) to[R=$R_A$] (3.5,3);
+      \draw (2,2)  node[left]{A};
+%       \draw[red, thick] (1.7,1.7) rectangle
+%       (4.3,5.2);
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:Messbruecke2aMarkierung}
+  \end{figure}
+\end{column}
+\begin{column}{.5\textwidth}
+  \only<2>{
+  \begin{align*}
+    R_A &= \frac{R_{AC}R_{AB}}{R_{AC}+R_{AB}+R_{BC}}\\[.5\baselineskip]
+    R_B &= \frac{R_{AB}R_{BC}}{R_{AC}+R_{AB}+R_{BC}}\\[.5\baselineskip]
+    R_C &= \frac{R_{AC}R_{BC}}{R_{AC}+R_{AB}+R_{BC}}
+  \end{align*}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung - Stern- > Dreieck}
+   \begin{columns}
+     \begin{column}{.5\textwidth}
+      \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*]  node[above]{C} (3,4);
+      \draw (2,2) to[R=$R_{AC}$] (3,4);
+      \draw (2,2) node[circ]{} node[left]{A};
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (3,4) to[R=$R_{BC}$] (4,2) to[short, -*]  node[right]{B} (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=$R_{AB}$] (4,2);
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:SternNachDreieck}
+  \end{figure}
+\end{column}
+ \begin{column}{.5\textwidth}
+   \only<2>{
+  \begin{align*}
+    R_{AB} &= \frac{R_{A}R_{B}}{R_{C}}+R_{A}+R_{B}\\[.5\baselineskip]
+     R_{AC} &= \frac{R_{A}R_{C}}{R_{B}}+R_{A}+R_{C}\\[.5\baselineskip]
+     R_{BC} &= \frac{R_{B}R_{C}}{R_{A}}+R_{B}+R_{C}
+   \end{align*}}
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[label=messbrueckeFrame]
+  \frametitle{Messbrücke}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+      \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=R6] (4,2);
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:Messbruecke1}
+  \end{figure}
+\end{column}
+\begin{column}{.6\textwidth}
+    \begin{align*}
+      R_{1} &= 220\Omega \\
+      R_{2} &= 470\Omega \\
+      R_{3} &= 330\Omega \\
+      R_{4} &= 330\Omega \\
+      R_{5} &= 560\Omega \\
+      R_{6} &= 390\Omega \\
+      U_q &= 5\,V
+    \end{align*}\only<1>{
+      $R_4 = R_{Mess}$ \\gesucht: Strom und Spannung an $R_6, R_4\  \text{und} \ R_5$\\}
+    \only<2>{
+    \begin{tabular}{lll}
+     $I_4 = 4,2\ mA,$ & $I_5 = 3,3\ mA,$ & $I_6 = 890\ \mu A$\\
+     $U_4 = 1,4\,V,$ & $U_5 = 3,6\,V,$ & $U_6 = 0,35\,V$
+    \end{tabular}
+  }
+\end{column}
+\end{columns}
+\end{frame}
+
 \section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
 \begin{frame}<beamer>
   \frametitle{Inhalt}
   \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
+
+
 \section[Kreisstrom]{Kreisstromverfahren (Pflicht)}
 \begin{frame}<beamer>
   \frametitle{Inhalt}
   \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
+
+
 \section[Knotenspannung]{Knotenspannungsverfahren (Pflicht)}
 \begin{frame}<beamer>
   \frametitle{Inhalt}
