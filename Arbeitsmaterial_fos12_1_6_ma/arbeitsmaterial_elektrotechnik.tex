@@ -61,7 +61,7 @@
 
 
 \title{Arbeitsunterlagen zu FOS ET (12.1 und 12.6)}
-\date{V 0.1 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.15 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -318,6 +318,7 @@ In der Festlegung \ref{comp:WiderstaendeSchaltung1} (Seite \pageref{comp:Widerst
 \end{frame}
 
 \subsection{Nur Quelle U2 aktiv}
+Jetzt schließe ich Quelle 1 kurz und nur Quelle $U_{Q2}$ ist aktiv. Damit kann ich den Teilstrom berechnen, der fließen würde, wenn in der Original-Schaltung nur diese Quelle vorhanden wäre.
 \begin{frame}{Nur Quelle U2 aktiv}
   \begin{figure}[htb]
     \begin{circuitikz}
@@ -360,14 +361,17 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
     U_2 &= 3,7V
   \end{align}
 \end{frame}
+$U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spanungsquellen sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 
 \section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (Pflicht)}
+Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungänderungen an einem Sensor (z.B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mit Hilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
+
 \begin{frame}<beamer>
   \frametitle{Inhalt}
   \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
 
-\begin{frame}[label=messbrueckeFrame]
+\begin{frame}%[label=messbrueckeFrame]
   \frametitle{Messbrücke}
   \begin{figure}[htb]
     \begin{circuitikz}
@@ -386,6 +390,7 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   \end{figure}
 \end{frame}
 
+Bild \ref{fig:Messbruecke1aMarkierung} stellt die selbe Schaltung dar, wie Bild \ref{fig:Messbruecke1}.
 \begin{frame}{Messbrücke - Stern-Dreieck}
   \begin{columns}
     \begin{column}{.5\textwidth}
@@ -411,6 +416,8 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
 \end{column}
 \end{columns}
 \end{frame}
+
+In Bild \ref{fig:Messbruecke2aMarkierung} wurden die Widerstände des Dreiecks in Widerstände in einer sternförmigen-Anordnung umgerechnet. Die Ströme und Spannungen an den Punkten A, B,und C sind bei beiden Anordnungen identisch.
 
 \begin{frame}{Umwandlung Dreieck -> Stern}
   \begin{columns}
@@ -444,6 +451,7 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
 \end{columns}
 \end{frame}
 
+In den folgenden Bildern ist der umgekehrte Weg von einem Stern zu einem Dreieck dargestellt. Die Herleitung der Formeln habe ich nicht geschrieben, sie ist auf der Seite https://de.wikipedia.org/wiki/Stern-Dreieck-Transformation zu finden.
 \begin{frame}{Umwandlung - Stern- > Dreieck}
    \begin{columns}
      \begin{column}{.5\textwidth}
@@ -473,7 +481,7 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   \end{columns}
 \end{frame}
 
-\begin{frame}[label=messbrueckeFrame]
+\begin{frame}%[label=messbrueckeFrame]
   \frametitle{Messbrücke}
   \begin{columns}
     \begin{column}{.4\textwidth}
@@ -488,7 +496,7 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
       \draw (2,2) to[R=R6] (4,2);
     \end{circuitikz}
     \caption{Messbrücke}
-    \label{fig:Messbruecke1}
+    \label{fig:AufgabeMessbruecke1}
   \end{figure}
 \end{column}
 \begin{column}{.6\textwidth}
@@ -589,8 +597,8 @@ Wenn man zwei nicht leitende Gegenstände, zum Beispiel einen Glasstab und ein S
     %    Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpeg: 436x289 px, 180dpi, 6.15x4.08 cm, bb=
     \caption{Katze mit Styroporflocken}
     \label{abb:CatWidthStyropor}
-    \footnote{Quelle: Von Original image: Sean McGrath from Saint John, NB, CanadaDerived image: Black Rainbow 999 - Diese Datei ist ein Ausschnitt aus einer anderen Datei, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=60287175}
-  \end{figure}
+    \end{figure}
+  \footnote{Quelle: Von Original image: Sean McGrath from Saint John, NB, CanadaDerived image: Black Rainbow 999 - Diese Datei ist ein Ausschnitt aus einer anderen Datei, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=60287175}
 \end{frame}
 
 \only<presentation>{
@@ -827,6 +835,7 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
   \item[Marinescu, Marlene]  Elektrische und magnetische Felder,
   Eine praxisorientierte Einführung; A 3 (2012); Springer
 \end{description}
+Simulationsprogramm für Schaltungen :\\Ngspice, GUI: KiCad https://www.kicad.org/
 \end{frame}
 
   \listoffigures
