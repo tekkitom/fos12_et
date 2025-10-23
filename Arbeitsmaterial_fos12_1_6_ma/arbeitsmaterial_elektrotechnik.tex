@@ -1,6 +1,6 @@
-\documentclass[a4paper, 10pt]{scrartcl}
-\usepackage{beamerarticle}
-% \documentclass[aspectratio=169, ignorenonframetext]{beamer}
+% \documentclass[a4paper, 10pt]{scrartcl}
+% \usepackage{beamerarticle}
+\documentclass[aspectratio=169, ignorenonframetext]{beamer}
 \usepackage{pgf}
 
 \mode<article>{
@@ -61,7 +61,7 @@
 
 
 \title{Arbeitsunterlagen zu FOS ET (12.1 und 12.6)}
-\date{V 0.15 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.1.0 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -521,6 +521,7 @@ In den folgenden Bildern ist der umgekehrte Weg von einem Stern zu einem Dreieck
 \end{frame}
 
 \section{Pflicht-Themen, die noch offen sind}
+\begin{frame}{Pflicht-Themen, die noch offen sind}
 Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Plicht, aber noch nicht ausgearbeitet.
 \begin{itemize}
     \item Knoten- und Maschengleichungen
@@ -529,7 +530,7 @@ Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Plicht, aber
 \end{itemize}
 
 Die Themen folgen demnächst hier.
-
+\end{frame}
 % \section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
 % \begin{frame}<beamer>
 %   \frametitle{Inhalt}
@@ -627,17 +628,17 @@ Elektrische Ladungen, die gleich sind (zwei positive Ladungen oder zwei negative
 
 Wenn sich die Ladungen nicht zwischen den Körpern bewegen und auch nicht innerhalb des Körpers, nennt man dies einen statischen Zustand. Die Ladung ist vorhanden, die Kräfte sind vorhanden aber es gibt keine Bewegung. Unter idealen Bedingungen bleibt der Zustand dauerhaft bestehen. In der Schule vereinfachen wir. Eine Ladung ist als punktförmig definiert, sie hat keine Ausdehnung, für die Elektrostatik gilt, dass sie ohne äußere Einflüsse unverändert bleibt. Elektronen und Ladungen bewegen sich nicht.
 
-\section[Einheiten]{Energieerhaltung und Einheit}
+\section[Energieerhaltung]{Energieerhaltung und Einheit}
 \only<presentation>{
 \begin{frame}
   \frametitle{Inhalt}
 
-  \begin{columns}
-    \column{.5\textwidth}
-    \tableofcontents[sections={7-12},currentsection]
-    \column{.5\textwidth}
-    \tableofcontents[sections={13-},currentsection]
-  \end{columns}
+%  \begin{columns}
+%    \column{.5\textwidth}
+    \tableofcontents%[sections={7-12},currentsection]
+%    \column{.5\textwidth}
+%    \tableofcontents[sections={13-},currentsection]
+%  \end{columns}
 \end{frame}
 }
 
@@ -662,12 +663,12 @@ Wenn eine positive Ladung und eine negative Ladung nahe beieinander existieren, 
 \begin{frame}
   \frametitle{Inhalt}
 
-  \begin{columns}
-    \column{.5\textwidth}
-    \tableofcontents[sections={7-12},currentsection]
-    \column{.5\textwidth}
-    \tableofcontents[sections={13-},currentsection]
-  \end{columns}
+% \begin{columns}
+%    \column{.5\textwidth}
+    \tableofcontents%[sections={7-12},currentsection]
+%    \column{.5\textwidth}
+%    \tableofcontents[sections={13-},currentsection]
+%  \end{columns}
 \end{frame}
 }
 
@@ -694,12 +695,12 @@ Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen inne
 \begin{frame}<beamer>
   \frametitle{Inhalt}
 
-  \begin{columns}
-    \column{.5\textwidth}
-    \tableofcontents[sections={7-12},currentsection]
-    \column{.5\textwidth}
-    \tableofcontents[sections={13-},currentsection]
-  \end{columns}
+%  \begin{columns}
+%    \column{.5\textwidth}
+    \tableofcontents%[sections={7-12},currentsection]
+%    \column{.5\textwidth}
+%    \tableofcontents[sections={13-},currentsection]
+%  \end{columns}
 \end{frame}
 }
 
@@ -769,12 +770,12 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
 \begin{frame}
   \frametitle{Inhalt}
 
-  \begin{columns}
-    \column{.5\textwidth}
-    \tableofcontents[sections={7-12},currentsection]
-    \column{.5\textwidth}
-    \tableofcontents[sections={13-},currentsection]
-  \end{columns}
+%  \begin{columns}
+%    \column{.5\textwidth}
+    \tableofcontents%[sections={7-12},currentsection]
+%    \column{.5\textwidth}
+%    \tableofcontents[sections={13-},currentsection]
+%  \end{columns}
 \end{frame}
 }
 
@@ -795,18 +796,20 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
 }
 
 \section{Pflicht-Themen, die noch offen sind}
-Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Plicht, aber noch nicht ausgearbeitet.
+\begin{frame}{Pflicht-Themen, die noch offen sind}
+Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
 \begin{itemize}
     \item Kondensator
-    \item Auf- und Entladung (zu Kondensator)
+    \\ Auf- und Entladung
     \item Induktion
-    \item Magnetischer Fluss (Phi, zu Induktion)
-    \item Flussdichte (B, zu Induktion) 
+    \\ Magnetischer Fluss (Phi)
+    \\ Flussdichte (B) 
     \item Spule
-    \item Ein- und Ausschaltvorgang (der Spule)
+    \\ Ein- und Ausschaltvorgang 
 \end{itemize}
 
 Die Themen folgen demnächst hier.
+\end{frame}
 
 % \section[Kondensator]{Kondensator (Pflicht)}
 % \only<presentation>{
