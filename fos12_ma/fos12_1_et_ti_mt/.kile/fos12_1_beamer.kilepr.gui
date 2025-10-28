@@ -1,0 +1,55 @@
+[General]
+kile_livePreviewEnabled=true
+kile_livePreviewStatusUserSpecified=false
+kile_livePreviewTool=LivePreview-PDFLaTeX
+lastDocument=
+
+[document-settings,item:fos12_1_gleichstrom.beamer.tex]
+Bookmarks=
+Encoding=windows-1252
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:fos12_1_gleichstrom.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[item:cc_by-nc_eu.png]
+open=false
+order=-1
+
+[item:fos12_1_beamer.kilepr]
+open=false
+order=-1
+
+[item:fos12_1_gleichstrom.beamer.tex]
+open=false
+order=-1
+
+[item:fos12_1_gleichstrom.tex]
+open=true
+order=0
+
+[view-settings,view=0,item:fos12_1_gleichstrom.beamer.tex]
+CursorColumn=0
+CursorLine=0
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,38,0,[,35,0,],38,13
+
+[view-settings,view=0,item:fos12_1_gleichstrom.tex]
+CursorColumn=32
+CursorLine=26
+Dynamic Word Wrap=false
+JumpList=
+TextFolding=[]
+ViMarks=.,26,10,[,26,10,],26,31
