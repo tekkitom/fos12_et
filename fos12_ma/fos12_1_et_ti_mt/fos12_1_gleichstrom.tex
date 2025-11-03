@@ -25,7 +25,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik, Technische Informatik, Mechatronik Themenfeld 12.1}
 \subtitle{Gleichstromnetzanalyse}
-\date{V 0.1.0 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.1.1 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -313,7 +313,8 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   \begin{align}
     U_{2''} &= U_{q2}*\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}}{R_4 + R_5 + \frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}}\\
     U_{2''} &= 12\,V*\frac{\frac{1}{\frac{1}{10\Omega}+\frac{1}{20\Omega}+\frac{1}{30\Omega}}}{40\Omega + 50\Omega + \frac{1}{\frac{1}{10\Omega}+\frac{1}{20\Omega}+\frac{1}{30\Omega}}}\\
-    U_{2''} &= 0,24V
+    U_{2''} &= 12\,V*0,057\
+    U_{2''} &= 0,685V
   \end{align}
 \end{frame}
 
@@ -321,14 +322,14 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   Zum Abschluss werden die beiden Teilspannungen addiert.
   \begin{align}
     U_2 &= U_{2'} + U_{2''}\\
-    U_2 &= 3,46V + 0,24V\\
-    U_2 &= 3,7V
+    U_2 &= 2,57V + 0,68V\\
+    U_2 &= 3,25V
   \end{align}
 \end{frame}
-$U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spanungsquellen sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
+$U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 
 \section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (Pflicht)}
-Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungänderungen an einem Sensor (z.B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mit Hilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
+Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungsänderungen an einem Sensor (z.B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mit Hilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
 
 \begin{frame}<beamer>
   \frametitle{Inhalt}
