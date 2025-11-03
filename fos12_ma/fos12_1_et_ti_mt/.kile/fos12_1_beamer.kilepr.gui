@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=
+lastDocument=fos12_1_gleichstrom.tex
 
 [document-settings,item:fos12_1_gleichstrom.beamer.tex]
 Bookmarks=
@@ -31,8 +31,8 @@ open=false
 order=-1
 
 [item:fos12_1_gleichstrom.beamer.tex]
-open=false
-order=-1
+open=true
+order=1
 
 [item:fos12_1_gleichstrom.tex]
 open=true
@@ -47,9 +47,9 @@ TextFolding=[]
 ViMarks=.,38,0,[,35,0,],38,13
 
 [view-settings,view=0,item:fos12_1_gleichstrom.tex]
-CursorColumn=32
-CursorLine=26
-Dynamic Word Wrap=false
+CursorColumn=13
+CursorLine=27
+Dynamic Word Wrap=true
 JumpList=
 TextFolding=[]
-ViMarks=.,26,10,[,26,10,],26,31
+ViMarks=.,27,12,[,27,12,],27,12

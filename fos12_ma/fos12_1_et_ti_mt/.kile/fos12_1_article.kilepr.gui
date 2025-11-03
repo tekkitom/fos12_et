@@ -47,9 +47,9 @@ TextFolding=[]
 ViMarks=.,14,0,[,14,0,],14,40
 
 [view-settings,view=0,item:fos12_1_gleichstrom.tex]
-CursorColumn=32
-CursorLine=26
-Dynamic Word Wrap=false
+CursorColumn=13
+CursorLine=27
+Dynamic Word Wrap=true
 JumpList=
 TextFolding=[]
-ViMarks=.,26,10,[,26,10,],26,31
+ViMarks=.,27,12,[,27,12,],27,12
