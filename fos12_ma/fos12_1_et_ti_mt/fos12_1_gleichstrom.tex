@@ -25,7 +25,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik, Technische Informatik, Mechatronik Themenfeld 12.1}
 \subtitle{Gleichstromnetzanalyse}
-\date{V 0.1.0 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.1.2 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -38,10 +38,10 @@
 \tableofcontents
 \clearpage
 }
-\begin{frame}<beamer>
-  \titlepage
-  % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
-\end{frame}
+% \begin{frame}<beamer>
+%   \titlepage
+%   % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
+% \end{frame}
 % \AtBeginSection[] % Do nothing for \section*
 % {
 %   \begin{frame}<beamer>
@@ -65,6 +65,46 @@
     \tableofcontents[sections={4-},hidesubsections]%currentsection]
   \end{columns}
 \end{frame}
+
+\section{Spannungsteiler}
+
+
+\begin{frame}{Spannungsteiler}
+  \begin{columns}[t]
+%      \begin{column}{2cm}
+\begin{column}{.33\textwidth}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to[vsource, l=$U$] (0,4.5);
+      \draw (0,4.5) to (2,4.5);
+      \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$] (2,2) to [short, -o] (3,2);
+      \draw (2,2) to [R=$R_2$,  v=$U_{2}$] (2,0) to [short, -o] (3,0);
+      \draw (2,0) to (0,0);      
+    \end{circuitikz}
+    %       \caption{Schaltung 1}
+    \label{fig:InfoZweipole1}
+  \end{figure}
+   \end{column}
+\begin{column}{.3\textwidth}
+   \begin{align}
+    U &= U_1 + U_2\\
+    I = \frac{U}{R_{ges}} &= \frac{U}{R_1+R_2}\\
+% I &= \frac{U_1}{R_!}\\
+% I &= \frac{U_2}{R_2}\\
+    I = \frac{U_1}{R_1} &=\frac{U_2}{R_2}
+   \end{align}
+    \end{column}
+    \begin{column}{.3\textwidth}
+   \begin{align}
+   U_2 &= I * R_2\\
+    U_2 &= \frac{U}{R_{ges}}*R_2\\
+    U_2 &= \frac{U}{R_1+R_2}*R_2\\
+    \frac{U_2}{U} &= \frac{R_2}{R_1+R_2}
+   \end{align}
+    \end{column}
+ \end{columns}  
+\end{frame}
+
 
 \section[Zweipole]{Zweipoltheorie (Pflicht)}
 In der Elektrotechnik werden Bauteile, die zwei Abschlüsse haben als Zweipole bezeichnet. Dies können jeweils einzelne Widerstände, Spulen und Kondensatoren sein. Manchmal ist es praktisch eine (Teil-)Schaltung als einen Zweipol darzustellen und in Berechnungen als ein virtuelles Bauteil zu verwenden.
@@ -242,9 +282,9 @@ Mit einem Messgerät kann ich die Spannung an $R_2$ messen, den Strom, der durch
       (6,0) to[short, -*] (4,0);
     \end{circuitikz}
     \caption{Nur Quelle 1 aktiv}
-    \label{fig:Schaltung4_1}
+    \label{fig:Schaltung41}
   \end{figure}
-  $R1 = 10\Omega ,\ R2 = 20 \Omega ,\ R3 = 30\Omega ,\ R4 = 40 \Omega ,\ R5 = 50 \Omega$
+  $U_{q1}=5V, U_{Q2}=12V, R1 = 10\Omega ,\ R2 = 20 \Omega ,\ R3 = 30\Omega ,\ R4 = 40 \Omega ,\ R5 = 50 \Omega$
 \end{frame}
 
 $R_2$ wird jetzt mit dem Ersatzwiderstand $R_{3||45}$ parallel geschaltet.
@@ -259,7 +299,7 @@ Zur Berechnung müssten jedoch entweder $I_2$ oder $U_2$ bekannt sein. Somit hil
 \begin{frame}{Berechnung Ersatzwiderstand II}
   \begin{align}
     U_{q1} &= U_1 + U_2\\
-    U_2 &= U_{q1}*\frac{R_2||R3||R45}{R!+ R_2||R3||R45}
+    U_2 &= U_{q1}*\frac{R_2||R3||R45}{R_1+ R_2||R3||R45}
   \end{align}
 \end{frame}
 In der Festlegung \ref{comp:WiderstaendeSchaltung1} (Seite \pageref{comp:WiderstaendeSchaltung1}) habe ich die Werte für die Widerstände und die Spannungen der Quellen festgelegt. In Formel (\ref{eq:zweipolr345}, Seite \pageref{eq:zweipolr345}) habe ich den Ersatzwiderstand für $R_{3||45}$ berechnet. Hier setze ich die Werte in die Formeln ein:
@@ -275,9 +315,9 @@ In der Festlegung \ref{comp:WiderstaendeSchaltung1} (Seite \pageref{comp:Widerst
     U_{2'} &= U_{q1}*\frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}+\frac{1}{R_4+R_5}}}{R_1 + \frac{1}{\frac{1}{R_2}+\frac{1}{R_3}+\frac{1}{R_4+R_5}}}\\
   \end{align*}
   \begin{align}
-    U_{2'} &= 5V*\frac{22,5\Omega}{10\Omega + 22,5\Omega}\\
-    U_{2'} &= 5V * 0,69\\
-    U_{2'} &= 3,46V
+    U_{2'} &= 5V*\frac{10,59\Omega}{10\Omega + 10,59\Omega}\\
+    U_{2'} &= 5V * 0,514\\
+    U_{2'} &= 2,57V
   \end{align}
 \end{frame}
 
@@ -298,7 +338,7 @@ Jetzt schließe ich Quelle 1 kurz und nur Quelle $U_{Q2}$ ist aktiv. Damit kann 
       \draw (6,0) to (4,0);
     \end{circuitikz}
     \caption{Nur Quelle zwei aktiv}
-    \label{fig:Schaltung4_2}
+    \label{fig:Schaltung42}
   \end{figure}
   $R1 = 10\Omega ,\ R2 = 20 \Omega ,\ R3 = 30\Omega ,\ R4 = 40 \Omega ,\ R5 = 50 \Omega$
 \end{frame}
@@ -313,7 +353,8 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   \begin{align}
     U_{2''} &= U_{q2}*\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}}{R_4 + R_5 + \frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}}}\\
     U_{2''} &= 12\,V*\frac{\frac{1}{\frac{1}{10\Omega}+\frac{1}{20\Omega}+\frac{1}{30\Omega}}}{40\Omega + 50\Omega + \frac{1}{\frac{1}{10\Omega}+\frac{1}{20\Omega}+\frac{1}{30\Omega}}}\\
-    U_{2''} &= 0,24V
+    U_{2''} &= 12\,V*0,057\\
+    U_{2''} &= 0,685V
   \end{align}
 \end{frame}
 
@@ -321,14 +362,14 @@ In diesem Fall ist $R_2$ parallelgeschaltet mit $R_1$ und $R_3$.
   Zum Abschluss werden die beiden Teilspannungen addiert.
   \begin{align}
     U_2 &= U_{2'} + U_{2''}\\
-    U_2 &= 3,46V + 0,24V\\
-    U_2 &= 3,7V
+    U_2 &= 2,57V + 0,685V\\
+    U_2 &= 3,26V
   \end{align}
 \end{frame}
-$U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spanungsquellen sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
+$U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 
 \section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (Pflicht)}
-Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungänderungen an einem Sensor (z.B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mit Hilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
+Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungsänderungen an einem Sensor (z.B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mit Hilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
 
 \begin{frame}<beamer>
   \frametitle{Inhalt}
@@ -401,7 +442,7 @@ In Bild \ref{fig:Messbruecke2aMarkierung} wurden die Widerstände des Dreiecks i
 %       (4.3,5.2);
     \end{circuitikz}
     \caption{Messbrücke}
-    \label{fig:Messbruecke2aMarkierung}
+    \label{fig:Messbruecke2bMarkierung}
   \end{figure}
 \end{column}
 \begin{column}{.5\textwidth}
