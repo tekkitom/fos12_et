@@ -214,8 +214,8 @@
           \begin{circuitikz}
             \draw (0,0) to[vsource, l=$U$] (0,4.5);
             \draw (0,4.5) to (2,4.5);
-            \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$] (2,2) to [short, -o] (3,2);
-            \draw (2,2) to [R=$R_2$,  v=$U_{2}$] (2,0) to [short, -o] (3,0);
+            \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$] (2,2) node[circ]{} to [short, -o] (3,2);
+            \draw (2,2) to [R=$R_2$,  v=$U_{2}$] (2,0) node[circ]{} to [short, -o] (3,0);
             \draw (2,0) to (0,0);
           \end{circuitikz}
           %       \caption{Schaltung 1}

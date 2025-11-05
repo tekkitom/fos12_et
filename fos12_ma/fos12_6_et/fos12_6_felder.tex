@@ -176,19 +176,57 @@ Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen inne
 
 %\only<presentation>{
 \begin{frame}
-\begin{description}
-    \item [Reihenschaltung] höhere Spannung, selbe Kapazität \\
-    $\frac{1}{C}=\frac{1}{C_1}+\frac{1}{C_2}+\frac{1}{C_3}+\dots$
-    \item[Parallelschaltung] Erhöhung der Kapazität ($\sum$)\\ $C=C_1+C_2+C_3+ \dots$\label{CsParallepAdd}
-\end{description}
+    \begin{description}
+        \item [Reihenschaltung] höhere Spannung, selbe Kapazität 
+    \end{description}
+        \begin{equation}
+        \frac{1}{C}=\frac{1}{C_1}+\frac{1}{C_2}+\frac{1}{C_3}+\dots
+        \label{eq:2CsInReihe}
+        \end{equation}
+        
+        \begin{figure}[htb]
+            \begin{tikzpicture}
+                \draw (0,0) to[C=$C_1$] (1,0) to [C=$C_2$] (2,0);
+            \end{tikzpicture}
+            \caption{Zwei Kondensatoren in Reihenschaltung}
+            \label{fig:2CsInReihe}
+        \end{figure}
 \end{frame}
-Die Berechnung der Schaltungen von Kondensatoren ist gegenüber der Berechnung von Schaltungen der Widerstände invertiert. Bei der Parallelschaltung werden die wirksamen Flächen der Kondensatoren addiert. Daher werden bei einer Parallelschaltung auch die Kapazitätswerte addiert (siehe Formel \ref{CsParallepAdd}). Bei einer Reihenschaltung werden die Kehrwerte addiert. Hier erhöht sich - theoretisch - die nutzbare Gesamtspannung aller Kondensatoren.
+
+\begin{frame}
+    \begin{description}
+    \item[Parallelschaltung] Erhöhung der Kapazität ($\sum$)
+    \end{description}
+    
+    \begin{equation}
+        C=C_1+C_2+C_3+ \dots
+        \label{eq:CsParallepAdd}
+    \end{equation}
+    
+    \begin{figure}[htb]
+        \begin{tikzpicture}
+            \draw (0,0) -- (1,0)node[circ]{} --(1,1) ; 
+            \draw (1,1) to[C=$C_1$] (2,1) -- (2,0) node[circ]{} -- (3,0);
+            \draw (0,0) -- (1,0) -- (1,-1) to [C=$C_2$] (2,-1) -- (2,0);
+        \end{tikzpicture}
+        \caption{Zwei Kondensatoren in Parallelschaltung}
+        \label{fig:2CsParallel}
+    \end{figure}
+\end{frame}
+Die Berechnung der Schaltungen von Kondensatoren ist gegenüber der Berechnung von Schaltungen der Widerstände invertiert. Bei der Parallelschaltung werden die wirksamen Flächen der Kondensatoren addiert. Daher werden bei einer Parallelschaltung auch die Kapazitätswerte addiert (siehe Formel \ref{eq:CsParallepAdd}). Bei einer Reihenschaltung werden die Kehrwerte addiert (siehe Formel \ref{eq:2CsInReihe}). Hier erhöht sich - theoretisch - die nutzbare Gesamtspannung aller Kondensatoren.
 
 \subsection{Spannung am Kondensator}
-Ein Kondensator ist für eine maximale Spannung ausgelegt. Die zulässige Betriebsspannung ist in der Regel aufgedruckt. Die Spannung ist unter anderem vom Abstand der Platten und dem verwendeten Dielektrikum (Isoliestoff) abhängig. Wenn die maximale Spannung überschritten wird, kann es zu einem Überschlag (Blitz) kommen. Dadurch wird in der Regel das Dielektrikum und die Platten beschädigt. Ob ein Durchschlag zur Zerstörung des Kondensators führt ist von der mechanischen Bauart abhängig. Selbstheilende Kondensatoren verlieren bei einem Durchschlag an der Stelle ein wenig einer Metallfolie, dadurch verringert sich die Kapazität des Kondensators. Grundsätzlich bleibt der Kondensator weiterhin funktionsfähig.
+Ein Kondensator ist für eine maximale Spannung ausgelegt. Die zulässige Betriebsspannung ist in der Regel aufgedruckt. Die Spannung ist unter anderem vom Abstand der Platten und dem verwendeten Dielektrikum (Isolierstoff) abhängig. Wenn die maximale Spannung überschritten wird, kann es zu einem Überschlag (Blitz) kommen. Dadurch wird in der Regel das Dielektrikum und die Platten beschädigt. Ob ein Durchschlag zur Zerstörung des Kondensators führt ist von der mechanischen Bauart abhängig. Selbstheilende Kondensatoren verlieren bei einem Durchschlag an der Stelle ein wenig einer Metallfolie, dadurch verringert sich die Kapazität des Kondensators. Grundsätzlich bleibt der Kondensator weiterhin funktionsfähig.
 
-Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen auf den Platten gleichmäßig. --  hier Bild einfügen: 2 Kondensatoren in Reihe geschaltet. --
-Die rechte Platte des linken Kondensators ist elektrisch direkt mit der linken Platte des rechten Kondensators verbunden. Sie bilden quasi eine Einheit. Im städtischen Fall (wenn sich alle Ladungen verteilt haben) kann jeder Kondensator mit seiner maximalen Spannung betrieben werden. Somit kann bei mehreren Kondensatoren, die in Reihe geschaltet sind und die die gleiche Spannung haben, die Spannung addiert werden.
+Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen auf den Platten gleichmäßig (siehe Bild \ref{fig:2CsInReihe}).
+
+% \begin{figure}[htb]
+%     \begin{tikzpicture}
+%         \draw (0,0) to[C=$C_1$] (1,0) to [C=$C_2$] (2,0);
+%     \end{tikzpicture}
+% \end{figure}
+
+Die rechte Platte des linken Kondensators ($C_1$) ist elektrisch direkt mit der linken Platte des rechten Kondensators ($C_2$) verbunden. Sie bilden quasi eine Einheit. Im städtischen Fall (wenn sich alle Ladungen verteilt haben) kann jeder Kondensator mit seiner maximalen Spannung betrieben werden. Somit kann bei mehreren Kondensatoren, die in Reihe geschaltet sind und die die gleiche Spannung haben, die Spannung addiert werden.
 
 Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt. daher kann es passieren, dass einer der Kondensatoren mit einer Spannung beaufschlagt wird, die die zulässige Betriebsspannung überschreitet. Dies kann zu einer Überlastung - und damit potentiell einer Zerstörung - des betreffenden Kondensators führen.
 \section{Vektoren}
