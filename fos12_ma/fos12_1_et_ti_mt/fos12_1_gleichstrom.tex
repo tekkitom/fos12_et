@@ -154,8 +154,8 @@
     Berechnen Sie jeweils den Ersatzwiderstand zwischen den Klemmen C und D zur Schaltung unten.
     \begin{description}
       \item[a] $R1 = R2 = 220 \Omega \ R3 = R5 = 230 \Omega \ R4 = 470 \Omega$
-      \item[b] $R1 = R2 = R3 = R5 = 230 \Omega \ R4 = 470 \Omega$
-      \item[c] $R1 = R2 = R4 = R5 = 230 \Omega \ R3 = 470 \Omega$
+      \item[b] $R1 = R2 = R3 = R5 = 230 \Omega \ R4 = 560 \Omega$
+      \item[c] $R1 = R2 = R4 = R5 = 150 \Omega \ R3 = 120 \Omega$
     \end{description}
     \begin{figure}[htb]
       \begin{circuitikz}
@@ -253,6 +253,22 @@
 
   Der Spannungsteiler in diesem Beispiel ist unbelastet, das bedeutet, dass außer den beiden Widerständen, die die Spannung U aufteilen keine weiteren Widerstände vorhanden sind. Wenn parallel zu $R_2$ ein weiterer Widerstand geschaltet wäre, wäre zu prüfen, wie groß der Widerstand ist, der parallel geschaltet ist. Wenn der parallele Widerstand viel größer ist (Faktor 100 und mehr) kann er vernachlässigt werden, da der Strom, der durch den Parallelwiderstand fließt, sehr kein ist im Verhältnis zu $R_2$. Wenn die Widerstände annähernd die gleiche Größe hätten, würde man von einem belasteten Spannungsteiler sprechen. In diesem Fall müsste die Parallelschaltung unbedingt für die Berechnung berücksichtigt werden.
 
+  \subsection{Übungen}
+  \label{Aufg:Spannungsteiler}
+  Gegen sei der Spannungsteiler aus Bild \ref{fig:Spannungsteiler}. Berechnen Sie die fehlenden Werte in der Tabelle unten.\\
+  \begin{tabular}{l|ll|ll}
+  U [V] & $R_1 [\Omega]$& $R_2 [\Omega]$& $I_{R1}$ & $I_{R2}$\\ \hline
+  5  & 220 & 330 &       & \\
+  12 & 220 & 470 &       & \\
+  12 & 220 &     & 12 mA & \\
+  12 & 470 &     &       & 10,4 mA  \\
+     & 560 & 120 & 22 mA &   \\
+     & 470 & 1,5k &  3,3 mA &   \\
+  \end{tabular}
+
+  Die Lösungen sind auf \pageref{Lsg:Spannungsteiler}
+  
+  
 
   \section[Helmholtz]{Überlagerungsverfahren nach Helmholtz (Pflicht)}
   \begin{frame}<beamer>
@@ -587,3 +603,24 @@
     %     0 & 0 & 1 \\
     %   \end{array}$
     %   \section{Knotenpotentialanalyse}
+    
+    \section{Lösungen}
+    \subsection{Ersatzwiderstand}
+    \begin{description}
+      \item[a] $R1 = R2 = 220 \Omega \ R3 = R5 = 230 \Omega \ R4 = 470 \Omega$ \ $R{3||45} = 173,12 \Omega$
+      \item[b] $R1 = R2 = R3 = R5 = 230 \Omega \ R4 = 560 \Omega$ \ $R{3||45} = \Omega$
+      \item[c] $R1 = R2 = R4 = R5 = 150 \Omega \ R3 = 120 \Omega$ \ $R{3||45} = \Omega$
+    \end{description}
+    \subsection{Spannungsteiler}
+    \label{Lsg:Spannungsteiler}
+    Zu Aufgabe aus Abschnitt \ref{Aufg:Spannungsteiler}
+    
+    \begin{tabular}{l|ll|ll}
+  U [V] & $R_1 [\Omega]$& $R_2 [\Omega]$& $I_{R1}$ & $I_{R2}$\\ \hline
+  5     & 220 & 330  & 9,09 mA  & 9,09 mA  \\
+  12    & 220 & 470  & 17,39 mA & 17,39 mA \\
+  12    & 220 & 780  & 12 mA    & 12 mA    \\
+  12    & 470 & 683  & 10,4 mA  & 10,4 mA  \\
+  14,96 & 560 & 120  & 22 mA    & 22 mA    \\
+  6,5   & 470 & 1,5k &  3,3 mA  &  3,3 mA  \\
+  \end{tabular}
