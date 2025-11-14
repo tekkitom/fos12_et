@@ -400,7 +400,31 @@
     \end{align}
   \end{frame}
   $U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
+\subsection{Aufgaben zu Überlagerung}
+Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
+für die Schaltung in Abbildung \ref{fig:SchaltungZweiQuellenAktiv}.
 
+% \begin{frame}{Zwei Spannungsquellen U1 und U2}
+ %   \begin{figure}[htb]
+%      \begin{circuitikz}
+%        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+ %       \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [short, i>_=$I_2$] (2,3);
+%        \draw (2,3) to [R=$R_2$,  v=$U_2$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+ %       \draw (2,4) -- (3,4) to[short, -*] (4,4) to[short] (4,3)  to[R=$R_3$]
+ %       (4,0) -- (3,0) -- (2,0);
+ %       \draw (4,4) to [R=$R_4$] (6,4);
+ %       \draw (6,4) to [R=$R_5$] (6,2);
+ %       \draw (6,2) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+%        \draw (6,0) to [short, -*] (4,0);
+%      \end{circuitikz}
+ %     \caption{Zwei Quellen aktiv}
+      %\label{fig:SchaltungZweiQuellenAktiv}
+   % \end{figure}
+ %   $R1 = 10\Omega ,\ R2 = 20 \Omega ,\ R3 = 30\Omega ,\ R4 = 40 \Omega ,\ R5 = 50 \Omega$
+
+%  \end{frame}
+
+  
   \section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (Pflicht)}
   Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungsänderungen an einem Sensor (z. B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mithilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
 
