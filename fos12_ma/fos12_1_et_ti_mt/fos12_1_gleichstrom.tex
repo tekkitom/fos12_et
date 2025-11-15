@@ -276,7 +276,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
     \tableofcontents[currentsection, hideothersubsections]
   \end{frame}
 
-  Wenn in einer Schaltung, man spricht auch von elektrischen Netzwerken, mehr als eine Quelle vorhanden ist, speisen alle Quellen gemeinsam die Schaltung mit Energie. Um in der Schaltung unten (Abbildung \ref{fig:SchaltungZweiQuellenAktiv}) zu berechnen, wie viel Strom durch den Widerstand $R_2$ fließt, muss ich wissen, wie viel Strom die Quelle $U_1$ und wie viel die Quelle $U_2$ an den Widerstand abgibt.
+  Wenn in einer Schaltung, man spricht auch von elektrischen Netzwerken, mehr als eine Quelle vorhanden ist, speisen alle Quellen gemeinsam die Schaltung mit Energie. Um in der Schaltung unten (Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}) zu berechnen, wie viel Strom durch den Widerstand $R_2$ fließt, muss ich wissen, wie viel Strom die Quelle $U_1$ und wie viel die Quelle $U_2$ an den Widerstand abgibt.
   \begin{frame}{Zwei Spannungsquellen U1 und U2}
     \begin{figure}[htb]
       \begin{circuitikz}
@@ -290,8 +290,8 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
         \draw (6,2) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
         \draw (6,0) to [short, -*] (4,0);
       \end{circuitikz}
-      \caption{Zwei Quellen aktiv}
-      \label{fig:SchaltungZweiQuellenAktiv}
+      \caption{Überlagerung, Schaltung 1, Zwei Quellen aktiv}
+      \label{fig:SchaltungEins-zweiQuellenAktiv}
     \end{figure}
     $R1 = 10\Omega ,\ R2 = 20 \Omega ,\ R3 = 30\Omega ,\ R4 = 40 \Omega ,\ R5 = 50 \Omega$
 
@@ -399,6 +399,49 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
   \end{frame}
   $U{2'}$ ist die Teilspannung, die von der Quelle $U_{Q1}$ kommt, $U_{2''}$ ist von $U_{2''}$. $U_2$ ist die gesamte  Spannung, die an Widerstand $R_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $U_2$ ist in der Schaltung messbar. die Teilspannungen $U{2'}$ und $U_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 
+  \subsection{Schaltung 2}
+   \begin{frame}{Schaltung 2}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,5);
+        \draw (0,5) to [R=$R_1$] (2,5) node[circ]{} node[above]{A} to [R=$R_2$] (2,3) to [short, i>_=$I_2$]  (2,2);
+        \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+        \draw (2,3) -- (3,3) -- (4,3) to[short] (4,3)  to[R=$R_4$]
+        (4,0) -- (3,0) -- (2,0);
+        \draw (2,5) -- (4,5) to [R=$R_5$] (6,5);
+        \draw (6,5) to [R=$R_6$] (6,2);
+        \draw (6,2) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+        \draw (6,0) to [short, -*] (4,0);
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 2}
+      \label{fig:SchaltungZwei}
+    \end{figure}
+    $R1 = 100\Omega ,\ R2 = 220 \Omega ,\ R3 = 230\Omega ,\ R4 = 470 \Omega ,\ R5 = 560 \Omega$
+
+  \end{frame}
+  
+  \subsection{Schaltung 3}
+   \begin{frame}{Schaltung 3}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,5);
+        \draw (0,5) to [R=$R_1$] (2,5) node[circ]{} node[above]{A} to (2,3) node[left]{B} to [short, i>_=$I_3$]  (2,2);
+        \draw (2,2)to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \draw (4,5) node[circ]{} node[above]{C}  to [R=$R_2$] (4,3);
+        \draw (2,3)  (2,3) node[circ]{} -- (4,3) node[circ]{}  node[right]{D} -- (4,2) to[R=$R_4$]
+        (4,0) -- (3,0) -- (2,0);
+        \draw (2,5) -- (4,5) to [R=$R_5$] (6,5);
+        \draw (6,5) to [R=$R_6$] (6,2);
+        \draw (6,2) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+        \draw (6,0) to [short, -*] (4,0);
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3}
+      \label{fig:SchaltungDrei}
+    \end{figure}
+    $R1 = 100\Omega ,\ R2 = 220 \Omega ,\ R3 = 230\Omega ,\ R4 = 470 \Omega ,\ R5 = 560 \Omega$
+\end{frame}
+
+  
   \section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (Pflicht)}
   Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungsänderungen an einem Sensor (z. B. Temperatursensor PT1000, DMS, \dots ) sehr kein sind. $R_4$ wäre zum Beispiel der Messwiederstand. $R_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mithilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $R_3. R_5. R_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $R_1, R_2$ und $R_4$ zu bestimmen.
 
