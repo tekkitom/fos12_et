@@ -283,17 +283,35 @@
         \draw[->] (0,0) -- (3,3);
         \draw node at (0.9,1.2) {$\vec{v}_1$};
         \draw node at (1.4,0.4) {$\vec{v}_2$};
-        \draw node at (1.6,2) {$\vec{v'}_2$};
+        \draw node at (1.6,2) {$\vec{v}_2$};
         \draw node at (2,1.5) {$\vec{v}_3$};
       \end{tikzpicture}
 
-      $\vec{v}_1= \left(\begin{array}{c} 1 \\ 2 \end{array}\right)$, $\vec{v}_2= \left(\begin{array}{c} 2 \\ 1 \end{array}\right)$, $\vec{v'}_2 = \vec{v}_2$  und $\vec{v}_3= \left(\begin{array}{c} 3 \\ 3 \end{array}\right)$
+      $\vec{v}_1= \left(\begin{array}{c} 1 \\ 2 \end{array}\right)$,
+      $\vec{v}_2= \left(\begin{array}{c} 2 \\ 1 \end{array}\right)$,
+      $\vec{v}_3= \left(\begin{array}{c} 3 \\ 3 \end{array}\right)$
       \caption{Zwei Vektoren in zweidimensionalen Raum}
       \label{fig:ZweiVektorenAddiert}
     \end{figure}
   \end{frame}
 
-  \only<presentation>{
+  \begin{frame}{Multiplikation Vektor mit skalarem Wert}
+    \begin{figure}[htb]
+      \begin{tikzpicture}
+        \draw (-2,0) -- (2,0);
+        \draw (0,-2) -- (0,2);
+        \draw[->] (0,0) -- (2,1);
+        \draw[->] (0,0) -- (4,2);
+        \draw node at (0.9,1.2) {$\vec{v}_1$};
+          \draw node at (2.3,1.8) {$\vec{v}_1 * 2$};
+      \end{tikzpicture}
+
+      \caption{Zwei Vektor mit skalarer Multiplikation}
+      \label{fig:VektorSkalarMultipliziert}
+    \end{figure}
+  \end{frame}
+
+%   \only<presentation>{
     \begin{frame}{Kraft als Vektor, Spannung}
       \begin{itemize}
         \item Kraft $\widehat{=}$ Vektor
@@ -303,41 +321,43 @@
         \item auch im Raum (E-Feld)
       \end{itemize}
     \end{frame}
-  }
-  \section[E-Feld]{Elektrische Feldstärke}
-  \only<presentation>{
-    \begin{frame}
-      \frametitle{Inhalt}
+%   }
+%   \section[E-Feld]{Elektrische Feldstärke}
+%   \only<presentation>{
+%     \begin{frame}
+%       \frametitle{Inhalt}
+%
+%       %  \begin{columns}
+%       %    \column{.5\textwidth}
+%       \tableofcontents%[sections={7-12},currentsection]
+%       %    \column{.5\textwidth}
+%       %    \tableofcontents[sections={13-},currentsection]
+%       %  \end{columns}
+%     \end{frame}
+%   }
 
-      %  \begin{columns}
-      %    \column{.5\textwidth}
-      \tableofcontents%[sections={7-12},currentsection]
-      %    \column{.5\textwidth}
-      %    \tableofcontents[sections={13-},currentsection]
-      %  \end{columns}
-    \end{frame}
-  }
 
 
+%   \section[Überlagerung E]{Überlagerung von elektrischen Feldern}
+%   \only<presentation>{
+%     \begin{frame}
+%       \frametitle{Inhalt}
+%
+%       \begin{columns}
+%         \column{.5\textwidth}
+%         \tableofcontents[sections={7-12},currentsection]
+%         \column{.5\textwidth}
+%         \tableofcontents[sections={13-},currentsection]
+%       \end{columns}
+%     \end{frame}
+%   }
 
-  \section[Überlagerung E]{Überlagerung von elektrischen Feldern}
-  \only<presentation>{
-    \begin{frame}
-      \frametitle{Inhalt}
-
-      \begin{columns}
-        \column{.5\textwidth}
-        \tableofcontents[sections={7-12},currentsection]
-        \column{.5\textwidth}
-        \tableofcontents[sections={13-},currentsection]
-      \end{columns}
-    \end{frame}
-  }
-
-  \section{Pflicht-Themen, die noch offen sind}
+  \section[noch offene Themen]{Pflicht-Themen, die noch offen sind}
   \begin{frame}{Pflicht-Themen, die noch offen sind}
     Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
     \begin{itemize}
+      \item Elektrische Feldstärke
+      \item Überlagerung von elektrischen Feldern
       \item Kondensator
       \\ Auf- und Entladung
       \item Induktion
