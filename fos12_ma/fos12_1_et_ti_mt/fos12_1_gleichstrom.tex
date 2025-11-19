@@ -449,8 +449,8 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
     \begin{figure}[htb]
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2) to [short, i>_=$I_2$]  (2,1.5);
-        \draw (2,1.5) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+        \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
         \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$]
         (4,0) -- (3,0) -- (2,0);
         \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
@@ -618,7 +618,8 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
   \end{frame}
 
   \begin{frame}%[label=messbrueckeFrame]
-    \frametitle{Messbrücke}
+    \only<1>{\frametitle{Aufgabe: Messbrücke}}
+    \only<2>{\frametitle{Lösung zu Messbrücke}}
     \begin{columns}
       \begin{column}{.4\textwidth}
         \begin{figure}[htb]
@@ -734,3 +735,156 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
   14,96 & 560 & 120  & 22 mA    & 22 mA    \\
   6,5   & 470 & 1,5k &  3,3 mA  &  3,3 mA  \\
   \end{tabular}
+  \subsection{Lösungsvorschlag zu Schaltung 2}
+  Die Bilder für Schaltung 2 und Schaltung 3 sind hier zurzeit überlagert. In der Beamer-Version sind die Bilder gut erkennbar.
+  \begin{frame}{Schaltung 2- nur Quelle 1 aktiv}
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \begin{figure}[htb]
+          \begin{circuitikz}
+            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+            \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+            \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+            \draw (4,0) -- (2,0);
+            \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+            \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+            \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
+            \draw (2,4) -- (6,4);}
+            \draw (6,2) -- (6,0) -- (6,0);
+            \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+            \only<4>{\draw (6,0) -- (4,0);}
+            \only<2>{\draw[red, thick] (4,2.3) rectangle
+              (6.8,4.8);}
+            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+              (4.8,2.3);}
+          \end{circuitikz}
+          \caption{Überlagerung, Schaltung 2}
+          \label{fig:SchaltungZweiLsgVorschlagTeil1}
+        \end{figure}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega$ $R5 = 560 \Omega,\ R6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
+      \end{column}
+    \end{columns}
+  \end{frame}
+  \begin{frame}{Schaltung 2- nur Quelle 2 aktiv}
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \begin{figure}[htb]
+          \begin{circuitikz}
+            \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+            \draw (0,4) -- (0,0);
+            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+            \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+            \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+            \draw (4,0) -- (2,0);
+            \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+            \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+            \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
+              \draw (2,4) -- (6,4);}
+            \draw (6,2) -- (6,0) -- (6,0);
+            \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+            \only<4>{\draw (6,0) -- (4,0);}
+            \only<2>{\draw[red, thick] (4,2.3) rectangle
+              (6.8,4.8);}
+            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+              (4.8,2.3);}
+          \end{circuitikz}
+          \caption{Überlagerung, Schaltung 2}
+          \label{fig:SchaltungZweiLsgVorschlagTeil2}
+        \end{figure}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega$ $R5 = 560 \Omega,\ R6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
+      \end{column}
+    \end{columns}
+  \end{frame}
+\subsection{Lösungsvorschlag zu Schaltung 3}
+Die Bilder für Schaltung 2 und Schaltung 3 sind hier zurzeit überlagert. In der Beamer-Version sind die Bilder gut erkennbar.
+  \begin{frame}{Schaltung 3 - nur Quelle 1 aktiv}
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \begin{figure}[htb]
+          \begin{circuitikz}
+            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+            \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
+            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+            \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
+            \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
+            \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
+              to [R=$R_5$] (2,3) node[circ]{};}
+            \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
+            \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
+            \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+            \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
+              \draw (6,4) to [R=$R_7$] (6,2);}
+            \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+            %\draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
+            \only<1-4>{\draw (6,2) -- (6,0);}
+            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+            \only<4>{\draw (6,0) -- (4,0);}
+            \only<2>{\draw[red, thick] (4.3,2.3) rectangle
+              (6.8,4.8);}
+            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+              (4.8,2.3);}
+          \end{circuitikz}
+          \caption{Überlagerung, Schaltung 3}
+          \label{fig:SchaltungDreiLsgVorschlagTeil1}
+        \end{figure}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega $ $ R5 = 470 \Omega,\ R6 = 560\Omega$
+        $ R7 = 120 \Omega$
+        $U_{q1} = 12\,V, U_{q2} = 15\,V$
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Schaltung 3 - nur Quelle 2 aktiv}
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \begin{figure}[htb]
+          \begin{circuitikz}
+%             \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+            \draw (0,4) -- (0,0);
+            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+            \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
+            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+            \only<5->{\draw (2,4) -- (6,4) to [R=$R_{(2||5)+3+7}$] (6,2);}
+            \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
+            \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
+              to [R=$R_5$] (2,3) node[circ]{};}
+            \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
+            \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
+            \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+            \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
+              \draw (6,4) to [R=$R_7$] (6,2);}
+            \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+            \draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
+            \only<1-4>{\draw (6,2) -- (6,0);}
+            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+            \only<4->{\draw (6,0) -- (4,0);}
+            \only<2>{\draw[red, thick] (4.3,2.3) rectangle
+              (6.8,4.8);}
+            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+              (4.8,2.3);}
+          \end{circuitikz}
+          \caption{Überlagerung, Schaltung 3}
+          \label{fig:SchaltungDreiLsgVorschlagTeil2}
+        \end{figure}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega $ $ R5 = 470 \Omega,\ R6 = 560\Omega$
+        $ R7 = 120 \Omega$
+        $U_{q1} = 12\,V, U_{q2} = 15\,V$
+      \end{column}
+    \end{columns}
+  \end{frame}
