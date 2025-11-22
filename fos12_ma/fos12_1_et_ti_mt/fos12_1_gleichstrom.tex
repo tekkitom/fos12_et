@@ -918,6 +918,13 @@ Anwendung der Spannungsteiler-Regel für $R_1$ zu $R_2+R_{3||4}||R_{5+6}$. Die S
       \end{column}
       \begin{column}{.4\textwidth}
         $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega$ $R5 = 560 \Omega,\ R6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
+        \only<4>{
+          \begin{align}
+            U_3 &= U_3' + U_3''\\
+            U_3 &= 3,78\,V + 0,64\,V\\
+            &= 4,42\,V
+          \end{align}
+        }
       \end{column}
     \end{columns}
   \end{frame}
@@ -1224,6 +1231,13 @@ Im finalen Schritt 1.5 wurden die Parallelschaltung aus R2 und R5 mit der Reihen
         $R1 = 100\Omega ,\ R2 = 220 \Omega$ $R3 = 270\Omega ,\ R4 = 470 \Omega $ $ R5 = 470 \Omega,\ R6 = 560\Omega$
         $ R7 = 120 \Omega$
         $U_{q1} = 12\,V, U_{q2} = 15\,V$
+        \only<5>{
+          \begin{align}
+          U_4 &= U_4' + U_4''\\
+          U_4 &= 7,61\,V + 1,76\,V\\
+          U_4 &= 9,37\,V
+        \end{align}
+        }
       \end{column}
     \end{columns}
   \end{frame}
@@ -1267,7 +1281,7 @@ Für Quelle 2 ergibt sich damit:
   R_{1}||R_{4||6} &= \frac{1}{\frac{1}{100 \Omega}+\frac{1}{255,53 \Omega}} = 71,87 \Omega\\
   \frac{U_4''}{U_{q2}} &= \frac{R_{1}||R_{4||6}}{R_{(2||5)+3+7}+R_1||R_{4||6}}\\
   U_4'' &= U_{q2} * \frac{R_{1}||R_{4||6}}{R_{(2||5)+3+7}+R_1||R_{4||6}}\\
-  U_4'' &= 15\,V * \frac{71,87 \Omega}{255,53 \Omega + 71,87 \Omega}\\
+  U_4'' &= 15\,V * \frac{71,87 \Omega}{539,86 \Omega + 71,87 \Omega}\\
   U_4'' &= 1,76\,V\\
   U_4 &= U_4' + U_4''\\
   U_4 &= 7,61\,V + 1,76\,V\\
