@@ -10,6 +10,7 @@
 \usepackage[siunitx,european]{circuitikz}
 \usepackage{ulem}
 \usepackage{listings}
+\usepackage{svg}
 %
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
 % \MyLogo{\includegraphics[height=1cm]{../../../../bilder/bwslogo_3.png}}
@@ -216,8 +217,8 @@
           \begin{circuitikz}
             \draw (0,0) to[vsource, l=$U$] (0,4.5);
             \draw (0,4.5) to (2,4.5);
-            \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$] (2,2) node[circ]{} to [short, -o] (3,2);
-            \draw (2,2) to [R=$R_2$,  v=$U_{2}$] (2,0) node[circ]{} to [short, -o] (3,0);
+            \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$, voltage=straight] (2,2) node[circ]{} to [short, -o] (3,2);
+            \draw (2,2) to [R=$R_2$,  v=$U_{2}$, voltage=straight] (2,0) node[circ]{} to [short, -o] (3,0);
             \draw (2,0) to (0,0);
           \end{circuitikz}
           %       \caption{Schaltung 1}
@@ -288,7 +289,7 @@
           \begin{circuitikz}
             \draw (0,0) to [vsource, l=$U_{q1}$] (0,3);
             \draw (0,3) to [R=$R_1$] (2,3) node[circ]{} node[above]{A} to [short, i>_=$I_2$] (2,2);
-            \draw (2,2) to [R=$R_2$,  v=$U_2$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+            \draw (2,2) to [R=$R_2$,  v=$U_2$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
             \draw (2,3) -- (3,3) to[short, -*] (4,3) to[short] (4,2)  to[R=$R_3$]
             (4,0) -- (3,0) -- (2,0);
             \draw (4,3) to [R=$R_4$] (6,3);
@@ -315,7 +316,7 @@
           \begin{circuitikz}
             \draw (0,0) to [vsource, l=$U_{q1}$] (0,3);
             \draw (0,3) to [R=$R_1$] (2,3) node[circ]{} node[above]{A} to [short, i>_=$I_2$] (2,2);
-            \draw (2,2) to [R=$R_2$,  v=$U_2$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+            \draw (2,2) to [R=$R_2$,  v=$U_2$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
             \draw (2,3) -- (3,3) to[short, -*] (4,3) to[short] (4,2)  to[R=$R_3$]
             (4,0) -- (3,0) -- (2,0);
             \draw (4,3) to [R=$R_4$] (6,3);
@@ -378,7 +379,7 @@
           \begin{circuitikz}
             \draw (0,0) to node[ocirc]{} (0,1) to node[ocirc]{} (0,2) -- (0,3) ;
             \draw (0,3) to [R=$R_1$] (2,3) node[circ]{} node[above]{A} to [short, i>_=$I_2$] (2,2);
-            \draw (2,2) to [R=$R_2$,  v=$U_2$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+            \draw (2,2) to [R=$R_2$,  v=$U_2$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
             \draw (2,3) -- (3,3) to[short, -*] (4,3) to[short] (4,2)  to[R=$R_3$]
             (4,0) -- (3,0) -- (2,0);
             \draw (4,3) to [R=$R_4$] (6,3);
@@ -434,7 +435,7 @@
           \begin{circuitikz}
             \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
             \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-            \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+            \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
             \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$]
             (4,0) -- (3,0) -- (2,0);
             \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
@@ -460,7 +461,7 @@
           \begin{circuitikz}
             \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
             \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);
-            \draw (2,1.5)to [R=$R_4$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+            \draw (2,1.5)to [R=$R_4$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
             \draw (2,4) to [R=$R_2$] (4,4);
             \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
             \draw (2,2) node[circ]{} -- (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$]
@@ -491,24 +492,24 @@
     \tableofcontents[currentsection, hideothersubsections]
   \end{frame}
 
-  \begin{frame}%[label=messbrueckeFrame]
-    \frametitle{Messbrücke}
-    \begin{figure}[htb]
-      \begin{circuitikz}
-        \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
-        \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
-        \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
-        \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
-        \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
-        \draw (4,2) to[R=R4] (4,0) -- (0,0);
-        \draw (2,2) to[R=R6] (4,2);
-        \only<2>{\draw[red, thick] (1.6,1.7) rectangle
-          (4.9,4.2);}
-      \end{circuitikz}
-      \caption{Messbrücke}
-      \label{fig:Messbruecke1}
-    \end{figure}
-  \end{frame}
+\begin{frame}%[label=messbrueckeFrame]
+  \frametitle{Messbrücke}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+      \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=R6] (4,2);
+      \only<2>{\draw[red, thick] (1.6,1.7) rectangle
+        (4.9,4.2);}
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:Messbruecke1}
+  \end{figure}
+\end{frame}
 
   Bild \ref{fig:Messbruecke1aMarkierung} stellt dieselbe Schaltung dar, wie Bild \ref{fig:Messbruecke1}.
   \begin{frame}{Messbrücke - Stern-Dreieck}
@@ -668,23 +669,226 @@
     $R_4 = R_{Mess}$ \\gesucht: Strom und Spannung an $R_6, R_4\  \text{und} \ R_5$\\
 
 
+\section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
+Einige elektrische Schaltungen können mit Hilfe der Überlagerung gelöst werden. Bei komplexen Schaltungen ist dies entweder nicht möglich oder sehr aufwändig. Hier ist es unter Umständen günstiger Gleichungen für die Knoten der Schaltung aufzustellen oder für sogenannte Maschen.
 
-    \section{Pflicht-Themen, die noch offen sind}
-    \begin{frame}{Pflicht-Themen, die noch offen sind}
-      Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
-      \begin{itemize}
-        \item Knoten- und Maschengleichungen
-        \item Kreisstromverfahren
-        \item Knotenspannungsverfahren
-      \end{itemize}
+Eine Masche Masche oder ein Umlauf in der Elektrotechnik bedeutet, dass Alle Spannungen in einem festgelegten Kreis addiert werden. Nach den Kirchhoffschen Regeln ergibt die Summe aller Spannungen in einem Umlauf 0. $\sum_{k=1}^n U_k = 0$
 
-      Die Themen folgen demnächst hier.
-    \end{frame}
-    % \section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
-    % \begin{frame}<beamer>
-    %   \frametitle{Inhalt}
-    %   \tableofcontents[currentsection, hideothersubsections]
-    % \end{frame}
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \tableofcontents[currentsection, hideothersubsections]
+\end{frame}
+
+\begin{frame}<presentation>
+  \frametitle{Schaltung - Maschen}
+%   \begin{figure}[htb]
+%     \begin{circuitikz}
+%       \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+%       \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+%       \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+%       \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+%       \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+%       \draw (4,2) to[R=R4] (4,0) -- (0,0);
+%       \draw (2,2) to[R=R6] (4,2);
+%     \end{circuitikz}
+%     \caption{Messbrücke}
+%     \label{fig:MessbrueckeMasche1}
+%   \end{figure}
+  \begin{figure}[htbp]
+    \only<1>{\includegraphics{messbruecke1}
+    \caption{Messbrücke}}
+    \only<2>{\includegraphics{messbruecke1_1}
+    \caption{Messbrücke mit vollständigem Baum} }
+    \only<3>{\includegraphics{messbruecke1_2}
+    \caption{Messbrücke mit vollständigem Baum und Maschen} }
+    \label{abb:Messbruecke1}
+  \end{figure}
+\end{frame}
+
+\begin{figure}[htbp]
+\includegraphics{messbruecke1}
+    \caption{Messbrücke}
+\end{figure}
+
+Im ersten Schritt muss ein sogenannter Baum festgelegt werden. Der Baum muss alle Knoten verbinden, darf aber keinen geschlossenen Umlauf bilden.
+
+\begin{figure}[htbp]
+ \includegraphics{messbruecke1_1}
+ \caption{Messbrücke mit vollständigem Baum}
+ \label{abb:Messbruecke1_Baum}
+\end{figure}
+
+Die Maschen M1, M2 und M3 bestehen immer aus einer Sehne (ein Zweig, der nicht zum vollständigen Baum gehört) und Zweigen, die zum Baum gehören.
+
+Für das Gleichungssystem ist die Umlaufrichtung der Maschen relevant. M1 dreht im Uhrzeigersinn, da hier die Quelle Uq1 in der Masche ist. Der Spannungspfeil der Quelle sollte möglichst gegen die Umlaufrichtung der Masche gerichtet sein.
+
+\begin{figure}[htbp]
+  \includegraphics{messbruecke1_2}
+  \caption{Messbrücke mit vollständigem Baum und Maschen}
+\end{figure}
+
+Im nächsten Schritt stelle ich für alle Maschen und alle Knoten Gleichungen auf.
+
+
+\begin{align}
+ M1: & -Uq1 + U1 + U3 + U2 = 0\\
+ M2: & U3 + U6 - U5 = 0 \\
+ M3: & U2 - U6 - U4 = 0\\
+\end{align}
+
+\begin{frame}<presentation>
+  \frametitle{Gleichungen für Maschen und Knoten}
+
+\begin{align}
+ M1: & -Uq1 + U1 + U3 + U2 = 0\\
+ M2: & U3 + U6 - U5 = 0 \\
+ M3: & U2 - U6 - U4 = 0\\
+\end{align}
+
+Knotengleichungen:\\
+\begin{align}
+  \text{I:}\ & I1 - I3 - I5 = 0\\
+  \text{II:}\ & I3 - I2 - I6 = 0\\
+  \text{III:}\ & I2 + I4 -I1 = 0
+\end{align}
+\end{frame}
+
+
+
+Für die Knoten gilt, dass die Summer aller Ströme, die hinein fließen und die Summe aller Ströme, die hinaus fließen null sein muss. $\sum_{k=1}^n I_k = 0$
+
+Knotengleichungen:\\
+\begin{align}
+  \text{I:}\ & I1 - I3 - I5 = 0\\
+  \text{II:}\ & I3 - I2 - I6 = 0\\
+  \text{III:}\ & I2 + I4 -I1 = 0
+\end{align}
+
+Die Ströme seien gleich der Spannungspfeile an den Widerständen.
+Ich zähle Ströme, die in den Knoten hinein fließen positiv, Ströme, die aus dem Knoten heraus fließen negativ.
+
+Zur Berechnung der Ströme und Spannungen kann ich die Gleichungen der Maschen und der Knoten zu einem linearen Gleichungssystem (LGS) zusammenfassen. Wichtig dabei ist, dass das Gleichungssystem nicht über bestimmt ist. Es dürfen nur die Gleichungen in das System übernommen werden, die linear unabhängig sind. Z. B. alle Maschengleichungen oder alle Knotengleichungen. Eine Kombination aus Maschengleichungen und Knotengleichungen ist auch möglich, solange alle Gleichungen des LGS linear unabhängig sind.
+
+Mit Hilfe der Maschengleichungen und Widerstände in den Zweigen kann ich die Ströme in den Zweigen bestimmen:
+
+\begin{frame}{Berechnung der Ströme}
+\begin{align}
+-Uq1 + I1 * R1 + I3 * R3 + I2 * R2 &= 0\\
+I3 * R3 + I6 * R6 - I5 * R5 &= 0 \\
+I2 * R2 - I6 * R6 - I4 * R4 &= 0
+\end{align}
+\end{frame}
+
+Das LGS ist dabei in eine dreiecksform zu überführen. Zur leichteren Berechnung verwende ich die Matrix-Schreibweise:
+
+\begin{frame}{LGS aufstellen}
+$\left( \begin{array}{rrrrrr}
+    1 &     0  & -1     &     0 & -1    &     0\\
+    0 & -1     & 1      &     0 &   0   &     0\\
+  -1  & 1      &   0    & 1     & 0     & 0    \\
+R1 & R2 & R3 & 0  & 0  & 0\\
+0  & 0  & R3 & 0  & R5 & R6 \\
+0  & R2 & 0  & R4 & 0  & R6 \\
+\end{array}\right) *
+\left(\begin{array}{c}
+       I1\\
+       I2\\
+       I3\\
+       I4\\
+       I5\\
+       I6
+      \end{array} \right)
+= \left( \begin{array}{c}
+  0\\
+  0\\
+  0\\
+  Uq1\\
+  0\\
+  0
+ \end{array}\right)
+$
+\end{frame}
+
+Für die Berechnung werden die Elemente der Matrix links (Widerstände) mit den Elementen des Spalten-Vektors (Ströme) einzeln multipliziert und anschließend addiert.
+
+$\begin{array}{lllllll}
+    1 &     0  & -1     &     0 & -1    &     0 &= 0\\
+    0 & -1     & 1      &     0 &   0   &     0 &= 0\\
+  -1  & 1      &   0    & 1     & 0     & 0     &= 0\\
+R1*I1 &+ R2*I2 &+ R3*I3 &+ 0*I4 &+ 0*I5 &+0*I6  &= Uq1\\
+0*I1  &+0*I2   &+R3*I3  &+0*I4  &+R5*I5 &+R6*I6 &= 0\\
+0*I1  &+ R2*I2 &+0*I3   &+R4*I4 &+0*I5  &+R6*I6 &= 0
+\end{array}$
+
+Überführung in die Dreiecksform. \\Im ersten Schritt vertausche ich Zeile fünf und sechs der Widerstands-Matrix und des Ergebnis-Vektors. Der Vektor mit den Strömen bleibt gleich.
+
+$\left( \begin{array}{rrrrrr}
+    1 &     0  & -1     &     0 & -1    &     0\\
+    0 & -1     & 1      &     0 &   0   &     0\\
+  -1  & 1      &   0    & 1     & 0     & 0    \\
+R1 & R2 & R3 & 0  & 0  & 0\\
+0  & R2 & 0  & R4 & 0  & R6 \\
+0  & 0  & R3 & 0  & R5 & R6 \\
+\end{array}\right) *
+\left(\begin{array}{c}
+       I1\\
+       I2\\
+       I3\\
+       I4\\
+       I5\\
+       I6
+      \end{array} \right)
+= \left( \begin{array}{c}
+ 0\\
+ 0\\
+ 0\\
+ Uq1\\
+ 0\\
+ 0
+ \end{array}\right)
+$
+
+Oft schreibt man die verkürzte Darstellung. Der Vektor mit Strömen wird in diesem Fall nicht dargestellt, Der Vektor mit den Spannungen wird durch eine senkrechte Linie vom Array der Widerstände bzw. Vorfaktoren der Ströme abgetrennt.
+
+\begin{frame}{Gekürzte Darstellung der Matrix}
+
+$\left( \begin{array}{rrrrrr|r}
+ 1 &  0 & -1 & 0  & -1 &  0 & 0\\
+ 0 & -1 &  1 & 0  &  0 &  0 & 0\\
+-1 &  1 &  0 & 1  &  0 &  0 & 0 \\
+R1 & R2 & R3 & 0  &  0 &  0 & Uq1\\
+0  & R2 & 0  & R4 &  0 & R6 & 0 \\
+0  & 0  & R3 & 0  & R5 & R6 & 0\\
+\end{array}\right)
+$
+\end{frame}
+
+Mit dem gaußschen Eliminationsverfahren kann ich die Matrix (links der senkrechten Linie) in eine Dreiecks-Form bringen. Dazu kann ich jeweils zwei Zeilen vertauschen oder durch Multiplikation von Faktoren zwei Zeilen addieren, sodass in einzelnen Spalten 0-Werte gebildet werden. Ziel der Umrechnung ist, dass die Matrix etwa die Form
+
+\begin{frame}{Dreiecksform - Beispiel}
+$\left( \begin{array}{rrr}
+ 1 & 2 & 3 \\
+ 0 & 3 & 2 \\
+ 0 & 0 & 3
+\end{array}\right)$
+\end{frame}
+
+erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht vertieft dar. Bei Wikipedia ist ein ausführlicher Artikel zum Algorithmus des Verfahrens zu finden.
+
+Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
+\clearpage
+
+\section{Pflicht-Themen, die noch offen sind}
+\begin{frame}{Pflicht-Themen, die noch offen sind}
+  Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
+  \begin{itemize}
+%         \item Knoten- und Maschengleichungen
+    \item Kreisstromverfahren
+    \item Knotenspannungsverfahren
+  \end{itemize}
+
+  Die Themen folgen demnächst hier.
+\end{frame}
 
 
     % \section[Kreisstrom]{Kreisstromverfahren (Pflicht)}
@@ -757,7 +961,7 @@
             \begin{circuitikz}
               \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
               \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-              \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+              \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
               \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
               \draw (4,0) -- (2,0);
               \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
@@ -765,7 +969,7 @@
               \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
                 \draw (2,4) -- (6,4);}
               \draw (6,2) -- (6,0) -- (6,0);
-              \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+              \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);}
               \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
               \only<4>{\draw (6,0) -- (4,0);}
               \only<2>{\draw[red, thick] (4,2.3) rectangle
@@ -792,7 +996,7 @@
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-        \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+        \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
         \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
         \draw (4,0) -- (2,0);
         \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
@@ -808,7 +1012,7 @@
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
         \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
         \draw (4,0) -- (2,0);
         \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
@@ -828,7 +1032,7 @@
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
         \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
         \draw (4,0) -- (2,0);
         \draw (6,4) to [R=$R_{5+6}$] (6,2);
@@ -848,12 +1052,12 @@
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
         \draw (4,0) -- (2,0);
         \draw (6,4) to [R=$R_{5+6}$] (6,2);
         \draw (2,4) -- (6,4);
         \draw (6,2) -- (6,0) -- (6,0);
-        \draw (2,2) to [R=$R_{3||4}$, v=$U_3$] (2,0);
+        \draw (2,2) to [R=$R_{3||4}$, v=$U_3$, voltage=straight] (2,0);
         \draw (6,0) -- (4,0);
       \end{circuitikz}
       \caption{Überlagerung, Schaltung 2 (Schritt 1.4)}
@@ -870,7 +1074,7 @@
               \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
               \draw (0,4) -- (0,0);
               \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-              \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+              \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
               \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
               \draw (4,0) -- (2,0);
               \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
@@ -878,7 +1082,7 @@
               \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
                 \draw (2,4) -- (6,4);}
               \draw (6,2) -- (6,0) -- (6,0);
-              \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+              \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);}
               \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
               \only<4>{\draw (6,0) -- (4,0);}
               \only<2>{\draw[red, thick] (4,2.3) rectangle
@@ -901,21 +1105,13 @@
         \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
         \draw (0,4) -- (0,0);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
-        \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
         \draw (4,0) -- (2,0);
-        \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-        \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-        %     \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-        %         \draw (2,4) -- (6,4);}
+        \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
+        \draw (6,4) to [R=$R_6$] (6,2);
         \draw (6,2) -- (6,0) -- (6,0);
-        %     \only<4>{\draw (2,2) to [R=$R_{3||4}$, v=$U_3$] (2,0);}
-        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-        %     \only<4>{\draw (6,0) -- (4,0);}
-        %     \only<2>{\draw[red, thick] (4,2.3) rectangle
-        %         (6.8,4.8);}
-        %     \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-        %         (4.8,2.3);}
+        \draw (6,0) to [short, -*] (4,0);
       \end{circuitikz}
       \caption{Überlagerung, Schaltung 2 (Schritt 2.1)}
       \label{fig:SchaltungZweiLsgVorschlagTeil2_21}
@@ -928,21 +1124,15 @@
         \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
         \draw (0,4) -- (0,0);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
-        \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
         \draw (4,0) -- (2,0);
-        \only<1-2>{\draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-        \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-        %         \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-        %             \draw (2,4)d -- (6,4);}
+        \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
+        \draw (6,4) to [R=$R_6$] (6,2);
         \draw (6,2) -- (6,0) -- (6,0);
-        %         \only<4>{\draw (2,2) to [R=$R_{3||4}$, v=$U_3$] (2,0);}
-        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-        %         \only<4>{\draw (6,0) -- (4,0);}
+        \draw (6,0) to [short, -*] (4,0);
         \draw[red, thick] (4,2.3) rectangle
         (6.8,4.8);
-        %         \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-        %             (4.8,2.3);}
       \end{circuitikz}
       \caption{Überlagerung, Schaltung 2 (Schritt 2.2)}
       \label{fig:SchaltungZweiLsgVorschlagTeil2_22}
@@ -953,7 +1143,7 @@
         \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
         \draw (0,4) -- (0,0);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
         \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
         \draw (4,0) -- (2,0);
         \draw (6,4) to [R=$R_{5+6}$] (6,2);
@@ -972,13 +1162,13 @@
         \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
         \draw (0,4) -- (0,0);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
         \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
         \draw (4,0) -- (2,0);
         \draw (6,4) to [R=$R_{5+6}$] (6,2);
         \draw (2,4) -- (6,4);
         \draw (6,2) -- (6,0) -- (6,0);
-        \draw (2,2) to [R=$R_{3||4}$, v=$U_3$] (2,0);
+        \draw (2,2) to [R=$R_{3||4}$, v=$U_3$, voltage=straight] (2,0);
         \draw (6,0) -- (4,0);
       \end{circuitikz}
       \caption{Überlagerung, Schaltung 2 (Schritt 2.4)}
@@ -998,7 +1188,7 @@
               \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
               \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$] (2,1.5);}
               \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-              \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+              \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
               \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
               \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
               \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
@@ -1041,7 +1231,7 @@
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
         \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$] (2,1.5);}
-        \draw (2,1.5)to [R=$R_{4}$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+        \draw (2,1.5)to [R=$R_{4}$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
         \draw (2,4) to [R=$R_2$] (4,4);
         \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
         \draw (2,2) node[circ]{} -- (4,2);
@@ -1060,7 +1250,7 @@
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
         \draw (2,2) node[left]{B} to [short, i>_=$I_4$] (2,1.5);
-        \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+        \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
         \draw (2,4) to [R=$R_2$] (4,4);
         \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
         \draw (2,2) node[circ]{} -- (4,2);
@@ -1078,7 +1268,7 @@
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
         \draw (2,1.5) -- (2,2);
-        \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+        \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
         \draw (2,4) to [R=$R_2$] (4,4);
         \draw (4,4) node[circ]{} node[above]{C} -- (4,3)
         to [R=$R_5$] (2,3) node[circ]{};
@@ -1097,7 +1287,7 @@
       \begin{circuitikz}
         \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-        \draw (2,2)to [R=$R_{4||6}$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+        \draw (2,2)to [R=$R_{4||6}$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
         \draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);
         \draw (4,0) -- (3,0) -- (2,0);
       \end{circuitikz}
@@ -1115,7 +1305,7 @@
               \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
               \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$] (2,1.5);}
               \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-              \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$] (2,0) node[circ]{} node[below]{GND} -- (0,0);
+              \draw (2,1.5)to [R=$R_{4||6}$, v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND} -- (0,0);
               \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
               \only<5->{\draw (2,4) -- (6,4) to [R=$R_{(2||5)+3+7}$] (6,2);}
               \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
