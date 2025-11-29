@@ -540,7 +540,7 @@
 
   In Bild \ref{fig:Messbruecke2bMarkierung} wurden die Widerstände des Dreiecks in Widerstände in einer sternförmigen-Anordnung umgerechnet. Die Ströme und Spannungen an den Punkten A, B, und C sind bei beiden Anordnungen identisch.
 
-  \begin{frame}{Umwandlung Dreieck -> Stern}
+  \begin{frame}{Umwandlung Dreieck $\rightarrow$ Stern}
     \begin{columns}
       \begin{column}{.5\textwidth}
         \begin{figure}[htb]
@@ -573,7 +573,7 @@
   \end{frame}
 
   In den folgenden Bildern ist der umgekehrte Weg von einem Stern zu einem Dreieck dargestellt. Die Herleitung der Formeln habe ich nicht geschrieben, sie ist auf der Seite https://de.wikipedia.org/wiki/Stern-Dreieck-Transformation zu finden.
-  \begin{frame}{Umwandlung - Stern- > Dreieck}
+  \begin{frame}{Umwandlung - Stern $\rightarrow$ Dreieck}
     \begin{columns}
       \begin{column}{.5\textwidth}
         \begin{figure}[htb]
@@ -878,7 +878,7 @@ erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht 
 Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
 \clearpage
 
-\section{Pflicht-Themen, die noch offen sind}
+\section[noch offen]{Pflicht-Themen, die noch offen sind}
 \begin{frame}{Pflicht-Themen, die noch offen sind}
   Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
   \begin{itemize}
@@ -1338,9 +1338,63 @@ Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nac
       \end{columns}
     \end{frame}
 
-    \section{Lösungsvorschlag zu Messbrücke / Stern-Dreieck-Umwandlung}
+    \subsection[LSG S-D]{Lösungsvorschlag zu Messbrücke / Stern-Dreieck-Umwandlung}
 
     \begin{tabular}{lll}
       $I_4 = 4,2\ mA,$ & $I_5 = 3,3\ mA,$ & $I_6 = 890\ \mu A$\\
       $U_4 = 1,4\,V,$ & $U_5 = 3,6\,V,$ & $U_6 = 0,35\,V$
     \end{tabular}
+
+\begin{figure}[htbp]
+ \includegraphics{brueckenschaltung_mit_spannungen.png}
+ % brueckenschaltung_mit_spannungen.png: 436x387 px, 96dpi, 11.53x10.24 cm, bb=0 0 327 290
+ \label{abb:BrueckenschMitSpannungen1}
+
+\end{figure}
+
+\begin{figure}[htbp]
+ \includegraphics{brueckenschaltung_umgewandelt_mit_spannungen.png}
+ % brueckenschaltung_umgewandelt_mit_spannungen.png: 441x436 px, 96dpi, 11.67x11.53 cm, bb=0 0 331 327
+ \label{abb:BrueckenschMitSpannungen2}
+\end{figure}
+
+\begin{figure}[htbp]
+ \includegraphics{brueckenschaltung_umgewandelt_mit_spannungen.png}
+ % brueckenschaltung_umgewandelt_mit_spannungen.png: 441x436 px, 96dpi, 11.67x11.53 cm, bb=0 0 331 327
+ \label{abb:BrueckenschMitSpannungen3}
+\end{figure}
+
+\section[Simulation]{Simulation mit KiCAD und Spice}
+
+\begin{frame}{Schaltung zeichnen}
+  \begin{figure}[htbp]
+ \includegraphics[height=.9\textheight]{simu_starten1_kicad.png}
+ % simu_starten1_kicad.png: 2050x1174 px, 96dpi, 54.23x31.06 cm, bb=0 0 1537 880
+ \label{abb:simu_starten1_kicad}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Simulation aufrufen}
+ \begin{figure}[htbp]
+ \includegraphics[height=.9\textheight]{simu_starten2_kicad.png}
+ % simu_starten2_kicad.png: 1920x1080 px, 96dpi, 50.79x28.57 cm, bb=0 0 1440 810
+ \label{abb:simu_starten2_kicad}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Simulation starten}
+ \begin{figure}[htbp]
+ \includegraphics[height=.9\textheight]{simu_starten3_kicad.png}
+ % simu_starten3_kicad.png: 1920x1080 px, 96dpi, 50.79x28.57 cm, bb=0 0 1440 810
+ \label{abb:simu_starten3_kicad}
+\end{figure}
+\end{frame}
+\begin{frame}{Simulation - Auswahl Modus}
+ \begin{figure}[htbp]
+ \includegraphics[height=.9\textheight]{simu_starten4_kicad.png}
+ % simu_starten4_kicad.png: 1920x1080 px, 96dpi, 50.79x28.57 cm, bb=0 0 1440 810
+ \label{abb:simu_starten4_kicad}
+\end{figure}
+\end{frame}
+
+\clearpage
