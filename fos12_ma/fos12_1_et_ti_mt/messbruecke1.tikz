@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\draw (4, 9) to[european resistor] (5, 9);
+	\draw (3.25, 7.25) to[european voltage source] (3.25, 6);
+	\draw (6.5, 7) to[european resistor] (7.5, 7);
+	\draw (6, 8.75) to[european resistor] (6, 7.25);
+	\draw (8, 8.75) to[european resistor] (8, 7.25);
+	\draw (6, 6.5) to[european resistor] (6, 5);
+	\draw (8, 6.5) to[european resistor] (8, 5);
+	\draw (3.25, 7.25) -| (3.25, 9) -- (4, 9);
+	\draw (3.25, 6) -| (3.25, 5) -| (3.25, 4.75) -- (8, 4.75) -- (8, 5);
+	\draw (6, 5) -| (6, 4.75);
+	\draw (6, 7.25) -| (6, 6.5);
+	\draw (6.5, 7) -- (6, 7);
+	\draw (6, 8.75) -| (6, 9) -- (5, 9);
+	\draw (8, 8.75) -| (8, 9) -- (6, 9);
+	\draw (8, 6.5) -| (8, 7.25);
+	\draw (7.5, 7) -- (8, 7);
+	\node[circ] at (6, 7){};
+	\node[circ] at (8, 7){};
+	\node[circ] at (6, 4.75){};
+	\node[circ] at (6, 9){};
+	\node[shape=rectangle, minimum width=-0.035cm, minimum height=-0.035cm] at (4, 8.5){} node[anchor=north west, align=left, text width=-0.423cm, inner sep=6pt] at (4, 8.5){R1};
+	\node[shape=rectangle, minimum width=-0.035cm, minimum height=-0.035cm] at (5.25, 8){} node[anchor=north west, align=left, text width=-0.423cm, inner sep=6pt] at (5.25, 8){R3};
+	\node[shape=rectangle, minimum width=-0.035cm, minimum height=0.215cm] at (5.25, 5.875){} node[anchor=north west, align=left, text width=-0.423cm, inner sep=6pt] at (5.25, 6){R3};
+	\node[shape=rectangle, minimum width=0.494cm, minimum height=0.436cm] at (7.265, 5.985){} node[anchor=north west, align=left, text width=0.106cm, inner sep=6pt] at (7, 6.221){R5};
+	\node[shape=rectangle, minimum width=0.494cm, minimum height=0.465cm] at (7.265, 8){} node[anchor=north west, align=left, text width=0.106cm, inner sep=6pt] at (7, 8.25){R4};
+	\node[shape=rectangle, minimum width=0.744cm, minimum height=0.436cm] at (6.89, 6.735){} node[anchor=north west, align=left, text width=0.356cm, inner sep=6pt] at (6.5, 6.971){R6};
+\end{tikzpicture}
