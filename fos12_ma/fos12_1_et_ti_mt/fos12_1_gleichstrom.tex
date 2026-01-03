@@ -760,14 +760,15 @@ Im nächsten Schritt stelle ich für alle Maschen und alle Knoten Gleichungen au
 \begin{align}
   \text{M}_1: & -\text{U}_{q1} + \text{U}_1 + \text{U}_3 + \text{U}_2 = 0\\
   \text{M}_2: & \text{U}_3 + \text{U}_6 - \text{U}_5 = 0 \\
-  \text{M}_3: & \text{U}_2 - \text{U}_6 - \text{U}_4 = 0\\
+  \text{M}_3: & \text{U}_2 - \text{U}_4 - \text{U}_6 = 0\\
 \end{align}
 
 Knotengleichungen:\\
 \begin{align}
   \text{I:}\ & \text{I}_1 - \text{I}_3 - \text{I}_5 = 0\\
   \text{II:}\ & \text{I}_3 - \text{I}_2 - \text{I}_6 = 0\\
-  \text{III:}\ & \text{I}_2 + \text{I}_4 -\text{I}_1 = 0
+  \text{III:}\ & \text{I}_2 + \text{I}_4 -\text{I}_1 = 0\\
+  \text{IV:}\ & \text{I}_3 - \text{I}_2 -\text{I}_6 = 0
 \end{align}
 \end{frame}
 
@@ -804,6 +805,7 @@ $\left( \begin{array}{rrrrrr}
     1 &     0  & -1     &     0 & -1    &     0\\
     0 & -1     & 1      &     0 &   0   &     0\\
   -1  & 1      &   0    & 1     & 0     & 0    \\
+    0 & -1     &   1    & 0     & 0     & -1 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  & 0  & 0\\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 \\
 0  & \text{R}_2 & 0  & \text{R}_4 & 0  & \text{R}_6 \\
@@ -841,6 +843,7 @@ $\begin{array}{lllllll}
     1 &     0  & -1     &     0 & -1    &     0 &= 0\\
     0 & -1     & 1      &     0 &   0   &     0 &= 0\\
   -1  & 1      &   0    & 1     & 0     & 0     &= 0\\
+    0 & -1     &   1    & 0     & 0     & -1    &= 0\\
 \text{R}_1*\text{I}_1 &+ \text{R}_2*\text{I}_2 &+ \text{R}_3*\text{I}_3 &+ 0*\text{I}_4 &+ 0*\text{I}_5 &+0*\text{I}_6  &= Uq1\\
 0*\text{I}_1  &+0*\text{I}_2   &+\text{R}_3*\text{I}_3  &+0*\text{I}_4  &+\text{R}_5*\text{I}_5 &+\text{R}_6*\text{I}_6 &= 0\\
 0*\text{I}_1  &+ \text{R}_2*\text{I}_2 &+0*\text{I}_3   &+\text{R}_4*\text{I}_4 &+0*\text{I}_5  &+\text{R}_6*\text{I}_6 &= 0
@@ -852,6 +855,7 @@ $\left( \begin{array}{rrrrrr}
     1 &     0  & -1     &     0 & -1    &     0\\
     0 & -1     & 1      &     0 &   0   &     0\\
   -1  & 1      &   0    & 1     & 0     & 0    \\
+    0 & -1     &   1    & 0     & 0     & -1 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  & 0  & 0\\
 0  & \text{R}_2 & 0  & \text{R}_4 & 0  & \text{R}_6 \\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 \\
@@ -884,6 +888,7 @@ $\left( \begin{array}{rrrrrr|r}
  1 &  0 & -1 & 0  & -1 &  0 & 0\\
  0 & -1 &  1 & 0  &  0 &  0 & 0\\
 -1 &  1 &  0 & 1  &  0 &  0 & 0 \\
+ 0 & -1 &  1 & 0  & 0  & -1 & 0 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  &  0 &  0 & Uq1\\
 0  & \text{R}_2 & 0  & \text{R}_4 &  0 & \text{R}_6 & 0 \\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 & 0\\
@@ -905,6 +910,42 @@ $\left( \begin{array}{rrr}
 erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht vertieft dar. Bei Wikipedia ist ein ausführlicher Artikel zum Algorithmus des Verfahrens zu finden.
 
 Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
+\section{Knoten und Maschen}
+\begin{frame}{Knoten und Maschen}
+ \begin{figure}[htbp]
+   \only<1>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten1.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOut1}
+}
+   \only<2>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten2.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung1}
+}
+   \only<3>{\includegraphics[scale=2,keepaspectratio=true]
+     {radar_out_v1_2_markierungenKnoten3.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung2}
+}
+  \only<4>{\includegraphics[scale=2,keepaspectratio=true]
+     {radar_out_v1_2_markierungenKnoten4.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung3}
+}
+  \only<5>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_schaltplan.png}
+   \caption{Schaltplan Ausgang}
+ \label{abb:Schaltplan1}
+}
+  \only<6>{
+\includegraphics[scale=2,keepaspectratio=true]{radar_out_v1_2_schaltplan2.png}
+   \caption{Schaltplan Ausgang}
+ \label{abb:Schaltplan2}}
+
+\end{figure}
+
+
+
+\end{frame}
+
 \clearpage
 
 \section{Pflicht-Themen, die noch offen sind}
