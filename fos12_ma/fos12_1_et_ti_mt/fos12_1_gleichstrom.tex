@@ -872,6 +872,7 @@ $\left( \begin{array}{rrrrrr}
  0\\
  0\\
  0\\
+ 0\\
  \text{U}_{q1}\\
  0\\
  0
@@ -897,6 +898,22 @@ $\\
 
 \end{frame}
 
+\begin{frame}{Gekürzte Darstellung mit Werten der Widerstände}
+
+$\left( \begin{array}{rrrrrr|r}
+ 1 &  0 & -1 & 0  & -1 &  0 & 0\\
+ 0 & -1 &  1 & 0  &  0 &  0 & 0\\
+-1 &  1 &  0 & 1  &  0 &  0 & 0 \\
+ 0 & -1 &  1 & 0  & 0  & -1 & 0 \\
+220\Omega & 470\Omega & 330\Omega & 0  &  0 &  0 & Uq1\\
+0  & 470\Omega & 0  & 330\Omega &  0 & 390\Omega & 0 \\
+0  & 0  & 330\Omega & 0  & 560\Omega & 390\Omega & 0\\
+\end{array}\right)
+$\\
+
+\end{frame}
+
+
 Mit dem gaußschen Eliminationsverfahren kann ich die Matrix (links der senkrechten Linie) in eine Dreiecks-Form bringen. Dazu kann ich jeweils zwei Zeilen vertauschen oder durch Multiplikation von Faktoren zwei Zeilen addieren, sodass in einzelnen Spalten 0-Werte gebildet werden. Ziel der Umrechnung ist, dass die Matrix etwa die Form
 
 \begin{frame}{Stufenform - Beispiel}
@@ -912,53 +929,170 @@ erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht 
 Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
 \section{Knoten und Maschen}
 \begin{frame}{Knoten und Maschen}
- \begin{figure}[htbp]
-   \only<1>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten1.png}
+ \begin{figure}
+   \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten1.png}
    \caption{Platine Ausgang}
  \label{abb:PlatineOut1}
-}
-   \only<2>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+   \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten2.png}
    \caption{Platine Ausgang}
  \label{abb:PlatineOutMarkierung1}
-}
-   \only<3>{\includegraphics[scale=2,keepaspectratio=true]
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+   \includegraphics[scale=2,keepaspectratio=true]
      {radar_out_v1_2_markierungenKnoten3.png}
    \caption{Platine Ausgang}
  \label{abb:PlatineOutMarkierung2}
-}
-  \only<4>{\includegraphics[scale=2,keepaspectratio=true]
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[scale=2,keepaspectratio=true]
      {radar_out_v1_2_markierungenKnoten4.png}
    \caption{Platine Ausgang}
  \label{abb:PlatineOutMarkierung3}
-}
-  \only<5>{\includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_schaltplan.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_schaltplan.png}
    \caption{Schaltplan Ausgang}
  \label{abb:Schaltplan1}
-}
-  \only<6>{
-\includegraphics[scale=2,keepaspectratio=true]{radar_out_v1_2_schaltplan2.png}
-   \caption{Schaltplan Ausgang}
- \label{abb:Schaltplan2}}
-
 \end{figure}
+\end{frame}
 
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[scale=2,keepaspectratio=true]{radar_out_v1_2_schaltplan2.png}
+   \caption{Schaltplan Ausgang}
+ \label{abb:Schaltplan2}
+\end{figure}
+\end{frame}
 
+\section{Kreisstromverfahren}
+
+Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung, in denen nur ein Kreisstrom fließt ist der Strom des Zweigs identisch zum Kreisstrom der Masche. Wenn mehrere virtuelle Kreisströme durch den selben Zweig fließen, müssen sie entsprechend der Zählrichtung addiert werden. Wenn die Zählrichtung beider Ströme identisch ist, werden sie addiert, sonst subtrahiert. Wenn ein Strom negativ ist, bedeutet dies, dass die Zählrichtung der Masche entgegen der tatsächlichen Stromrichtung ist.
+
+\begin{frame}{Kreisstromverfahren - Baum}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{enumerate}
+        \item Baum festlegen (alle Knoten berühren, kein Umlauf).
+        \item Maschen einzeichnen (Umlaufsinn ist willkürlich)
+        \item Gleichungen aufstellen.
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Kreisstromverfahren - Baum}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      Gleichungssystem
+      \begin{enumerate}
+        \item Hauptdiagonale: Rs in der Masche
+        \item Nebendiagonalen: Verbindungs-Rs
+        \item Quelle in Quellen-Vektor
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Kreisstromverfahren - Gleichungssystem}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      Gleichungssystem
+        $\left( \begin{array}{rrrrrr}
+          \text{R}1+\text{R}2+\text{R}3 &     -\text{R}3  & -\text{R}2  \\
+          -\text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          -\text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+\end{array}\right) *
+\left(\begin{array}{c}
+  \text{I}_{M1}\\
+  \text{I}_{M2}\\
+  \text{I}_{M3}
+      \end{array} \right)
+= \left( \begin{array}{c}
+  \text{U}_{q1}\\
+ 0\\
+ 0\\
+\end{array}\right)
+$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Kreisstromverfahren - Gleichungssystem}
+        $\left( \begin{array}{rrrrrr}
+          \text{R}1+\text{R}2+\text{R}3 &     -\text{R}3  & -\text{R}2  \\
+          -\text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          -\text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+\end{array}\right) *
+\left(\begin{array}{c}
+  \text{I}_{M1}\\
+  \text{I}_{M2}\\
+  \text{I}_{M3}
+      \end{array} \right)
+= \left( \begin{array}{c}
+  \text{U}_{q1}\\
+ 0\\
+ 0\\
+\end{array}\right)
+$
+LGS lösen:
+
+\begin{itemize}
+ \item per Hand - z.B. gaußsches Eliminationsverfahren\\ Matrix und SpannungsVektor in Dreiecksform bringen.
+ \item im Taschenrechner - LGS Solver\\
+ Matrix und Spannungsvektor eintippen.\\ Ergebnis ist Strom Vektor (von oben nach unten).
+ \item mit dem PC z.B. octave (open source) - Eingabe vergleichbar mit Taschenrechner
+\end{itemize}
 
 \end{frame}
 
-\clearpage
 
-\section{Pflicht-Themen, die noch offen sind}
-\begin{frame}{Pflicht-Themen, die noch offen sind}
-  Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
-  \begin{itemize}
-%         \item Knoten- und Maschengleichungen
-    \item Kreisstromverfahren
-    \item Knotenspannungsverfahren
-  \end{itemize}
+\section{Knotenspannungsverfahren}
 
-  Die Themen folgen demnächst hier.
-\end{frame}
+% \clearpage
+
+% \section{Pflicht-Themen, die noch offen sind}
+% \begin{frame}{Pflicht-Themen, die noch offen sind}
+%   Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
+%   \begin{itemize}
+% %         \item Knoten- und Maschengleichungen
+%     \item Kreisstromverfahren
+%     \item Knotenspannungsverfahren
+%   \end{itemize}
+%
+%   Die Themen folgen demnächst hier.
+% \end{frame}
 
 
     % \section[Kreisstrom]{Kreisstromverfahren (Pflicht)}
