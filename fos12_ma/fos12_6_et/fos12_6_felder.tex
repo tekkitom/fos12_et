@@ -172,7 +172,7 @@ Eine Linienladung stellt eine Linie dar, auf der sich die (gleichnamigen) Ladung
 Eine Flächenladung verteilt sich auf einer Fläche gleichmäßig. In der Regel passiert dies bei metallischen Flächen oder anderen Flächen, die gut leitend sind. Hier verteilen sich die Ladungen auf der gesamten Fläche gleichmäßig.
 
 Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen innerhalb eines Volumens dar.
-\section{Schaltung von Kondensatoren}
+\section[Schalt. von Cs]{Schaltung von Kondensatoren}
 
 %\only<presentation>{
 \begin{frame}
@@ -470,12 +470,79 @@ $P_4 =\left( \begin{array}{c}0,5\,m \\ 0\, m\end{array} \right)$
 $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
 \end{frame}
 
-\section{Pflicht-Themen, die noch offen sind}
+\section[Kondensator]{Kondensator Auf- und Entladung}
+
+\begin{frame}{Kondensator- Eigenschaften}
+ \begin{itemize}
+  \item Kondensatorplatten haben (große) Fläche.
+  \item Zwischen Platten ist Luft / Dielektrikum (nicht Leitfähig)
+  \item Durch den Kondensator fließt \emph{kein} (Gleich-)Strom.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Ladung eines Kondensators I}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{figure}[htb]
+    \begin{tikzpicture}
+      \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
+      \draw (0,2) to[closing switch, l={t = 0}] (2,2) to [R=$R_1$] (4,2) to[C=$C_1$] (4,0)  -- (0,0);
+    \end{tikzpicture}
+    \caption{Reihenschaltung von Widerstand und Kondensator}
+    \label{fig:StromkreisMitQuelleUndC}
+  \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Anfangszustand: Kondensator ist leer (ungeladen - auf beiden Platten selbe Anzahl Ladungen)
+        \item Verbindung mit Spannungsquelle  (t = 0) - Kondensator lädt sich auch - Anzahl der Ladungen verschiebt sich.
+        \item Dauer: i.d.R wenige Millisekunden (abhängig von R und C)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ladung eines Kondensators II}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{figure}[htb]
+    \begin{tikzpicture}
+      \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
+      \draw (0,2) to[normal closed switch, l={t > 0}] (2,2) to [R=$R_1$] (4,2) to[C=$C_1$] (4,0)  -- (0,0);
+    \end{tikzpicture}
+    \caption{Reihenschaltung von Widerstand und Kondensator}
+    \label{fig:StromkreisMitQuelleUndC2}
+  \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Kondensator lädt sich auf.
+        \item Strom fließt durch R.
+        \item $u_c (t) = U_0+\Delta U \cdot e^{-\frac{t}{\tau}}$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ladung eines Kondensators III}
+\begin{tabular}{ll}
+ Zeitpunkt & Spannung an C\\
+ $t =  \tau$ & $\approx 0,63 \cdot U_0$\\
+ $t = 2\tau$ & $\approx 0,86 \cdot U_0$\\
+ $t = 3\tau$ & $\approx 0,95 \cdot U_0$\\
+ $t = 4\tau$ & $\approx 0,98 \cdot U_0$\\
+ $t = 5\tau$ & $= 0,99 \cdot U_0 \Rightarrow \approx U_0$\\
+\end{tabular}
+
+$u_c (t) = U_0+\Delta U \cdot e^{-\frac{t}{\tau}}$ mit R und C = 1.
+\end{frame}
+
+\section[noch offen]{Pflicht-Themen, die noch offen sind}
 \begin{frame}{Pflicht-Themen, die noch offen sind}
   Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
   \begin{itemize}
-    \item Kondensator
-    \\ Auf- und Entladung
+%     \item Kondensator
+%     \\ Auf- und Entladung
     \item Induktion
     \\ Magnetischer Fluss (Phi)
     \\ Flussdichte (B)
