@@ -440,7 +440,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
       \text{U}_2 &= 3,26\ V
     \end{align}
   \end{frame}
-  $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
+  $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. Die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 \subsection{Aufgaben zu Überlagerung}
 Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
 für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
@@ -688,9 +688,9 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
 
 
 \section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
-Einige elektrische Schaltungen können mit Hilfe der Überlagerung gelöst werden. Bei komplexen Schaltungen ist dies entweder nicht möglich oder sehr aufwändig. Hier ist es unter Umständen günstiger Gleichungen für die Knoten der Schaltung aufzustellen oder für sogenannte Maschen.
+Einige elektrische Schaltungen können mithilfe der Überlagerung gelöst werden. Bei komplexen Schaltungen ist dies entweder nicht möglich oder sehr aufwändig. Hier ist es unter Umständen günstiger Gleichungen für die Knoten der Schaltung aufzustellen oder für sogenannte Maschen.
 
-Eine Masche Masche oder ein Umlauf in der Elektrotechnik bedeutet, dass Alle Spannungen in einem festgelegten Kreis addiert werden. Nach den Kirchhoffschen Regeln ergibt die Summe aller Spannungen in einem Umlauf 0. $\sum_{k=1}^n \text{U}_k = 0$
+Eine Masche Masche oder ein Umlauf in der Elektrotechnik bedeutet, dass alle Spannungen in einem festgelegten Kreis addiert werden. Nach den Kirchhoffschen Regeln ergibt die Summe aller Spannungen in einem Umlauf 0. $\sum_{k=1}^n \text{U}_k = 0$
 
 \begin{frame}<beamer>
   \frametitle{Inhalt}
@@ -736,7 +736,7 @@ Im ersten Schritt muss ein sogenannter Baum festgelegt werden. Der Baum muss all
  \label{abb:Messbruecke1_Baum}
 \end{figure}
 
-Die Maschen M1, M2 und M3 bestehen immer aus einer Sehne (ein Zweig, der nicht zum vollständigen Baum gehört) und Zweigen, die zum Baum gehören.
+Die Maschen M1, M2 und M3 bestehen immer aus einer Sehne (ein Zweig, der nicht zum vollständigen Baum gehört) und Ästen, die zum Baum gehören.
 
 Für das Gleichungssystem ist die Umlaufrichtung der Maschen relevant. M1 dreht im Uhrzeigersinn, da hier die Quelle Uq1 in der Masche ist. Der Spannungspfeil der Quelle sollte möglichst gegen die Umlaufrichtung der Masche gerichtet sein.
 
@@ -774,7 +774,7 @@ Knotengleichungen:\\
 
 
 
-Für die Knoten gilt, dass die Summer aller Ströme, die hinein fließen und die Summe aller Ströme, die hinaus fließen null sein muss. $\sum_{k=1}^n I_k = 0$
+Für die Knoten gilt, dass die Summer aller Ströme, die hineinfließen und die Summe aller Ströme, die hinausfließen null sein muss. $\sum_{k=1}^n I_k = 0$
 
 Knotengleichungen:\\
 \begin{align}
@@ -881,7 +881,7 @@ $
 
 
 
-Oft schreibt man die verkürzte Darstellung. Der Vektor mit Strömen wird in diesem Fall nicht dargestellt, Der Vektor mit den Spannungen wird durch eine senkrechte Linie vom Array der Widerstände bzw. Vorfaktoren der Ströme abgetrennt.
+Oft schreibt man die verkürzte Darstellung. Der Vektor mit Strömen wird in diesem Fall nicht dargestellt, der Vektor mit den Spannungen wird durch eine senkrechte Linie vom Array der Widerstände bzw. Vorfaktoren der Ströme abgetrennt.
 
 \begin{frame}{Gekürzte Darstellung der Matrix}
 
@@ -926,8 +926,11 @@ $\left( \begin{array}{rrr}
 
 erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht vertieft dar. Bei Wikipedia ist ein ausführlicher Artikel zum Algorithmus des Verfahrens zu finden.
 
-Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
+Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da dieses Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
 \section{Knoten und Maschen}
+Die Bilder sind in der Präsentation. Der Abschnitt ist im Artikel leer. Die Bilder sollen den Zusammenhang zwischen einer Platine und dem Schaltplan erklären.
+
+\only<presentation>{
 \begin{frame}{Knoten und Maschen}
  \begin{figure}
    \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten1.png}
@@ -977,18 +980,18 @@ Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nac
  \label{abb:Schaltplan2}
 \end{figure}
 \end{frame}
+}
 
 \section{Kreisstromverfahren}
+Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung, in denen nur ein Kreisstrom fließt, ist der Strom des Zweigs identisch zum Kreisstrom der Masche. Wenn mehrere virtuelle Kreisströme durch denselben Zweig fließen, müssen sie entsprechend der Zählrichtung addiert werden. Wenn die Zählrichtung beider Ströme identisch ist, werden sie addiert, sonst subtrahiert. Wenn ein Strom negativ ist, bedeutet dies, dass die Zählrichtung der Masche entgegen der tatsächlichen Stromrichtung ist.
 
-Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung, in denen nur ein Kreisstrom fließt ist der Strom des Zweigs identisch zum Kreisstrom der Masche. Wenn mehrere virtuelle Kreisströme durch den selben Zweig fließen, müssen sie entsprechend der Zählrichtung addiert werden. Wenn die Zählrichtung beider Ströme identisch ist, werden sie addiert, sonst subtrahiert. Wenn ein Strom negativ ist, bedeutet dies, dass die Zählrichtung der Masche entgegen der tatsächlichen Stromrichtung ist.
-
-\begin{frame}{Kreisstromverfahren - Baum}
+\begin{frame}{Kreisstromverfahren - Baum I}
   \begin{columns}
-    \begin{column}{.5\textwidth}
+    \begin{column}{.5\textwidth}\only<presentation>{
       \begin{figure}[htbp]
         \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
         \caption{Messbrücke mit vollständigem Baum und Maschen}
-      \end{figure}
+      \end{figure}}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{enumerate}
@@ -1000,13 +1003,27 @@ Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung
   \end{columns}
 \end{frame}
 
-\begin{frame}{Kreisstromverfahren - Baum}
+\begin{figure}[htbp]
+  \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+  \caption{Messbrücke mit vollständigem Baum und Maschen}
+  \label{KreisstromBaumMaschen-1}
+\end{figure}
+
+Im Bild \ref{KreisstromBaumMaschen-1} ist die Brückenschaltung gezeichnet. In Blau ist der sogenannte Baum eingezeichnet. Der Baum in der Schaltung ist eine Markierung, die alle Knoten berührt. Gleichzeitig darf sie keinen geschlossenen Umlauf bilden. Die Markierungen der Knoten (römische Zahlen) sind für die Maschenstrom- oder Kreisstromanalyse nicht relevant.
+
+Bei der Festlegung des Baums sollte man berücksichtigen, dass Spannungsquellen immer außerhalb des Baums sein sollen. Es wäre hier auch möglich, statt des Ast mit R3 den Ast über R5 zu wählen. Ebenso wäre statt R2 ein Teil des Baums über R4 möglich. Im vorliegenden Baum wäre es auch möglich statt des Ast R6 entweder R5 oder R4 zu wählen.
+
+Nach der Festlegung des Baums werden die Maschen festgelegt. Eine Masche besteht immer aus einer Sehne, einem Teil der Schaltung, der nicht zum Baum gehört und den Ästen des Baums um den Umlauf zu schließen. Masche M1 besteht aus der Sehne mit der Quelle Uq1 und R1. Zusätzlich sind die Äste mit R3 und R2 Teil der Masche.
+
+Der Umlaufsinn der Masche ist frei wählbar. Bei Maschen, die eine Quelle beinhalten sollte man den Umlaufsinn entgegen dem Zählpfeil der Quelle (Zählpfeil hier nach unten, daher sollte der Umlauf an der Stelle nach oben verlaufen). Bei den Maschen 2 und 3 ist der Umlaufsinn frei wählbar.
+
+\begin{frame}{Kreisstromverfahren - Baum II}
   \begin{columns}
-    \begin{column}{.5\textwidth}
+    \begin{column}{.5\textwidth}\only<presentation>{
       \begin{figure}[htbp]
         \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
         \caption{Messbrücke mit vollständigem Baum und Maschen}
-      \end{figure}
+      \end{figure}}
     \end{column}
     \begin{column}{.5\textwidth}
       Gleichungssystem
@@ -1019,6 +1036,12 @@ Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung
   \end{columns}
 \end{frame}
 
+Nach der Festlegung der Maschen werden die Widerstände in einer Matrix notiert. Auf der Hauptdiagonalen (von links oben nach rechts unten) werden die Widerstände der Maschen eingetragen. An Position 1-1 (links oben stehen die Widerstände der Masche 1, in der Mitte (Position 2-2) die Widerstände der Masche 2 und in der Position 3-3 die Widerstände der Masche 3.
+
+An den anderen Positionen werden die Koppelwiderstände notiert. Masche 1 und Masche 2 haben den Koppelwiderstand R3, da in beiden Maschen nur R3 gemeinsam ist. Das Vorzeichen für R3 ist von den Umlaufrichtungen der Maschen abhängig. Wenn die Umlaufrichtung (am betreffenden Widerstand / Ast) gleich ist, wird der Widerstand mit positiven Vorzeichen eingetragen. Wenn die Umlaufrichtungen gegenläufig sind, wird der Widerstand mit negativem Vorzeichen eingetragen.
+
+Anschließend werden der Vektor für die Maschenströme (hier $\text{I}_{M1}$ bis $\text{I}_{M3}$) erstellt und - rechts vom Gleichheitszeichen - der Vektor mit den Spannungsquellen. Wenn in einer Masche keine Quelle vorhanden ist, wird dort 0 eingetragen. (siehe Gleichungssystem, unten)
+
 \begin{frame}{Kreisstromverfahren - Gleichungssystem}
   \begin{columns}
     \begin{column}{.5\textwidth}
@@ -1029,10 +1052,11 @@ Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung
     \end{column}
     \begin{column}{.5\textwidth}
       Gleichungssystem
+
         $\left( \begin{array}{rrrrrr}
-          \text{R}1+\text{R}2+\text{R}3 &     -\text{R}3  & -\text{R}2  \\
-          -\text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
-          -\text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+          \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
+          \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
 \end{array}\right) *
 \left(\begin{array}{c}
   \text{I}_{M1}\\
@@ -1044,16 +1068,19 @@ Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung
  0\\
  0\\
 \end{array}\right)
-$
+$\label{LGSBrueckenschaltung1}
     \end{column}
   \end{columns}
 \end{frame}
 
+Das Gleichungssystem kann per Hand gelöst werden. Alternativ ist eine Lösung mit einem geeigneten Taschenrechner oder z.B. octave auf dem Computer möglich. Octave ist open source.
+
+\only<presentation>{
 \begin{frame}{Kreisstromverfahren - Gleichungssystem}
         $\left( \begin{array}{rrrrrr}
-          \text{R}1+\text{R}2+\text{R}3 &     -\text{R}3  & -\text{R}2  \\
-          -\text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
-          -\text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+          \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
+          \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
 \end{array}\right) *
 \left(\begin{array}{c}
   \text{I}_{M1}\\
@@ -1066,20 +1093,21 @@ $
  0\\
 \end{array}\right)
 $
+
 LGS lösen:
 
 \begin{itemize}
- \item per Hand - z.B. gaußsches Eliminationsverfahren\\ Matrix und SpannungsVektor in Dreiecksform bringen.
+ \item per Hand - z.B. gaußsches Eliminationsverfahren\\ Matrix und Spannungs-Vektor in Dreiecksform bringen.
  \item im Taschenrechner - LGS Solver\\
  Matrix und Spannungsvektor eintippen.\\ Ergebnis ist Strom Vektor (von oben nach unten).
  \item mit dem PC z.B. octave (open source) - Eingabe vergleichbar mit Taschenrechner
 \end{itemize}
 
-\end{frame}
+\end{frame}}
 
 
 \section{Knotenspannungsverfahren}
-
+ - Abschnitt folgt noch -
 % \clearpage
 
 % \section{Pflicht-Themen, die noch offen sind}
@@ -1124,7 +1152,7 @@ LGS lösen:
     %     0 & 0 & 1 \\
     %   \end{array}$
     %   \section{Knotenpotentialanalyse}
-
+\appendix
     \section{Lösungen}
     \subsection{Ersatzwiderstand}
     \label{lsg:Ersatzwiderstand}
@@ -1254,7 +1282,7 @@ In Schritt 1.2 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_12}) werden die Wid
     \label{fig:SchaltungZweiLsgVorschlagTeil1_13}
 \end{figure}
 
-In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Widerstände $\text{R}_3$ und $\text{R}_4$ zusammengefasst, da in der Parallelschaltung die selbe Spannung anliegt. $\text{R}_2$ kann nicht mit dem neuen Widerstand $\text{R}_{3||4}$ zusammengefasst werden, da die Spannung an $\text{R}_3$ gesucht wird. Bei einer Zusammenfassung von $\text{R}_2$ und $\text{R}_{3||4}$ kann die Teilspannung nicht mehr direkt bestimmt werden. Ich müsste dann mit Hilfe der Spannungsteiler-Regel die Teilspannung bestimmen.
+In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Widerstände $\text{R}_3$ und $\text{R}_4$ zusammengefasst, da in der Parallelschaltung dieselbe Spannung anliegt. $\text{R}_2$ kann nicht mit dem neuen Widerstand $\text{R}_{3||4}$ zusammengefasst werden, da die Spannung an $\text{R}_3$ gesucht wird. Bei einer Zusammenfassung von $\text{R}_2$ und $\text{R}_{3||4}$ kann die Teilspannung nicht mehr direkt bestimmt werden. Ich müsste dann mithilfe der Spannungsteiler-Regel die Teilspannung bestimmen.
 
 
 \begin{figure}[ht]

@@ -486,7 +486,7 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
      \begin{figure}[htb]
     \begin{tikzpicture}
       \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
-      \draw (0,2) to[closing switch, l={t = 0}] (2,2) to [R=$R_1$] (4,2) to[C=$C_1$] (4,0)  -- (0,0);
+      \draw (0,2) to[closing switch, l={t = 0}] (2,2) to [R=$R_C$] (4,2) to[C=$C$] (4,0)  -- (0,0);
     \end{tikzpicture}
     \caption{Reihenschaltung von Widerstand und Kondensator}
     \label{fig:StromkreisMitQuelleUndC}
@@ -508,7 +508,7 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
      \begin{figure}[htb]
     \begin{tikzpicture}
       \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
-      \draw (0,2) to[normal closed switch, l={t > 0}] (2,2) to [R=$R_1$] (4,2) to[C=$C_1$] (4,0)  -- (0,0);
+      \draw (0,2) to[normal closed switch, l={t > 0}] (2,2) to [R=$R_C$] (4,2) to[C=$C$] (4,0)  -- (0,0);
     \end{tikzpicture}
     \caption{Reihenschaltung von Widerstand und Kondensator}
     \label{fig:StromkreisMitQuelleUndC2}
@@ -525,6 +525,8 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
 \end{frame}
 
 \begin{frame}{Ladung eines Kondensators III}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
 \begin{tabular}{ll}
  Zeitpunkt & Spannung an C\\
  $t =  \tau$ & $\approx 0,63 \cdot U_0$\\
@@ -533,8 +535,23 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
  $t = 4\tau$ & $\approx 0,98 \cdot U_0$\\
  $t = 5\tau$ & $= 0,99 \cdot U_0 \Rightarrow \approx U_0$\\
 \end{tabular}
+\ \\[\baselineskip]
+mit R und C = 1, $U_{max}\hat{=}U_0$ \\
+$u_c(t) = U_0+\Delta U \cdot e^{-\frac{t}{\tau}}$ \\
+$\Delta U = U_{C,t0}-U_0$\\
+$i_C(t) = \frac{U_0}{R_C}\cdot e^{-\frac{t}{\tau}} = I0\cdot e^{\frac{t}{R_C\cdot C}}$
 
-$u_c (t) = U_0+\Delta U \cdot e^{-\frac{t}{\tau}}$ mit R und C = 1.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\begin{figure}[htbp]
+ \includegraphics[width=\textwidth,keepaspectratio=true]{Ladevorgang.png}
+ % Ladevorgang.png: 767x431 px, 96dpi, 20.30x11.41 cm, bb=0 0 575 323
+ \caption{Von Honina.Frank Murmann at de:Wp via Wikipedia (abgerufen: 06.01.26)}
+ \label{abb:CLadevorgang}
+\end{figure}
+
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section[noch offen]{Pflicht-Themen, die noch offen sind}
