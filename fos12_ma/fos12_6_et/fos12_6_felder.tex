@@ -539,43 +539,56 @@ Bei der Aufladung eines Kondensators gehe ich davon aus, dass der Kondensator vo
 In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die Prozentwerte für $\tau$ bis $5\cdot \tau$ eingetragen. Bei einem Wert von $5 \cdot \tau$ geht man davon aus, dass der Kondensator vollständig geladen ist. Bei einer genauen Betrachtung stimmt dies nicht, für die vereinfachte Abschätzung ist die Annahme jedoch ausreichend. Zusätzlich entlädt sich der Kondensator über ein nicht perfekt isolierendes Dielektrikum selbst wieder. Wir gehen davon aus, dass das Dielektrikum ideal ist und es keine Leckströme über das Dielektrikum gibt.
 
 \begin{frame}{Ladung eines Kondensators IV}
+  \framesubtitle{Spannung bestimmen}
   \begin{columns}
     \begin{column}{0.5\textwidth}
-%       \begin{table}
-\begin{tabular}{ll}
- Zeitpunkt & Spannung an C\\
- $t =  \tau$ & $= 0,63 \cdot U_0$\\
- $t = 2\tau$ & $= 0,86 \cdot U_0$\\
- $t = 3\tau$ & $= 0,95 \cdot U_0$\\
- $t = 4\tau$ & $= 0,98 \cdot U_0$\\
- $t = 5\tau$ & $= 0,99 \cdot U_0 \Rightarrow \approx U_0$\\
-\end{tabular}
-% \caption{Ladung des Kondensators an Stützstellen $n\cdot \tau$}
-\label{tblLadungC}
-% \end{table}
+      \begin{tabular}{ll}
+      Zeitpunkt & Spannung an C\\
+      $t =  \tau$ & $= 0,63 \cdot U_0$\\
+      $t = 2\tau$ & $= 0,86 \cdot U_0$\\
+      $t = 3\tau$ & $= 0,95 \cdot U_0$\\
+      $t = 4\tau$ & $= 0,98 \cdot U_0$\\
+      $t = 5\tau$ & $= 0,99 \cdot U_0 \Rightarrow \approx U_0$\\
+      \end{tabular}
+      % \caption{Ladung des Kondensators an Stützstellen $n\cdot \tau$}
+      \label{tblLadungC}
+      % \end{table}
 
-% \ \\[\baselineskip]
+      % \ \\[\baselineskip]
 
-mit R und C = 1, $U_{max}\hat{=}U_0$
+      mit R und C = 1, $U_{max}\hat{=}U_0$
 
-$u_c(t) = U_0+\Delta U \cdot e^{-\frac{t}{\tau}}$
+      $u_c(t) = U_0 \cdot (1- e^{-\frac{t}{\tau}})$
 
-$\Delta U = U_{C,t0}-U_0$
+      $i_C(t) = \frac{U_0}{R_C}\cdot e^{-\frac{t}{\tau}} = I_0\cdot e^{\frac{t}{R_C\cdot C}}$
 
-$i_C(t) = \frac{U_0}{R_C}\cdot e^{-\frac{t}{\tau}} = I0\cdot e^{\frac{t}{R_C\cdot C}}$
-
+      $\tau = R_C\cdot C$
     \end{column}
     \begin{column}{0.5\textwidth}
-\begin{figure}[htbp]
- \includegraphics[width=\textwidth,keepaspectratio=true]{Ladevorgang.png}
- % Ladevorgang.png: 767x431 px, 96dpi, 20.30x11.41 cm, bb=0 0 575 323
- \caption{Von Honina.Frank Murmann at de:Wp via Wikipedia (abgerufen: 06.01.26)}
- \label{abb:CLadevorgang}
-\end{figure}
-
+      \begin{figure}[htbp]
+      \includegraphics[width=\textwidth,keepaspectratio=true]{Ladevorgang.png}
+      % Ladevorgang.png: 767x431 px, 96dpi, 20.30x11.41 cm, bb=0 0 575 323
+      \caption{Von Honina.Frank Murmann at de:Wp via Wikipedia (abgerufen: 06.01.26)}
+      \label{abb:CLadevorgang}
+      \end{figure}
     \end{column}
   \end{columns}
 \end{frame}
+
+\begin{frame}{Ladung eines Kondensators V}
+  \framesubtitle{Zeit bestimmen}
+  \begin{align}
+    u_c(t) = U_0 \cdot (1- e^{-\frac{t}{\tau}})\\
+    t = ?\\
+    \frac{u_c(t)}{U_0} = 1- e^{-\frac{t}{\tau}}\\
+    1-\frac{u_c(t)}{U_0} = e^{-\frac{t}{\tau}}\\
+     \text{ln}\left(1-\frac{u_c(t)}{U_0}\right) = -\frac{t}{\tau}\\
+    - \tau \cdot \text{ln}\left(1-\frac{u_c(t)}{U_0}\right) = t
+  \end{align}
+$    \tau = R_C\cdot C$
+\end{frame}
+
+
 \clearpage
 \section[noch offen]{Pflicht-Themen, die noch offen sind}
 \begin{frame}{Pflicht-Themen, die noch offen sind}
