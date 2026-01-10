@@ -1102,8 +1102,167 @@ LGS lösen:
  Matrix und Spannungsvektor eintippen.\\ Ergebnis ist Strom Vektor (von oben nach unten).
  \item mit dem PC z.B. octave (open source) - Eingabe vergleichbar mit Taschenrechner
 \end{itemize}
-
 \end{frame}}
+
+\section{Ersatzquellen}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle I}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item liefert definierten, konstanten Strom
+     \item Spannung ist unerheblich
+     \item Innenwiderstand ($R_i$) ist parallel geschaltet.
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle II}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Stromquelle in Spannungsquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt,
+     \item $R_i$ geht in Reihe zu $U_q$
+     \item Spannung: $U_l = I_k \cdot R_i$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$I_{q1}$] (0,2) ;
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (0,2) to[R=$R_i$] (2,2) -- (3,2);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:Spannungsquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Spannungsquelle $\rightarrow$ Stromquelle}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Spannungsquelle in Stromquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt
+     \item $R_i$ ist jetzt parallel zu $I_q$
+     \item Strom: $I_k = \frac{U_l}{R_i}$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle2}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Stromquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item $R_i$ ist parallel zu $I_q$
+     \only<2>{\item R2 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) ;
+        \draw (0,2) to[R=$R_2$] (2,2);
+        \draw (2,2) node[circ]{} -- (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (2,2) to[R=$R_3$] (2,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:StromquelleMitZusR}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Spannungsquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Spannungsquelle
+     \begin{itemize}
+     \item $R_i$ ist in Reihe zu $U_q$
+     \only<2>{\item R3 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$U_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) to[R=$R_2$] (3,2);
+        \draw (1,2) node[circ]{};
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_3$] (1,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:SpannungsquelleMitZusR}
+   \end{column}
+ \end{columns}
+\end{frame}
 
 
 % \section{Knotenspannungsverfahren}
@@ -1534,3 +1693,5 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
   \end{column}
 \end{columns}
 \end{frame}
+
+
