@@ -28,7 +28,7 @@
         {
           "color": "rgb(228, 26, 28)",
           "cursor1": {
-            "position": 0.6,
+            "position": 4.0,
             "x_format": "3~s",
             "y_format": "3~V"
           },

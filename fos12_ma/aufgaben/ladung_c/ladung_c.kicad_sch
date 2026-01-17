@@ -664,7 +664,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "14,5"
+		(property "Value" "12"
 			(at 41.91 86.2301 0)
 			(effects
 				(font
@@ -827,7 +827,7 @@
 				)
 			)
 		)
-		(property "Value" "1k2"
+		(property "Value" "2k2"
 			(at 48.26 72.39 90)
 			(effects
 				(font
@@ -896,7 +896,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "560u"
+		(property "Value" "470u"
 			(at 60.96 87.6299 0)
 			(effects
 				(font

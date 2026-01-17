@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[siunitx,european]{circuitikz}
-\usepackage{ulem}
+% \usepackage{ulem}
 \usepackage{listings}
 %
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
@@ -829,6 +829,59 @@ $|F_{31}| = 0,64 N$. Da $Q_1, Q_2 \ \text{und} \ Q_3$ gleich groß sind und der 
 \end{figure}
 \end{columns}
 \end{frame}
+\clearpage
+\subsection{Kondensator}
+\begin{frame}{Aufgaben - Laden des Kondensators}
+  \subtitle{Lösungen}
+  \label{AufgabenLadenC-Lsg}
+\begin{tabular}{|l|l|l|l|l|l|}
+ $U_0$  & $U_c$    & $\tau$    & t &            R &  C\\ \hline
+ 12\, V & \underline{siehe unten} & \underline{0,22\, S}  & 100\ mS, 220\ mS, $3\tau$, 1\,S  & $1\ k\Omega$ & $220\ \mu F$\\
+ 12\, V & $U_c(t)$ & 0,484\, S & $2\tau$, 2\, S, 4\,S  & \underline{$2,2k\Omega$} & $220\ \mu F$\\
+ 12\, V & $U_c(t)$ & 1,034\, S & $0,5\tau$, $\tau$, 4\, S & $2,2\ k\Omega$ & \underline{$470\ \mu F$} \\
+ \underline{14,5\, V}& 8,56\, V & \underline{0,672\, S}& 600 mS & $1,2\ k\Omega$ & $560 \mu F$ \\
+\end{tabular}
+\end{frame}
+\begin{frame}{Aufgaben Laden C LSG Teil 2}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+    Zu Zeile 1 (12V, $\tau = 0,22 S$, R = $1\, k\Omega$, C~=~$220\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ 100 mS & 4,38\, V \\ \hline
+ 220 mS & 7,59\, V \\ \hline
+ $3\tau$ = 0,66 S & 11,4\, V\\ \hline
+ 1\, S & 11,9V\\ \hline
+\end{tabular}
+
+Zu Zeile 2 (12V, $\tau = 0,484 S$, R~=~$2,2\, k\Omega$, C = $220\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ $2\tau = 0,968 S$ & 10,4\, V \\ \hline
+ 2\, S & 11,8\, V \\ \hline
+ 4\, S & 12,0\,V\\ \hline
+\end{tabular}
+    \end{column}
+    \begin{column}{.5\textwidth}
+    Zu Zeile 3 (12V, $\tau = 1,034 S$, R~=~$2,2\, k\Omega$, C = $470\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ $0,5\tau = 0,517 S$ & 7,88\, V \\ \hline
+ $\tau = 1,034\, S$ & 10,6\, V \\ \hline
+ 4\, S & 12\,V\\ \hline
+\end{tabular}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
 
 % \begin{figure}[h]
 %   \begin{tikzpicture}
