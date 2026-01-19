@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[siunitx,european]{circuitikz}
-\usepackage{ulem}
+% \usepackage{ulem}
 \usepackage{listings}
 %
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
@@ -25,7 +25,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik Themenfeld 12.6}
 \subtitle{Elektrisches und magnetisches Feld}
-\date{V 0.1.0 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.2.0 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -137,7 +137,7 @@ Wenn sich die Ladungen nicht zwischen den Körpern bewegen und auch nicht innerh
     \end{itemize}
   \end{frame}
 }
-Unabhängig von den Vereinfachungen gilt, dass es einen Energieerhaltungssatz gibt. Energie kann nur umgewandelt werden. Potentielle in kinetische oder chemische Energie. Energie kann innerhalb eines geschlossenen Systems (wir gehen davon aus, dass unsere System alle geschlossen sind) nicht entstehen und nicht vernichtet werden. Damit bleibt die Gesamtladung auch immer identisch. Die Elektrische Ladung wird in Coulomb (Einheit C) gemessen, $1 C = 1 As$. \\ Die Elementarladung (kleinste Einheit) beträgt: $e = 1,602 * 10^{-19} C$
+Unabhängig von den Vereinfachungen gilt, dass es einen Energieerhaltungssatz gibt. Energie kann nur umgewandelt werden. Potenzielle in kinetische oder chemische Energie. Energie kann innerhalb eines geschlossenen Systems (wir gehen davon aus, dass unsere Systeme alle geschlossen sind) nicht entstehen und nicht vernichtet werden. Damit bleibt die Gesamtladung auch immer identisch. Die elektrische Ladung wird in Coulomb (Einheit C) gemessen, $1 C = 1 As$. \\ Die Elementarladung (kleinste Einheit) beträgt: $e = 1,602 * 10^{-19} C$
 
 Wenn eine positive Ladung und eine negative Ladung nahe beieinander existieren, bilden sich zwischen ihnen Kräfte. Zusätzlich kann man ein elektrostatisches Feld messen. Das Feld wird als Linien dargestellt. Die Feldlinien beginnen bei der positiven Ladung und enden an der negativen Ladung.
 
@@ -172,7 +172,7 @@ Eine Linienladung stellt eine Linie dar, auf der sich die (gleichnamigen) Ladung
 Eine Flächenladung verteilt sich auf einer Fläche gleichmäßig. In der Regel passiert dies bei metallischen Flächen oder anderen Flächen, die gut leitend sind. Hier verteilen sich die Ladungen auf der gesamten Fläche gleichmäßig.
 
 Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen innerhalb eines Volumens dar.
-\section{Schaltung von Kondensatoren}
+\section[Schalt. von Cs]{Schaltung von Kondensatoren}
 
 %\only<presentation>{
 \begin{frame}
@@ -216,7 +216,7 @@ Eine Raumladung stellt eine gleichmäßige Verteilung elektrischer Ladungen inne
 Die Berechnung der Schaltungen von Kondensatoren ist gegenüber der Berechnung von Schaltungen der Widerstände invertiert. Bei der Parallelschaltung werden die wirksamen Flächen der Kondensatoren addiert. Daher werden bei einer Parallelschaltung auch die Kapazitätswerte addiert (siehe Formel \ref{eq:CsParallepAdd}). Bei einer Reihenschaltung werden die Kehrwerte addiert (siehe Formel \ref{eq:2CsInReihe}). Hier erhöht sich - theoretisch - die nutzbare Gesamtspannung aller Kondensatoren.
 
 \subsection{Spannung am Kondensator}
-Ein Kondensator ist für eine maximale Spannung ausgelegt. Die zulässige Betriebsspannung ist in der Regel aufgedruckt. Die Spannung ist unter anderem vom Abstand der Platten und dem verwendeten Dielektrikum (Isolierstoff) abhängig. Wenn die maximale Spannung überschritten wird, kann es zu einem Überschlag (Blitz) kommen. Dadurch wird in der Regel das Dielektrikum und die Platten beschädigt. Ob ein Durchschlag zur Zerstörung des Kondensators führt ist von der mechanischen Bauart abhängig. Selbstheilende Kondensatoren verlieren bei einem Durchschlag an der Stelle ein wenig einer Metallfolie, dadurch verringert sich die Kapazität des Kondensators. Grundsätzlich bleibt der Kondensator weiterhin funktionsfähig.
+Ein Kondensator ist für eine maximale Spannung ausgelegt. Die zulässige Betriebsspannung ist in der Regel aufgedruckt. Die Spannung ist unter anderem vom Abstand der Platten und dem verwendeten Dielektrikum (Isolierstoff) abhängig. Wenn die maximale Spannung überschritten wird, kann es zu einem Überschlag (Blitz) kommen. Dadurch wird in der Regel das Dielektrikum und die Platten beschädigt. Ob ein Durchschlag zur Zerstörung des Kondensators führt, ist von der mechanischen Bauart abhängig. Selbstheilende Kondensatoren verlieren bei einem Durchschlag an der Stelle ein wenig einer Metallfolie, dadurch verringert sich die Kapazität des Kondensators. Grundsätzlich bleibt der Kondensator weiterhin funktionsfähig.
 
 Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen auf den Platten gleichmäßig (siehe Bild \ref{fig:2CsInReihe}).
 
@@ -228,7 +228,7 @@ Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen au
 
 Die rechte Platte des linken Kondensators ($C_1$) ist elektrisch direkt mit der linken Platte des rechten Kondensators ($C_2$) verbunden. Sie bilden quasi eine Einheit. Im städtischen Fall (wenn sich alle Ladungen verteilt haben) kann jeder Kondensator mit seiner maximalen Spannung betrieben werden. Somit kann bei mehreren Kondensatoren, die in Reihe geschaltet sind und die die gleiche Spannung haben, die Spannung addiert werden.
 
-Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt. daher kann es passieren, dass einer der Kondensatoren mit einer Spannung beaufschlagt wird, die die zulässige Betriebsspannung überschreitet. Dies kann zu einer Überlastung - und damit potentiell einer Zerstörung - des betreffenden Kondensators führen.
+Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt. Daher kann es passieren, dass einer der Kondensatoren mit einer Spannung beaufschlagt wird, die die zulässige Betriebsspannung überschreitet. Dies kann zu einer Überlastung - und damit potenziell einer Zerstörung - des betreffenden Kondensators führen.
 \section{Vektoren}
 \only<presentation>{
   \begin{frame}<beamer>
@@ -294,7 +294,8 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
   \end{figure}
 \end{frame}
 
-\only<presentation>{\begin{frame}{Länge / Betrag eines Vektors}  \begin{figure}[htb]
+\only<presentation>{\begin{frame}{Länge / Betrag eines Vektors}
+ \begin{figure}[htb]
     \begin{tikzpicture}
       \draw (-2,0) -- (2,0);
       \draw (0,-2) -- (0,2);
@@ -323,7 +324,7 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
       \item Kraft $\widehat{=}$ Vektor
       \item Richtung, Betrag
       \item Addition ($\vec{v}_3 = \vec{v}_1 + \vec{v}_2$), jeweils x, y, z-Komponente
-      \item Spannung $\widehat{=}$ Potential zwischen 2 Punkten\\
+      \item Spannung $\widehat{=}$ Potenzial zwischen 2 Punkten\\
       \dots \ auch im Raum (E-Feld)
     \end{itemize}
   \end{frame}
@@ -333,7 +334,8 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
   \begin{itemize}
     \item Abhängig von Ladung Q und Abstand zur Ladung
     \item $\vec{F} = \frac{1}{4 \cdot \pi \cdot \varepsilon}\frac{Q_1 \cdot Q_2}{r^2}$
-    \item $\vec{F} = \frac{Q_1 \cdot Q_2}{4 \cdot \pi \cdot \varepsilon \cdot r^2}\vec{e}^2$ \\$\vec{e}$ = Einheitsvektor (Länge = 1, für Richtung relevant)
+    \item $\vec{F} = \frac{Q_1 \cdot Q_2}{4 \cdot \pi \cdot \varepsilon \cdot r^2}\vec{e}^2$ \\
+$\vec{e}$ = Einheitsvektor (Länge = 1, für Richtung relevant)
   \end{itemize}
 \end{frame}
 
@@ -368,7 +370,8 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
 
  Gegeben seien drei Ladungen $Q_1, Q_2\ \text{und} \ Q_3$. Alle Ladungen sind ideal punktförmig und haben den Wert $10\mu C$.
 
-  Die Ladungen befinden sich an folgenden Punkten: $Q_1= \left(\begin{array}{c} 0 \\ 2 \end{array}\right)$,
+  Die Ladungen befinden sich an folgenden Punkten: $Q_1= \left(\begin{array}{c} 0 \\
+2 \end{array}\right)$,
   $Q_2= \left(\begin{array}{c} 2 \\ 2 \end{array}\right)$,
   $Q_3= \left(\begin{array}{c} 1 \\ 3 \end{array}\right)$. Das Koordinatensystem ist im m skaliert (eine Einheit = 1\,m). $\varepsilon = \varepsilon_0 = 8,85 -10^{-12}\frac{As}{Vm}$
   Berechnen Sie die resultierende Kraft auf $Q_3$, die von $Q_1 \ \text{und}\ Q_2$ ausgeht.
@@ -440,7 +443,7 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
    \item $V_{res} = V_1 + V_2$
    \item $V_{res} = \left(\begin{array}{c} 10 \\ 15 \end{array}\right) + \left(\begin{array}{c} 5 \\ 7 \end{array}\right) = \left(\begin{array}{c} 15 \\ 22 \end{array}\right)$
    \item $\vec{E} = \frac{Q}{4 \cdot \pi \cdot r^2 \cdot \varepsilon}\cdot \vec{e}^2$
-   \item $|\vec{v}| =  \sqrt{\Delta x^2 + \Delta y^2}$\\
+   \item $|\vec{v}| = \sqrt{\Delta x^2 + \Delta y^2}$\\
   \end{itemize}
 \end{frame}
 
@@ -470,12 +473,178 @@ $P_4 =\left( \begin{array}{c}0,5\,m \\ 0\, m\end{array} \right)$
 $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
 \end{frame}
 
-\section{Pflicht-Themen, die noch offen sind}
+\section[Kondensator]{Kondensator Auf- und Entladung}
+
+\begin{frame}{Kondensator - Eigenschaften}
+ \begin{itemize}
+  \item Kondensatorplatten haben (große) Fläche.
+  \item Zwischen Platten ist Luft / Dielektrikum (nicht Leitfähig)
+  \item Durch den Kondensator fließt \emph{kein} (Gleich-)Strom.
+ \end{itemize}
+\end{frame}
+
+Ein Kondensator besteht aus zwei parallelen Platten. Der Zwischenraum zwischen den Platten ist mit Luft oder einem Dielektrikum gefüllt. Diese Füllung ist im Normalfall nicht leitend. Wenn ein sogenannter Durchbruch erfolgt wird das Dielektrikum in der Regel beschädigt, dies führt oft zur Beschädigung des Kondensators. Es kann auch sein, dass der Kondensator zerstört wird.
+
+\begin{frame}{Ladung eines Kondensators I}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{figure}[htb]
+    \begin{tikzpicture}
+      \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
+      \draw (0,2) to[closing switch, l={t = 0}] (2,2) to [R=$R$] (4,2) to[C=$C$] (4,0)  -- (0,0);
+    \end{tikzpicture}
+    \caption{Reihenschaltung von Widerstand und Kondensator}
+    \label{fig:StromkreisMitQuelleUndC}
+  \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Anfangszustand: Kondensator ist leer (ungeladen - auf beiden Platten selbe Anzahl Ladungen)
+        \item Verbindung mit Spannungsquelle  (t = 0) - Kondensator lädt sich auf - Anzahl der Ladungen verschiebt sich.
+        \item Dauer: i.d.R wenige Millisekunden bis einige Sekunden (abhängig von R und C)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+Bei der Aufladung eines Kondensators gehe ich davon aus, dass der Kondensator vollständig entladen ist, das bedeutet, dass die Anzahl der Ladungen auf beiden Platten gleich ist. Die Verbindung zur Spannungsquelle U0 ist vor dem Experiment offen (Bild \ref{fig:StromkreisMitQuelleUndC}). Zum Zeitpunkt t=0 wird der Schalter geschlossen (Bild \ref{fig:StromkreisMitQuelleUndC2}). Wir gehen davon aus, das dies ohne Prellen passiert. Über den Widerstand Rc kann ein Strom fließen. Der Strom fließt jedoch nicht innerhalb des Kondensators, da das Dielektrikum nicht leitfähig ist. Es werden im Kondensator jedoch Ladungen transportiert, dadurch lädt sich der Kondensator auf, bis er die Spannung der Spannungsquelle (U0) erreicht. Der Vorgang des Aufladens ist abhängig von der Kapazität des Kondensators und der Größe des Widerstands. Die Zeit ist abhängig von der sogenannten Zeitkonstante $\tau$ (griechischer Buchstabe Tau) $\tau = R\cdot C$. Wenn in der Schaltung der Widerstand einen Wert von $R = 1k\Omega$ und der Kondensator einen Wert von $C = 330\mu F$ hat, ergibt sich:
+
+\begin{frame}{Ladung eines Kondensators II}
+\begin{align}
+\tau &= R\cdot C \\
+\tau &= 1k\Omega \cdot 330\mu F\\
+\tau &= 330 mS
+\end{align}
+\end{frame}
+
+\begin{frame}{Ladung eines Kondensators III}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{figure}[htb]
+    \begin{tikzpicture}
+      \draw (0,0) to[vsource, l=$U_{0}$] (0,2);
+      \draw (0,2) to[normal closed switch, l={t > 0}] (2,2) to [R=$R$] (4,2) to[C=$C$] (4,0)  -- (0,0);
+    \end{tikzpicture}
+    \caption{Reihenschaltung von Widerstand und Kondensator}
+    \label{fig:StromkreisMitQuelleUndC2}
+  \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Kondensator lädt sich auf.
+        \item Strom fließt durch R.
+        \item $u_c (t) = U_0  \cdot (1 - e^{-\frac{t}{\tau}}$)\\
+              $\tau = R \cdot C$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die Prozentwerte für $\tau$ bis $5\cdot \tau$ eingetragen. Bei einem Wert von $5 \cdot \tau$ geht man davon aus, dass der Kondensator vollständig geladen ist. Bei einer genauen Betrachtung stimmt dies nicht, für die vereinfachte Abschätzung ist die Annahme jedoch ausreichend. Zusätzlich entlädt sich der Kondensator über ein nicht perfekt isolierendes Dielektrikum selbst wieder. Wir gehen davon aus, dass das Dielektrikum ideal ist und es keine Leckströme über das Dielektrikum gibt.
+
+\begin{frame}{Ladung eines Kondensators IV}
+  \framesubtitle{Spannung bestimmen}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{tabular}{ll}
+      Zeitpunkt & Spannung an C\\
+      $t =  \tau$ & $= 0,63 \cdot U_0$\\
+      $t = 2\tau$ & $= 0,86 \cdot U_0$\\
+      $t = 3\tau$ & $= 0,95 \cdot U_0$\\
+      $t = 4\tau$ & $= 0,98 \cdot U_0$\\
+      $t = 5\tau$ & $= 0,99 \cdot U_0 \Rightarrow \approx U_0$\\
+      \end{tabular}
+      % \caption{Ladung des Kondensators an Stützstellen $n\cdot \tau$}
+      \label{tblLadungC}
+      % \end{table}
+
+      % \ \\[\baselineskip]
+
+      mit R und C = 1, $U_{max}\hat{=}U_0$
+
+      $u_c(t) = U_0 \cdot (1- e^{-\frac{t}{\tau}})$
+
+      $i_C(t) = \frac{U_0}{R}\cdot e^{-\frac{t}{\tau}}$
+
+      $\tau = R\cdot C$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}[htbp]
+      \includegraphics[width=\textwidth,keepaspectratio=true]{Ladevorgang.png}
+      % Ladevorgang.png: 767x431 px, 96dpi, 20.30x11.41 cm, bb=0 0 575 323
+      \caption{Von Honina.Frank Murmann at de:Wp via Wikipedia (abgerufen: 06.01.26)}
+      \label{abb:CLadevorgang}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Aufladen eines Kondensators}
+  \framesubtitle{Zeit bestimmen}
+  gesucht: t
+  \begin{align}
+    u_c(t) &= U_0 \cdot (1- e^{-\frac{t}{\tau}})| : U_0\\
+    \frac{u_c(t)}{U_0} &= 1- e^{-\frac{t}{\tau}}|-1, \cdot \ (-1) \\
+    1-\frac{u_c(t)}{U_0} &= e^{-\frac{t}{\tau}}| ln()\\
+    ln\left(1-\frac{u_c(t)}{U_0}\right) &= -\frac{t}{\tau}|\ \dot \  (-\tau)\\
+    - \tau \cdot ln\left(1-\frac{u_c(t)}{U_0}\right) &= t
+  \end{align}
+   $\tau = R\cdot C,\ ln(x)$ ist Umkehrfunktion zu $e^x$
+\end{frame}
+
+\begin{frame}{Aufgaben - Laden des Kondensators}
+\begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+ $U_0$  & $U_c$    & $\tau$    & t &            R &  C\\ \hline
+ 12\, V & $U_c(t)$ &           & 100\ mS, 220\ mS, $3\tau$, 1\,S  & $1\ k\Omega$ & $220\ \mu F$\\ \hline
+ 12\, V & $U_c(t)$ & 0,484\, S & $2\tau$, 2\, S, 4\,S  &  & $220\ \mu F$\\ \hline
+ 12\, V & $U_c(t)$ & 1,034\, S & $0,5\tau$, $\tau$, 4\, S & $2,2\ k\Omega$ & \\ \hline
+        & 8,56\, V & & 600 mS & $1,2\ k\Omega$ & $560 \mu F$ \\ \hline
+\end{tabular}
+\begin{itemize}
+  \item berechnen die fehlenden Parameter($\tau$, R, C, $U_0$) und $U_C(t)$
+ \item Bei Widerstandswerten und Kondensatorwerten sind jeweils Werte der E12-Reihe zu bestimmen.
+ \item $U_c(t)$ = berechne alle Spannungen für $U_c$ zu den angegebenen Zeitpunkten t.
+ \item Als weitere Übungsmöglichkeit: $U_0$ = 15\, V; 18\, V; 20\, V; 24\, V.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Entladen des Kondensators}
+ \begin{itemize}
+   \item Spannung fällt von $U_{max}$ auf 0\,V
+   \item Strom fließt "`umgekehrt"'
+   \item nach 5$\tau$ gilt der Kondensator als entladen.
+ \end{itemize}
+ \begin{align}
+   u_c(t) &= U_0\cdot e^{-\frac{t}{\tau}}\\
+   i_c(t) &= -\frac{U_0}{R}\cdot e^{-\frac{t}{\tau}}
+ \end{align}
+\end{frame}
+
+\begin{frame}{Beispiel: C laden "`ohne"' Vorwiderstand}
+ Wie groß ist i(0+ = 1 mS), wenn folgendes gegeben ist:
+ \begin{itemize}
+  \item ideale Spannungsquelle
+  \item R = $1\ m\Omega$
+  \item C = $10\mu \text{F}$
+  \pause
+  \item $\tau = R\cdot C$
+  \item $\tau = 1\cdot 10^{-9}s$
+  \item $i_c(t) = -\frac{U_0}{R}\cdot e^{-\frac{t}{\tau}}$
+  \item $i_c(t) = -\frac{5\, V}{1\ m\Omega}\cdot e^{-\frac{1\ mS}{1\  nS}}$
+  \item $i_c (t= 1\, mS) \approx 5\ kA$
+ \end{itemize}
+\end{frame}
+! Nicht ausprobieren!\\
+Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kondensators) zerstören. Bei einem Vorwiderstand von 0 steigt der Strom direkt nach dem Einschalten (wenige Pico Sekunden) theoretisch ins Unendliche. In Realität würden weder die Leiterbahn(en) noch die beteiligten Bauteile diese Stoßbelastung überstehen. Zusätzlich würden diverse andere Effekte auftreten, die hier aus Gründen der Vereinfachung ignoriert werden sollen.
+
+\clearpage
+\section[noch offen]{Pflicht-Themen, die noch offen sind}
 \begin{frame}{Pflicht-Themen, die noch offen sind}
-  Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
+Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
   \begin{itemize}
-    \item Kondensator
-    \\ Auf- und Entladung
+%     \item Kondensator
+%     \\ Auf- und Entladung
     \item Induktion
     \\ Magnetischer Fluss (Phi)
     \\ Flussdichte (B)
@@ -660,6 +829,60 @@ $|F_{31}| = 0,64 N$. Da $Q_1, Q_2 \ \text{und} \ Q_3$ gleich groß sind und der 
 \end{figure}
 \end{columns}
 \end{frame}
+\clearpage
+\subsection{Kondensator}
+\begin{frame}{Aufgaben - Laden des Kondensators}
+  \subtitle{Lösungen}
+  \label{AufgabenLadenC-Lsg}
+\begin{tabular}{|l|l|l|l|l|l|}
+ $U_0$  & $U_c$    & $\tau$    & t &            R &  C\\ \hline
+ 12\, V & \underline{siehe unten} & \underline{0,22\, S}  & 100\ mS, 220\ mS, $3\tau$, 1\,S  & $1\ k\Omega$ & $220\ \mu F$\\
+ 12\, V & $U_c(t)$ & 0,484\, S & $2\tau$, 2\, S, 4\,S  & \underline{$2,2k\Omega$} & $220\ \mu F$\\
+ 12\, V & $U_c(t)$ & 1,034\, S & $0,5\tau$, $\tau$, 4\, S & $2,2\ k\Omega$ & \underline{$470\ \mu F$} \\
+ \underline{14,5\, V}& 8,56\, V & \underline{0,672\, S}& 600 mS & $1,2\ k\Omega$ & $560 \mu F$ \\
+\end{tabular}
+\end{frame}
+\begin{frame}{Aufgaben Laden C LSG Teil 2}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+    Zu Zeile 1 (12V, $\tau = 0,22 S$, R = $1\, k\Omega$, C~=~$220\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ 100 mS & 4,38\, V \\ \hline
+ 220 mS & 7,59\, V \\ \hline
+ $3\tau$ = 0,66 S & 11,4\, V\\ \hline
+ 1\, S & 11,9V\\ \hline
+\end{tabular}
+
+Zu Zeile 2 (12V, $\tau = 0,484 S$, R~=~$2,2\, k\Omega$, C = $220\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ $2\tau = 0,968 S$ & 10,4\, V \\ \hline
+ 2\, S & 11,8\, V \\ \hline
+ 4\, S & 12,0\,V\\ \hline
+\end{tabular}
+    \end{column}
+    \begin{column}{.5\textwidth}
+
+    Zu Zeile 3 (12V, $\tau = 1,034 S$, R~=~$2,2\, k\Omega$, C = $470\ \mu F$)
+
+\begin{tabular}{|l|l|}
+  \hline
+ t & $U_c(t)$ \\ \hline
+ $0,5\tau = 0,517 S$ & 7,88\, V \\ \hline
+ $\tau = 1,034\, S$ & 10,6\, V \\ \hline
+ 4\, S & 12\,V\\ \hline
+\end{tabular}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
 
 % \begin{figure}[h]
 %   \begin{tikzpicture}
@@ -668,51 +891,3 @@ $|F_{31}| = 0,64 N$. Da $Q_1, Q_2 \ \text{und} \ Q_3$ gleich groß sind und der 
 % (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1);
 %   \end{tikzpicture}
 % \end{figure}
-
-% \section[Kondensator]{Kondensator (Pflicht)}
-% \only<presentation>{
-% \begin{frame}
-%   \frametitle{Inhalt}
-%
-%   \begin{columns}
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={7-12},currentsection]
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={13-},currentsection]
-%   \end{columns}
-% \end{frame}
-% }
-% \subsection[C laden]{Auf- und Entladung (Pflicht)}
-%
-% \section[Induktion]{Induktion (Pflicht)}
-% \only<presentation>{
-% \begin{frame}
-%   \frametitle{Inhalt}
-%
-%   \begin{columns}
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={7-12},currentsection]
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={13-},currentsection]
-%   \end{columns}
-% \end{frame}
-% }
-%
-% \subsection[Phi]{Magnetischer Fluss (Phi) (Pflicht)}
-% \subsection[B]{Flussdichte (Pflicht)}
-%
-% \section[Spule]{Spule (Pflicht)}
-% \only<presentation>{
-% \begin{frame}
-%   \frametitle{Inhalt}
-%
-%   \begin{columns}
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={7-12},currentsection]
-%     \column{.5\textwidth}
-%     \tableofcontents[sections={13-},currentsection]
-%   \end{columns}
-% \end{frame}
-% }
-%
-% \subsection{Ein- und Ausschaltvorgang (Pflicht)}

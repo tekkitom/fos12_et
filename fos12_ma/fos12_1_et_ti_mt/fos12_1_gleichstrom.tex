@@ -28,7 +28,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik, Technische Informatik, Mechatronik Themenfeld 12.1}
 \subtitle{Gleichstromnetzanalyse}
-\date{V 0.2.0 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.2.1 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -440,7 +440,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
       \text{U}_2 &= 3,26\ V
     \end{align}
   \end{frame}
-  $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
+  $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. Die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 \subsection{Aufgaben zu Überlagerung}
 Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
 für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
@@ -558,7 +558,7 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
 
   In Bild \ref{fig:Messbruecke2bMarkierung} wurden die Widerstände des Dreiecks in Widerstände in einer sternförmigen-Anordnung umgerechnet. Die Ströme und Spannungen an den Punkten A, B, und C sind bei beiden Anordnungen identisch.
 
-  \begin{frame}{Umwandlung Dreieck -> Stern}
+  \begin{frame}{Umwandlung Dreieck $\rightarrow$ Stern}
     \begin{columns}
       \begin{column}{.5\textwidth}
         \begin{figure}[htb]
@@ -591,7 +591,7 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
   \end{frame}
 
   In den folgenden Bildern ist der umgekehrte Weg von einem Stern zu einem Dreieck dargestellt. Die Herleitung der Formeln habe ich nicht geschrieben, sie ist auf der Seite https://de.wikipedia.org/wiki/Stern-Dreieck-Transformation zu finden.
-  \begin{frame}{Umwandlung - Stern- > Dreieck}
+  \begin{frame}{Umwandlung - Stern $\rightarrow$ Dreieck}
     \begin{columns}
       \begin{column}{.5\textwidth}
         \begin{figure}[htb]
@@ -688,9 +688,9 @@ für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
 
 
 \section[Gleichungen]{Knoten- und Maschengleichungen (Pflicht)}
-Einige elektrische Schaltungen können mit Hilfe der Überlagerung gelöst werden. Bei komplexen Schaltungen ist dies entweder nicht möglich oder sehr aufwändig. Hier ist es unter Umständen günstiger Gleichungen für die Knoten der Schaltung aufzustellen oder für sogenannte Maschen.
+Einige elektrische Schaltungen können mithilfe der Überlagerung gelöst werden. Bei komplexen Schaltungen ist dies entweder nicht möglich oder sehr aufwändig. Hier ist es unter Umständen günstiger Gleichungen für die Knoten der Schaltung aufzustellen oder für sogenannte Maschen.
 
-Eine Masche Masche oder ein Umlauf in der Elektrotechnik bedeutet, dass Alle Spannungen in einem festgelegten Kreis addiert werden. Nach den Kirchhoffschen Regeln ergibt die Summe aller Spannungen in einem Umlauf 0. $\sum_{k=1}^n \text{U}_k = 0$
+Eine Masche Masche oder ein Umlauf in der Elektrotechnik bedeutet, dass alle Spannungen in einem festgelegten Kreis addiert werden. Nach den Kirchhoffschen Regeln ergibt die Summe aller Spannungen in einem Umlauf 0. $\sum_{k=1}^n \text{U}_k = 0$
 
 \begin{frame}<beamer>
   \frametitle{Inhalt}
@@ -736,7 +736,7 @@ Im ersten Schritt muss ein sogenannter Baum festgelegt werden. Der Baum muss all
  \label{abb:Messbruecke1_Baum}
 \end{figure}
 
-Die Maschen M1, M2 und M3 bestehen immer aus einer Sehne (ein Zweig, der nicht zum vollständigen Baum gehört) und Zweigen, die zum Baum gehören.
+Die Maschen M1, M2 und M3 bestehen immer aus einer Sehne (ein Zweig, der nicht zum vollständigen Baum gehört) und Ästen, die zum Baum gehören.
 
 Für das Gleichungssystem ist die Umlaufrichtung der Maschen relevant. M1 dreht im Uhrzeigersinn, da hier die Quelle Uq1 in der Masche ist. Der Spannungspfeil der Quelle sollte möglichst gegen die Umlaufrichtung der Masche gerichtet sein.
 
@@ -747,6 +747,9 @@ Für das Gleichungssystem ist die Umlaufrichtung der Maschen relevant. M1 dreht 
 
 Im nächsten Schritt stelle ich für alle Maschen und alle Knoten Gleichungen auf.
 
+    \subsection{Spannungsteiler}
+%     \label{Lsg:Spannungsteiler}
+    Zu Aufgabe aus Abschnitt \ref{Aufg:Spannungsteiler}
 
 \begin{align}
   \text{M}_1: & -\text{U}_{q1} + \text{U}_1 + \text{U}_3 + \text{U}_2 = 0\\
@@ -760,20 +763,21 @@ Im nächsten Schritt stelle ich für alle Maschen und alle Knoten Gleichungen au
 \begin{align}
   \text{M}_1: & -\text{U}_{q1} + \text{U}_1 + \text{U}_3 + \text{U}_2 = 0\\
   \text{M}_2: & \text{U}_3 + \text{U}_6 - \text{U}_5 = 0 \\
-  \text{M}_3: & \text{U}_2 - \text{U}_6 - \text{U}_4 = 0\\
+  \text{M}_3: & \text{U}_2 - \text{U}_4 - \text{U}_6 = 0\\
 \end{align}
 
 Knotengleichungen:\\
 \begin{align}
   \text{I:}\ & \text{I}_1 - \text{I}_3 - \text{I}_5 = 0\\
   \text{II:}\ & \text{I}_3 - \text{I}_2 - \text{I}_6 = 0\\
-  \text{III:}\ & \text{I}_2 + \text{I}_4 -\text{I}_1 = 0
+  \text{III:}\ & \text{I}_2 + \text{I}_4 -\text{I}_1 = 0\\
+  \text{IV:}\ & \text{I}_3 - \text{I}_2 -\text{I}_6 = 0
 \end{align}
 \end{frame}
 
 
 
-Für die Knoten gilt, dass die Summer aller Ströme, die hinein fließen und die Summe aller Ströme, die hinaus fließen null sein muss. $\sum_{k=1}^n I_k = 0$
+Für die Knoten gilt, dass die Summer aller Ströme, die hineinfließen und die Summe aller Ströme, die hinausfließen null sein muss. $\sum_{k=1}^n I_k = 0$
 
 Knotengleichungen:\\
 \begin{align}
@@ -804,6 +808,7 @@ $\left( \begin{array}{rrrrrr}
     1 &     0  & -1     &     0 & -1    &     0\\
     0 & -1     & 1      &     0 &   0   &     0\\
   -1  & 1      &   0    & 1     & 0     & 0    \\
+    0 & -1     &   1    & 0     & 0     & -1 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  & 0  & 0\\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 \\
 0  & \text{R}_2 & 0  & \text{R}_4 & 0  & \text{R}_6 \\
@@ -841,6 +846,7 @@ $\begin{array}{lllllll}
     1 &     0  & -1     &     0 & -1    &     0 &= 0\\
     0 & -1     & 1      &     0 &   0   &     0 &= 0\\
   -1  & 1      &   0    & 1     & 0     & 0     &= 0\\
+    0 & -1     &   1    & 0     & 0     & -1    &= 0\\
 \text{R}_1*\text{I}_1 &+ \text{R}_2*\text{I}_2 &+ \text{R}_3*\text{I}_3 &+ 0*\text{I}_4 &+ 0*\text{I}_5 &+0*\text{I}_6  &= Uq1\\
 0*\text{I}_1  &+0*\text{I}_2   &+\text{R}_3*\text{I}_3  &+0*\text{I}_4  &+\text{R}_5*\text{I}_5 &+\text{R}_6*\text{I}_6 &= 0\\
 0*\text{I}_1  &+ \text{R}_2*\text{I}_2 &+0*\text{I}_3   &+\text{R}_4*\text{I}_4 &+0*\text{I}_5  &+\text{R}_6*\text{I}_6 &= 0
@@ -852,6 +858,7 @@ $\left( \begin{array}{rrrrrr}
     1 &     0  & -1     &     0 & -1    &     0\\
     0 & -1     & 1      &     0 &   0   &     0\\
   -1  & 1      &   0    & 1     & 0     & 0    \\
+    0 & -1     &   1    & 0     & 0     & -1 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  & 0  & 0\\
 0  & \text{R}_2 & 0  & \text{R}_4 & 0  & \text{R}_6 \\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 \\
@@ -868,6 +875,7 @@ $\left( \begin{array}{rrrrrr}
  0\\
  0\\
  0\\
+ 0\\
  \text{U}_{q1}\\
  0\\
  0
@@ -876,7 +884,7 @@ $
 
 
 
-Oft schreibt man die verkürzte Darstellung. Der Vektor mit Strömen wird in diesem Fall nicht dargestellt, Der Vektor mit den Spannungen wird durch eine senkrechte Linie vom Array der Widerstände bzw. Vorfaktoren der Ströme abgetrennt.
+Oft schreibt man die verkürzte Darstellung. Der Vektor mit Strömen wird in diesem Fall nicht dargestellt, der Vektor mit den Spannungen wird durch eine senkrechte Linie vom Array der Widerstände bzw. Vorfaktoren der Ströme abgetrennt.
 
 \begin{frame}{Gekürzte Darstellung der Matrix}
 
@@ -884,6 +892,7 @@ $\left( \begin{array}{rrrrrr|r}
  1 &  0 & -1 & 0  & -1 &  0 & 0\\
  0 & -1 &  1 & 0  &  0 &  0 & 0\\
 -1 &  1 &  0 & 1  &  0 &  0 & 0 \\
+ 0 & -1 &  1 & 0  & 0  & -1 & 0 \\
 \text{R}_1 & \text{R}_2 & \text{R}_3 & 0  &  0 &  0 & Uq1\\
 0  & \text{R}_2 & 0  & \text{R}_4 &  0 & \text{R}_6 & 0 \\
 0  & 0  & \text{R}_3 & 0  & \text{R}_5 & \text{R}_6 & 0\\
@@ -891,6 +900,22 @@ $\left( \begin{array}{rrrrrr|r}
 $\\
 
 \end{frame}
+
+\begin{frame}{Gekürzte Darstellung mit Werten der Widerstände}
+
+$\left( \begin{array}{rrrrrr|r}
+ 1 &  0 & -1 & 0  & -1 &  0 & 0\\
+ 0 & -1 &  1 & 0  &  0 &  0 & 0\\
+-1 &  1 &  0 & 1  &  0 &  0 & 0 \\
+ 0 & -1 &  1 & 0  & 0  & -1 & 0 \\
+220\Omega & 470\Omega & 330\Omega & 0  &  0 &  0 & Uq1\\
+0  & 470\Omega & 0  & 330\Omega &  0 & 390\Omega & 0 \\
+0  & 0  & 330\Omega & 0  & 560\Omega & 390\Omega & 0\\
+\end{array}\right)
+$\\
+
+\end{frame}
+
 
 Mit dem gaußschen Eliminationsverfahren kann ich die Matrix (links der senkrechten Linie) in eine Dreiecks-Form bringen. Dazu kann ich jeweils zwei Zeilen vertauschen oder durch Multiplikation von Faktoren zwei Zeilen addieren, sodass in einzelnen Spalten 0-Werte gebildet werden. Ziel der Umrechnung ist, dass die Matrix etwa die Form
 
@@ -904,117 +929,417 @@ $\left( \begin{array}{rrr}
 
 erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht vertieft dar. Bei Wikipedia ist ein ausführlicher Artikel zum Algorithmus des Verfahrens zu finden.
 
-Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da diese Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
-\clearpage
+Wen ich die Matrix in die Dreiecks-Form überführt habe, kann ich von unten nach oben die Werte einsetzen und die Ströme berechnen. Da dieses Vorgehen aufwändig und fehleranfällig ist, kann man alternativ die Verfahren der Maschenanalyse (Kreisstromverfahren) oder die Knotenanalyse (Knotenspannungsverfahren oder Knotenpotentialverfahren) verwenden.
+\section{Knoten und Maschen}
+Die Bilder sind in der Präsentation. Der Abschnitt ist im Artikel leer. Die Bilder sollen den Zusammenhang zwischen einer Platine und dem Schaltplan erklären.
 
-\section{Pflicht-Themen, die noch offen sind}
-\begin{frame}{Pflicht-Themen, die noch offen sind}
-  Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
-  \begin{itemize}
-%         \item Knoten- und Maschengleichungen
-    \item Kreisstromverfahren
-    \item Knotenspannungsverfahren
-  \end{itemize}
+\only<presentation>{
+\begin{frame}{Knoten und Maschen}
+ \begin{figure}
+   \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten1.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOut1}
+\end{figure}
+\end{frame}
 
-  Die Themen folgen demnächst hier.
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+   \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_markierungenKnoten2.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+   \includegraphics[scale=2,keepaspectratio=true]
+     {radar_out_v1_2_markierungenKnoten3.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung2}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[scale=2,keepaspectratio=true]
+     {radar_out_v1_2_markierungenKnoten4.png}
+   \caption{Platine Ausgang}
+ \label{abb:PlatineOutMarkierung3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[height=.9\textheight,keepaspectratio=true]{radar_out_v1_2_schaltplan.png}
+   \caption{Schaltplan Ausgang}
+ \label{abb:Schaltplan1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Knoten und Maschen}
+\begin{figure}
+  \includegraphics[scale=2,keepaspectratio=true]{radar_out_v1_2_schaltplan2.png}
+   \caption{Schaltplan Ausgang}
+ \label{abb:Schaltplan2}
+\end{figure}
+\end{frame}
+}
+
+\section{Kreisstromverfahren}
+Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung, in denen nur ein Kreisstrom fließt, ist der Strom des Zweigs identisch zum Kreisstrom der Masche. Wenn mehrere virtuelle Kreisströme durch denselben Zweig fließen, müssen sie entsprechend der Zählrichtung addiert werden. Wenn die Zählrichtung beider Ströme identisch ist, werden sie addiert, sonst subtrahiert. Wenn ein Strom negativ ist, bedeutet dies, dass die Zählrichtung der Masche entgegen der tatsächlichen Stromrichtung ist.
+
+\begin{frame}{Kreisstromverfahren - Baum I}
+  \begin{columns}
+    \begin{column}{.5\textwidth}\only<presentation>{
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{enumerate}
+        \item Baum festlegen (alle Knoten berühren, kein Umlauf).
+        \item Maschen einzeichnen (Umlaufsinn ist willkürlich)
+        \item Gleichungen aufstellen.
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{figure}[htbp]
+  \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+  \caption{Messbrücke mit vollständigem Baum und Maschen}
+  \label{KreisstromBaumMaschen-1}
+\end{figure}
+
+Im Bild \ref{KreisstromBaumMaschen-1} ist die Brückenschaltung gezeichnet. In Blau ist der sogenannte Baum eingezeichnet. Der Baum in der Schaltung ist eine Markierung, die alle Knoten berührt. Gleichzeitig darf sie keinen geschlossenen Umlauf bilden. Die Markierungen der Knoten (römische Zahlen) sind für die Maschenstrom- oder Kreisstromanalyse nicht relevant.
+
+Bei der Festlegung des Baums sollte man berücksichtigen, dass Spannungsquellen immer außerhalb des Baums sein sollen. Es wäre hier auch möglich, statt des Ast mit R3 den Ast über R5 zu wählen. Ebenso wäre statt R2 ein Teil des Baums über R4 möglich. Im vorliegenden Baum wäre es auch möglich statt des Ast R6 entweder R5 oder R4 zu wählen.
+
+Nach der Festlegung des Baums werden die Maschen festgelegt. Eine Masche besteht immer aus einer Sehne, einem Teil der Schaltung, der nicht zum Baum gehört und den Ästen des Baums um den Umlauf zu schließen. Masche M1 besteht aus der Sehne mit der Quelle Uq1 und R1. Zusätzlich sind die Äste mit R3 und R2 Teil der Masche.
+
+Der Umlaufsinn der Masche ist frei wählbar. Bei Maschen, die eine Quelle beinhalten sollte man den Umlaufsinn entgegen dem Zählpfeil der Quelle (Zählpfeil hier nach unten, daher sollte der Umlauf an der Stelle nach oben verlaufen). Bei den Maschen 2 und 3 ist der Umlaufsinn frei wählbar.
+
+\begin{frame}{Kreisstromverfahren - Baum II}
+  \begin{columns}
+    \begin{column}{.5\textwidth}\only<presentation>{
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      Gleichungssystem
+      \begin{enumerate}
+        \item Hauptdiagonale: Rs in der Masche
+        \item Nebendiagonalen: Verbindungs-Rs
+        \item Quelle in Quellen-Vektor
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+Nach der Festlegung der Maschen werden die Widerstände in einer Matrix notiert. Auf der Hauptdiagonalen (von links oben nach rechts unten) werden die Widerstände der Maschen eingetragen. An Position 1-1 (links oben stehen die Widerstände der Masche 1, in der Mitte (Position 2-2) die Widerstände der Masche 2 und in der Position 3-3 die Widerstände der Masche 3.
+
+An den anderen Positionen werden die Koppelwiderstände notiert. Masche 1 und Masche 2 haben den Koppelwiderstand R3, da in beiden Maschen nur R3 gemeinsam ist. Das Vorzeichen für R3 ist von den Umlaufrichtungen der beteiligten Maschen abhängig. Wenn die Umlaufrichtung (am betreffenden Widerstand / Ast) gleich ist, wird der Widerstand mit positiven Vorzeichen eingetragen. Wenn die Umlaufrichtungen gegenläufig sind, wird der Widerstand mit negativem Vorzeichen eingetragen. In Zeile 1, Spalte 2 wird der Widerstand (oder die Widerstände) eingetragen, mit denen die Maschen 1 und 2 verbunden sind\footnote{Die Widerstände im Baum-Zweig / den Baum-Zweigen, die die beiden Maschen gemeinsam haben.} Zeile 1, Spalte 3 ist die Kopplung von Masche 1 und Masche 3. Allgemein kann man sagen die Zeile bestimmt die eine Masche, die einen gemeinsamen Baum-Zweig haben\footnote{es können auch mehrere Zweige im Baum sein.}. Die Spalte bestimmt die zweite Masche der Kopplung.
+
+Die "`untere Hälfte"' der Matrix (unten links von der Hauptdiagonalen) wird über die Hauptdiagonale gespiegelt. (Spalte 1, Zeile 3 wird von Zeile 1, Spalte 3 kopiert, etc.)
+
+Anschließend werden der Vektor für die Maschenströme (hier $\text{I}_{M1}$ bis $\text{I}_{M3}$) erstellt und - rechts vom Gleichheitszeichen - der Vektor mit den Spannungsquellen. Wenn in einer Masche keine Quelle vorhanden ist, wird dort 0 eingetragen. (siehe Gleichungssystem, unten)
+
+\begin{frame}{Kreisstromverfahren - Gleichungssystem}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htbp]
+        \includegraphics[scale=0.9,keepaspectratio=true]{messbruecke1_2}
+        \caption{Messbrücke mit vollständigem Baum und Maschen}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      Gleichungssystem
+>
+        $\left( \begin{array}{rrrrrr}
+          \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
+          \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+\end{array}\right) *
+\left(\begin{array}{c}
+  \text{I}_{M1}\\
+  \text{I}_{M2}\\
+  \text{I}_{M3}
+      \end{array} \right)
+= \left( \begin{array}{c}
+  \text{U}_{q1}\\
+ 0\\
+ 0\\
+\end{array}\right)
+$\label{LGSBrueckenschaltung1}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+Das Gleichungssystem kann per Hand gelöst werden. Alternativ ist eine Lösung mit einem geeigneten Taschenrechner oder z.B. octave auf dem Computer möglich. Octave ist open source.
+
+\only<presentation>{
+\begin{frame}{Kreisstromverfahren - Gleichungssystem}
+        $\left( \begin{array}{rrrrrr}
+          \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
+          \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
+          \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
+\end{array}\right) *
+\left(\begin{array}{c}
+  \text{I}_{M1}\\
+  \text{I}_{M2}\\
+  \text{I}_{M3}
+      \end{array} \right)
+= \left( \begin{array}{c}
+  \text{U}_{q1}\\
+ 0\\
+ 0\\
+\end{array}\right)
+$
+
+LGS lösen:
+
+\begin{itemize}
+ \item per Hand - z.B. gaußsches Eliminationsverfahren\\ Matrix und Spannungs-Vektor in Dreiecksform bringen.
+ \item im Taschenrechner - LGS Solver\\
+ Matrix und Spannungsvektor eintippen.\\ Ergebnis ist Strom Vektor (von oben nach unten).
+ \item mit dem PC z.B. octave (open source) - Eingabe vergleichbar mit Taschenrechner
+\end{itemize}
+\end{frame}}
+
+\section{Ersatzquellen}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle I}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item liefert definierten, konstanten Strom
+     \item Spannung ist unerheblich
+     \item Innenwiderstand ($R_i$) ist parallel geschaltet.
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle II}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Stromquelle in Spannungsquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt,
+     \item $R_i$ geht in Reihe zu $U_q$
+     \item Spannung: $U_l = I_k \cdot R_i$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$I_{q1}$] (0,2) ;
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (0,2) to[R=$R_i$] (2,2) -- (3,2);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:Spannungsquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Spannungsquelle $\rightarrow$ Stromquelle}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Spannungsquelle in Stromquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt
+     \item $R_i$ ist jetzt parallel zu $I_q$
+     \item Strom: $I_k = \frac{U_l}{R_i}$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle2}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Stromquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item $R_i$ ist parallel zu $I_q$
+     \only<2>{\item R2 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) ;
+        \draw (0,2) to[R=$R_2$] (2,2);
+        \draw (2,2) node[circ]{} -- (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (2,2) to[R=$R_3$] (2,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:StromquelleMitZusR}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Spannungsquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Spannungsquelle
+     \begin{itemize}
+     \item $R_i$ ist in Reihe zu $U_q$
+     \only<2>{\item R3 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$U_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) to[R=$R_2$] (3,2);
+        \draw (1,2) node[circ]{};
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_3$] (1,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:SpannungsquelleMitZusR}
+   \end{column}
+ \end{columns}
 \end{frame}
 
 
-    % \section[Kreisstrom]{Kreisstromverfahren (Pflicht)}
-    % \begin{frame}<beamer>
-    %   \frametitle{Inhalt}
-    %   \tableofcontents[currentsection, hideothersubsections]
-    % \end{frame}
+% \section{Knotenspannungsverfahren}
+% \begin{frame}
+%  - Abschnitt folgt noch -
+% \end{frame}
+\appendix
+\section{Lösungen}
+\subsection{Ersatzwiderstand}
+\label{lsg:Ersatzwiderstand}
+\subsubsection{Übungen zu Zweipole I}
+\begin{description}
+  \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||45} = 173,12 \Omega$
+  \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||45} = 178,14 \Omega$
+  \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||45} = 85,71 \Omega$
+\end{description}
+\subsubsection{Übungen zu Zweipole II}
+\begin{description}
+  \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||5+4} = 585,01 \Omega$
+  \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = 150 \Omega \ \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||5+4} =  650,79\Omega$
+  \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||5+4} =  216,67\Omega$
+\end{description}
 
 
-    % \section[Knotenspannung]{Knotenspannungsverfahren (Pflicht)}
-    % \begin{frame}<beamer>
-    %   \frametitle{Inhalt}
-    %   \tableofcontents[currentsection, hideothersubsections]
-    % \end{frame}
+\subsection{Spannungsteiler}
+\label{Lsg:Spannungsteiler}
+Zu Aufgabe aus Abschnitt \ref{Aufg:Spannungsteiler}
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %   \section{Maschenstromanalyse}
-    %
-    %
-    %   $\begin{vmatrix}
-    %     1 & 0 & 0 \\
-    %     0 & 1 & 0 \\
-    %     0 & 0 & 1 \\
-    %   \end{vmatrix}$
-    %   \\
-    %   $\begin{array}{|rr|r|}
-    %     1 & 0 & 0 \\
-    %     0 & 1 & 0 \\
-    %     0 & 0 & 1 \\
-    %   \end{array}$
-    %   \section{Knotenpotentialanalyse}
+\begin{tabular}{l|ll|ll}
+U [V] & $\text{R}_1 [\Omega]$& $\text{R}_2 [\Omega]$& $I_{\text{R}_1}$ & $I_{\text{R}_2}$\\ \hline
+5     & 220 & 330  & 9,09 mA  & 9,09 mA  \\
+12    & 220 & 470  & 17,39 mA & 17,39 mA \\
+12    & 220 & 780  & 12 mA    & 12 mA    \\
+12    & 470 & 683  & 10,4 mA  & 10,4 mA  \\
+14,96 & 560 & 120  & 22 mA    & 22 mA    \\
+6,5   & 470 & 1,5k &  3,3 mA  &  3,3 mA  \\
+\end{tabular}
+\subsection{Lösungsvorschlag zu Schaltung 2}
 
-    \section{Lösungen}
-    \subsection{Ersatzwiderstand}
-    \label{lsg:Ersatzwiderstand}
-    \subsubsection{Übungen zu Zweipole I}
-    \begin{description}
-      \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||45} = 173,12 \Omega$
-      \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||45} = 178,14 \Omega$
-      \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||45} = 85,71 \Omega$
-    \end{description}
-    \subsubsection{Übungen zu Zweipole II}
-    \begin{description}
-      \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||5+4} = 585,01 \Omega$
-      \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = 150 \Omega \ \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||5+4} =  650,79\Omega$
-      \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||5+4} =  216,67\Omega$
-    \end{description}
-
-
-    \subsection{Spannungsteiler}
-    \label{Lsg:Spannungsteiler}
-    Zu Aufgabe aus Abschnitt \ref{Aufg:Spannungsteiler}
-
-    \begin{tabular}{l|ll|ll}
-  U [V] & $\text{R}_1 [\Omega]$& $\text{R}_2 [\Omega]$& $I_{\text{R}_1}$ & $I_{\text{R}_2}$\\ \hline
-  5     & 220 & 330  & 9,09 mA  & 9,09 mA  \\
-  12    & 220 & 470  & 17,39 mA & 17,39 mA \\
-  12    & 220 & 780  & 12 mA    & 12 mA    \\
-  12    & 470 & 683  & 10,4 mA  & 10,4 mA  \\
-  14,96 & 560 & 120  & 22 mA    & 22 mA    \\
-  6,5   & 470 & 1,5k &  3,3 mA  &  3,3 mA  \\
-  \end{tabular}
-  \subsection{Lösungsvorschlag zu Schaltung 2}
-%   Die Bilder für Schaltung 2 und Schaltung 3 sind hier zurzeit überlagert. In der Beamer-Version sind die Bilder gut erkennbar.
-  \begin{frame}<article=0>
-  \frametitle{Schaltung 2- nur Quelle 1 aktiv}
-    \begin{columns}
-      \begin{column}{.6\textwidth}
-        \begin{figure}[htb]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-            \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-            \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
-            \draw (4,0) -- (2,0);
-            \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-            \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-            \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-            \draw (2,4) -- (6,4);}
-            \draw (6,2) -- (6,0) -- (6,0);
-            \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);}
-            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-            \only<4>{\draw (6,0) -- (4,0);}
-            \only<2>{\draw[red, thick] (4,2.3) rectangle
-              (6.8,4.8);}
-            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-              (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 2}
-          \label{fig:SchaltungZweiLsgVorschlagTeil1}
-        \end{figure}
-      \end{column}
-      \begin{column}{.4\textwidth}
-        $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
-      \end{column}
-    \end{columns}
-  \end{frame}
+\begin{frame}<article=0>
+\frametitle{Schaltung 2- nur Quelle 1 aktiv}
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+        \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+        \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+        \draw (4,0) -- (2,0);
+        \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+        \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+        \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
+        \draw (2,4) -- (6,4);}
+        \draw (6,2) -- (6,0) -- (6,0);
+        \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);}
+        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+        \only<4>{\draw (6,0) -- (4,0);}
+        \only<2>{\draw[red, thick] (4,2.3) rectangle
+          (6.8,4.8);}
+        \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+          (4.8,2.3);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 2}
+      \label{fig:SchaltungZweiLsgVorschlagTeil1}
+    \end{figure}
+  \end{column}
+  \begin{column}{.4\textwidth}
+    $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
+  \end{column}
+\end{columns}
+\end{frame}
 
 Gegeben seien die Werte: $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
 
@@ -1022,141 +1347,130 @@ Da ich die Spannung an R3 berechnen soll, kann ich die Schaltung nur bis Bild \r
 
 \subsubsection{Schaltung 2 - nur Quelle 1 aktiv}
 \begin{figure}[htbp]
-    \begin{circuitikz}
-    \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-    \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-    \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
-    \draw (4,0) -- (2,0);
-    \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-    \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-    \draw (6,2) -- (6,0) -- (6,0);
-    \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 1.1)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil1_11}
+\begin{circuitikz}
+\draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+\only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+\draw (4,0) -- (2,0);
+\only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+\only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+\draw (6,2) -- (6,0) -- (6,0);
+\only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 1.1)}
+\label{fig:SchaltungZweiLsgVorschlagTeil1_11}
 \end{figure}
 
 In Schritt 1 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_11}) ist die Quelle 2 entfernt worden. Nur Quelle 1 ist jetzt aktiv. Dies ergibt die Teilspannung $U_3'$. Später berechne ich die Teilspanung $U_3''$ und addiere die beiden Teilspannungen. Wenn drei oder mehr Quellen in der Schaltung sind, muss ich das verfahren für jede Quelle anwenden. Dabei ist immer nur eine Quelle zur selben Zeit aktiv. Ich muss jeweils die Schaltung zusammenfassen, um die gesuchte (Teil-)Spannung (hier $\text{U}_3$ an $\text{R}_3$) berechnen zu können.
 
 \begin{figure}[htbp]
-    \begin{circuitikz}
-    \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-    \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
-    \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
-    \draw (4,0) -- (2,0);
-    \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
-    \draw (6,4) to [R=$R_6$] (6,2);
-%     \draw (2,4) -- (6,4);
-    \draw (6,2) -- (6,0) -- (6,0);
-    \draw (6,0) to [short, -*] (4,0);
-    \draw[red, thick] (4,2.3) rectangle
-        (6.8,4.8);
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 1.2)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil1_12}
+\begin{circuitikz}
+\draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+\draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
+\draw (4,0) -- (2,0);
+\draw (2,4) -- (4,4) to [R=$R_5$] (6,4);
+\draw (6,4) to [R=$R_6$] (6,2);
+\draw (6,2) -- (6,0) -- (6,0);
+\draw (6,0) to [short, -*] (4,0);
+\draw[red, thick] (4,2.3) rectangle
+    (6.8,4.8);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 1.2)}
+\label{fig:SchaltungZweiLsgVorschlagTeil1_12}
 \end{figure}
 
 In Schritt 1.2 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_12}) werden die Widerstände $\text{R}_5$ und $\text{R}_6$ zu einem Widerstand zusammengefasst.
 \begin{figure}[htbp]
-    \begin{circuitikz}
-    \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-    \draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-    \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);
-    \draw (4,0) -- (2,0);
-    \draw (6,4) to [R=$R_{5+6}$] (6,2);
-    \draw (2,4) -- (6,4);
-    \draw (6,2) -- (6,0) -- (6,0);
-%     \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
-    \draw (6,0) to [short, -*] (4,0);
-%     \only<4>{\draw (6,0) -- (4,0);}
-    \draw[red, thick] (1.3,-0.5) rectangle
-         (4.8,2.3);
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 1.3)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil1_13}
+\begin{circuitikz}
+\draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+\draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);
+\draw (4,0) -- (2,0);
+\draw (6,4) to [R=$R_{5+6}$] (6,2);
+\draw (2,4) -- (6,4);
+\draw (6,2) -- (6,0) -- (6,0);
+\draw (6,0) to [short, -*] (4,0);
+\draw[red, thick] (1.3,-0.5) rectangle
+      (4.8,2.3);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 1.3)}
+\label{fig:SchaltungZweiLsgVorschlagTeil1_13}
 \end{figure}
 
-In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Widerstände $\text{R}_3$ und $\text{R}_4$ zusammengefasst, da in der Parallelschaltung die selbe Spannung anliegt. $\text{R}_2$ kann nicht mit dem neuen Widerstand $\text{R}_{3||4}$ zusammengefasst werden, da die Spannung an $\text{R}_3$ gesucht wird. Bei einer Zusammenfassung von $\text{R}_2$ und $\text{R}_{3||4}$ kann die Teilspannung nicht mehr direkt bestimmt werden. Ich müsste dann mit Hilfe der Spannungsteiler-Regel die Teilspannung bestimmen.
+In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Widerstände $\text{R}_3$ und $\text{R}_4$ zusammengefasst, da in der Parallelschaltung dieselbe Spannung anliegt. $\text{R}_2$ kann nicht mit dem neuen Widerstand $\text{R}_{3||4}$ zusammengefasst werden, da die Spannung an $\text{R}_3$ gesucht wird. Bei einer Zusammenfassung von $\text{R}_2$ und $\text{R}_{3||4}$ kann die Teilspannung nicht mehr direkt bestimmt werden. Ich müsste dann mithilfe der Spannungsteiler-Regel die Teilspannung bestimmen.
 
 
 \begin{figure}[ht]
-    \begin{circuitikz}
-    \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-    \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
-    \draw (4,0) -- (2,0);
-    \draw (6,4) to [R=$R_{5+6}$] (6,2);
-    \draw (2,4) -- (6,4);
-    \draw (6,2) -- (6,0) -- (6,0);
-    \draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);
-    \draw (6,0) -- (4,0);
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 1.4)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil1_14}
+\begin{circuitikz}
+\draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
+\draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+\draw (4,0) -- (2,0);
+\draw (6,4) to [R=$R_{5+6}$] (6,2);
+\draw (2,4) -- (6,4);
+\draw (6,2) -- (6,0) -- (6,0);
+\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);
+\draw (6,0) -- (4,0);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 1.4)}
+\label{fig:SchaltungZweiLsgVorschlagTeil1_14}
 \end{figure}
 
 \clearpage
 \subsubsection{Schaltung 2 - nur Quelle 2 aktiv}
-  \begin{frame}<article=0>{Schaltung 2- nur Quelle 2 aktiv}
-    \begin{columns}
-      \begin{column}{.6\textwidth}
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
-            \draw (0,4) -- (0,0);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-            \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
-            \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
-            \draw (4,0) -- (2,0);
-            \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-            \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-            \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-              \draw (2,4) -- (6,4);}
-            \draw (6,2) -- (6,0) -- (6,0);
-            \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
-            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-            \only<4>{\draw (6,0) -- (4,0);}
-            \only<2>{\draw[red, thick] (4,2.3) rectangle
-              (6.8,4.8);}
-            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-              (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 2}
-          \label{fig:SchaltungZweiLsgVorschlagTeil2}
-        \end{figure}
-      \end{column}
-      \begin{column}{.4\textwidth}
-        $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
-      \end{column}
-    \end{columns}
-  \end{frame}
+\begin{frame}<article=0>{Schaltung 2- nur Quelle 2 aktiv}
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+        \draw (0,4) -- (0,0);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
+        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+        \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
+        \draw (4,0) -- (2,0);
+        \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+        \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+        \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
+          \draw (2,4) -- (6,4);}
+        \draw (6,2) -- (6,0) -- (6,0);
+        \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+        \only<4>{\draw (6,0) -- (4,0);}
+        \only<2>{\draw[red, thick] (4,2.3) rectangle
+          (6.8,4.8);}
+        \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+          (4.8,2.3);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 2}
+      \label{fig:SchaltungZweiLsgVorschlagTeil2}
+    \end{figure}
+  \end{column}
+  \begin{column}{.4\textwidth}
+    $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
+  \end{column}
+\end{columns}
+\end{frame}
 
-  \begin{figure}[hb]
-    \begin{circuitikz}
-    \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
-    \draw (0,4) -- (0,0);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-    \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-    \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
-    \draw (4,0) -- (2,0);
-    \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-    \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-%     \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-%         \draw (2,4) -- (6,4);}
-    \draw (6,2) -- (6,0) -- (6,0);
-%     \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
-    \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-%     \only<4>{\draw (6,0) -- (4,0);}
-%     \only<2>{\draw[red, thick] (4,2.3) rectangle
-%         (6.8,4.8);}
-%     \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-%         (4.8,2.3);}
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 2.1)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil2_21}
+\begin{figure}[hb]
+\begin{circuitikz}
+\draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+\draw (0,4) -- (0,0);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+\only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+\draw (4,0) -- (2,0);
+\only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+\only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+\draw (6,2) -- (6,0) -- (6,0);
+\only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 2.1)}
+\label{fig:SchaltungZweiLsgVorschlagTeil2_21}
 \end{figure}
 
 
@@ -1164,127 +1478,109 @@ In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Wid
 $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ $U_{q1} = 12\,V, U_{q2} = 15\,V$
 
 \begin{figure}[htbp]
-    \begin{circuitikz}
+\begin{circuitikz}
 
-        \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
-        \draw (0,4) -- (0,0);
-        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
-        \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
-        \draw (4,0) -- (2,0);
-        \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
-        \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
-%         \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
-%             \draw (2,4)d -- (6,4);}
-        \draw (6,2) -- (6,0) -- (6,0);
-%         \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
-        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-%         \only<4>{\draw (6,0) -- (4,0);}
-        \draw[red, thick] (4,2.3) rectangle (6.8,4.8);
-%         \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-%             (4.8,2.3);}
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 2.2)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil2_22}
-\end{figure}
-
-\begin{figure}[htbp]
-    \begin{circuitikz}
-
-        \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
-        \draw (0,4) -- (0,0);
-        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-        \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
-        \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
-        \draw (4,0) -- (2,0);
-        \draw (6,4) to [R=$R_{5+6}$] (6,2);
-        \draw (2,4) -- (6,4);
-        \draw (6,2) -- (6,0) -- (6,0);
-        \draw (6,0) to [short, -*] (4,0);
-        \draw[red, thick] (1.3,-0.5) rectangle (4.8,2.3);
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 2.3)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil2_23}
-\end{figure}
-
-
-\begin{figure}[htbp]
-
-    \begin{circuitikz}
     \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
     \draw (0,4) -- (0,0);
-    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-    \draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-    \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
+    \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+    \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
+    \draw (4,0) -- (2,0);
+    \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
+    \only<1-2>{\draw (6,4) to [R=$R_6$] (6,2);}
+    \draw (6,2) -- (6,0) -- (6,0);
+    \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+    \draw[red, thick] (4,2.3) rectangle (6.8,4.8);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 2.2)}
+\label{fig:SchaltungZweiLsgVorschlagTeil2_22}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{circuitikz}
+
+    \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+    \draw (0,4) -- (0,0);
+    \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
+    \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
+    \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);
     \draw (4,0) -- (2,0);
     \draw (6,4) to [R=$R_{5+6}$] (6,2);
     \draw (2,4) -- (6,4);
     \draw (6,2) -- (6,0) -- (6,0);
-    \draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);
-    \draw (6,0) -- (4,0);
-    \end{circuitikz}
-    \caption{Überlagerung, Schaltung 2 (Schritt 2.4)}
-    \label{fig:SchaltungZweiLsgVorschlagTeil2_24}
+    \draw (6,0) to [short, -*] (4,0);
+    \draw[red, thick] (1.3,-0.5) rectangle (4.8,2.3);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 2.3)}
+\label{fig:SchaltungZweiLsgVorschlagTeil2_23}
+\end{figure}
+
+
+\begin{figure}[htbp]
+
+\begin{circuitikz}
+\draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
+\draw (0,4) -- (0,0);
+\draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
+\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+\only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+\draw (4,0) -- (2,0);
+\draw (6,4) to [R=$R_{5+6}$] (6,2);
+\draw (2,4) -- (6,4);
+\draw (6,2) -- (6,0) -- (6,0);
+\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);
+\draw (6,0) -- (4,0);
+\end{circuitikz}
+\caption{Überlagerung, Schaltung 2 (Schritt 2.4)}
+\label{fig:SchaltungZweiLsgVorschlagTeil2_24}
 
 \end{figure}
 
 
-
-
-
-
-
-
-
-
-
-
-
 \clearpage
-  \subsection{Lösungsvorschlag zu Schaltung 3}
+\subsection{Lösungsvorschlag zu Schaltung 3}
 \subsubsection{Schaltung 3 - nur Quelle 1 aktiv}
 
-  \begin{frame}<article=0>{Schaltung 3 - nur Quelle 1 aktiv}
-    \begin{columns}
-      \begin{column}{.6\textwidth}
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-            \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
-            \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
-            \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
-            \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
-              to [R=$R_5$] (2,3) node[circ]{};}
-            \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
-            \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
-            \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
-            \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
-              \draw (6,4) to [R=$R_7$] (6,2);}
-            \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
-            %\draw (6,2) to [vsource, l=$U_{q2}$, voltage=straight] (6,0);
-            \only<1-4>{\draw (6,2) -- (6,0);}
-            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-            \only<4>{\draw (6,0) -- (4,0);}
-            \only<2>{\draw[red, thick] (4.3,2.3) rectangle
-              (6.8,4.8);}
-            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-              (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3}
-          \label{fig:SchaltungDreiLsgVorschlagTeil1}
-        \end{figure}
-      \end{column}
-      \begin{column}{.4\textwidth}
-        $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega $ $ \text{R}_5 = 470 \Omega,\ \text{R}_6 = 560\Omega$
-        $ \text{R}_7 = 120 \Omega$
-        $U_{q1} = 12\,V, U_{q2} = 15\,V$
-      \end{column}
-    \end{columns}
-  \end{frame}
+\begin{frame}<article=0>{Schaltung 3 - nur Quelle 1 aktiv}
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+        \only<4->{\draw (2,1.5) -- (2,2);}
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+        \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
+        \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
+        \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
+          to [R=$R_5$] (2,3) node[circ]{};}
+        \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
+        \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
+        \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+        \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
+          \draw (6,4) to [R=$R_7$] (6,2);}
+        \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+        \only<1-4>{\draw (6,2) -- (6,0);}
+        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+        \only<4>{\draw (6,0) -- (4,0);}
+        \only<2>{\draw[red, thick] (4.3,2.3) rectangle
+          (6.8,4.8);}
+        \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+          (4.8,2.3);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3}
+      \label{fig:SchaltungDreiLsgVorschlagTeil1}
+    \end{figure}
+  \end{column}
+  \begin{column}{.4\textwidth}
+    $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega $ $ \text{R}_5 = 470 \Omega,\ \text{R}_6 = 560\Omega$
+    $ \text{R}_7 = 120 \Omega$
+    $U_{q1} = 12\,V, U_{q2} = 15\,V$
+  \end{column}
+\end{columns}
+\end{frame}
 
 
 
@@ -1293,178 +1589,114 @@ $ \text{R}_7 = 120 \Omega$
 $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
 
 
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-%             \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-            \draw (2,4) to [R=$R_2$] (4,4);
-            \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
-            \draw (2,2) node[circ]{} -- (4,2);
-            \draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);
-            \draw (4,4) to [R=$R_3$] (6,4);
-            \draw (6,4) to [R=$R_7$] (6,2);
-            \draw (6,2) -- (6,0);
-            \draw (6,0) to [short, -*] (4,0);
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3, (Schritt1.1) Quelle Q2 entfernt}
-          \label{fig:SchaltungDreiLsgVorschlagTeil11}
-        \end{figure}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+        \draw (2,1.5)to [R=$R_{4}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \draw (2,4) to [R=$R_2$] (4,4);
+        \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
+        \draw (2,2) node[circ]{} -- (4,2);
+        \draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);
+        \draw (4,4) to [R=$R_3$] (6,4);
+        \draw (6,4) to [R=$R_7$] (6,2);
+        \draw (6,2) -- (6,0);
+        \draw (6,0) to [short, -*] (4,0);
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3, (Schritt1.1) Quelle Q2 entfernt}
+      \label{fig:SchaltungDreiLsgVorschlagTeil11}
+    \end{figure}
 
-%         \begin{figure}[htbp]
-%           \begin{circuitikz}
-%             \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-%             \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-%             \draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);
-%             \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-%             \draw (2,4) to [R=$R_2$] (4,4);
-%             \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
-%             \draw (2,2) node[circ]{} -- (4,2);
-%             \draw(4,0) -- (3,0) -- (2,0);
-%             \draw (4,4) to [R=$R_3$] (6,4);
-%               \draw (6,4) to [R=$R_7$] (6,2);
-%             \draw (6,2) -- (6,0);
-%             \draw (6,0) -- (4,0);
-%           \end{circuitikz}
-%           \caption{Überlagerung, Schaltung 3, (Schritt1.2)}
-%           \label{fig:SchaltungDreiLsgVorschlagTeil12}
-%         \end{figure}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+        \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
+        \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
+        \draw  (4,0) -- (3,0) -- (2,0);
+          \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
 
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-%             \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
-%             \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
-            \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
-%             \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
-%               to [R=$R_5$] (2,3) node[circ]{};}
-            \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
-            \draw  (4,0) -- (3,0) -- (2,0);
-%             \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
-%             \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
-%               \draw (6,4) to [R=$R_7$] (6,2);}
-             \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+        \only<1-4>{\draw (6,2) -- (6,0);}
+        \only<1-3>{\draw (6,0) -- (4,0);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3, (Schritt1.2)}
+      \label{fig:SchaltungDreiLsgVorschlagTeil12}
+    \end{figure}
 
-            \only<1-4>{\draw (6,2) -- (6,0);}
-            \only<1-3>{\draw (6,0) -- (4,0);}
-%             \only<4>{\draw (6,0) -- (4,0);}
-%             \only<2>{\draw[red, thick] (4.3,2.3) rectangle
-%               (6.8,4.8);}
-%             \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-%               (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3, (Schritt1.2)}
-          \label{fig:SchaltungDreiLsgVorschlagTeil12}
-        \end{figure}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \only<4->{\draw (2,1.5) -- (2,2);}
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+        \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
+          to [R=$R_5$] (2,3) node[circ]{};}
+          \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+          \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+        \only<1-4>{\draw (6,2) -- (6,0);}
+        \only<4>{\draw (6,0) -- (4,0);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3, (Schritt1.4)}
+      \label{fig:SchaltungDreiLsgVorschlagTeil14}
+    \end{figure}
 
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-%             \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-            \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
-%             \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
-%             \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
-            \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
-              to [R=$R_5$] (2,3) node[circ]{};}
-%             \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
-%             \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
-             \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
-%             \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
-%               \draw (6,4) to [R=$R_7$] (6,2);}
-             \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
-            \draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
-            \only<1-4>{\draw (6,2) -- (6,0);}
-%             \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-            \only<4>{\draw (6,0) -- (4,0);}
-%             \only<2>{\draw[red, thick] (4.3,2.3) rectangle
-%               (6.8,4.8);}
-%             \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-%               (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3, (Schritt1.4)}
-          \label{fig:SchaltungDreiLsgVorschlagTeil14}
-        \end{figure}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \draw (2,2)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
+        \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3, (Schritt1.5)}
+      \label{fig:SchaltungDreiLsgVorschlagTeil15}
+    \end{figure}
 
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-%             \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-%             \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-%             \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
-            \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
-%             \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
-%             \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
-%               to [R=$R_5$] (2,3) node[circ]{};}
-%             \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
-%             \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
-            \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
-%             \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
-%               \draw (6,4) to [R=$R_7$] (6,2);}
-%              \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
-            \draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
-%             \only<1-4>{\draw (6,2) -- (6,0);}
-%             \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-%             \only<4>{\draw (6,0) -- (4,0);}
-%             \only<2>{\draw[red, thick] (4.3,2.3) rectangle
-%               (6.8,4.8);}
-%             \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-%               (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3, (Schritt1.5)}
-          \label{fig:SchaltungDreiLsgVorschlagTeil15}
-        \end{figure}
+\begin{frame}<article=0>{Schaltung 3 - nur Quelle 2 aktiv}
+\begin{columns}
+  \begin{column}{.6\textwidth}
+    \begin{figure}[htbp]
+      \begin{circuitikz}
+        \draw (0,4) -- (0,0);
+        \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
+        \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
+        \only<4->{\draw (2,1.5) -- (2,2);}
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
+        \only<5->{\draw (2,4) -- (6,4) to [R=$R_{(2||5)+3+7}$] (6,2);}
+        \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
+        \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
+          to [R=$R_5$] (2,3) node[circ]{};}
+        \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
+        \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
+        \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
+        \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
+          \draw (6,4) to [R=$R_7$] (6,2);}
+        \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
+        \draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
+        \only<1-4>{\draw (6,2) -- (6,0);}
+        \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
+        \only<4->{\draw (6,0) -- (4,0);}
+        \only<2>{\draw[red, thick] (4.3,2.3) rectangle
+          (6.8,4.8);}
+        \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
+          (4.8,2.3);}
+      \end{circuitikz}
+      \caption{Überlagerung, Schaltung 3}
+      \label{fig:SchaltungDreiLsgVorschlagTeil2}
+    \end{figure}
+  \end{column}
+  \begin{column}{.4\textwidth}
+    $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega $ $ \text{R}_5 = 470 \Omega,\ \text{R}_6 = 560\Omega$
+    $ \text{R}_7 = 120 \Omega$
+    $U_{q1} = 12\,V, U_{q2} = 15\,V$
+  \end{column}
+\end{columns}
+\end{frame}
 
-  \begin{frame}<article=0>{Schaltung 3 - nur Quelle 2 aktiv}
-    \begin{columns}
-      \begin{column}{.6\textwidth}
-        \begin{figure}[htbp]
-          \begin{circuitikz}
-%             \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
-            \draw (0,4) -- (0,0);
-            \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-            \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-            \only<4->{\draw (2,1.5) -- (2,2);}% node[circ]{} -- (4,2);}
-            \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
-            \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
-            \only<5->{\draw (2,4) -- (6,4) to [R=$R_{(2||5)+3+7}$] (6,2);}
-            \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
-            \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
-              to [R=$R_5$] (2,3) node[circ]{};}
-            \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
-            \only<1-3>{\draw (4,2) node[circ]{} node[right]{D} -- (4,2) to[R=$R_6$] (4,0) -- (3,0) -- (2,0);}
-            \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
-            \only<1-2>{\draw (4,4) to [R=$R_3$] (6,4);
-              \draw (6,4) to [R=$R_7$] (6,2);}
-            \only<3-4>{\draw (4,4) -- (6,4) to [R=$R_{3+7}$] (6,2);}
-            \draw (6,2) to [vsource, l=$U_{q2}$] (6,0);
-            \only<1-4>{\draw (6,2) -- (6,0);}
-            \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
-            \only<4->{\draw (6,0) -- (4,0);}
-            \only<2>{\draw[red, thick] (4.3,2.3) rectangle
-              (6.8,4.8);}
-            \only<3>{\draw[red, thick] (1.3,-0.5) rectangle
-              (4.8,2.3);}
-          \end{circuitikz}
-          \caption{Überlagerung, Schaltung 3}
-          \label{fig:SchaltungDreiLsgVorschlagTeil2}
-        \end{figure}
-      \end{column}
-      \begin{column}{.4\textwidth}
-        $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega $ $ \text{R}_5 = 470 \Omega,\ \text{R}_6 = 560\Omega$
-        $ \text{R}_7 = 120 \Omega$
-        $U_{q1} = 12\,V, U_{q2} = 15\,V$
-      \end{column}
-    \end{columns}
-  \end{frame}
 
