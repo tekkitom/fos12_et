@@ -747,6 +747,9 @@ Für das Gleichungssystem ist die Umlaufrichtung der Maschen relevant. M1 dreht 
 
 Im nächsten Schritt stelle ich für alle Maschen und alle Knoten Gleichungen auf.
 
+    \subsection{Spannungsteiler}
+%     \label{Lsg:Spannungsteiler}
+    Zu Aufgabe aus Abschnitt \ref{Aufg:Spannungsteiler}
 
 \begin{align}
   \text{M}_1: & -\text{U}_{q1} + \text{U}_1 + \text{U}_3 + \text{U}_2 = 0\\
@@ -1038,7 +1041,9 @@ Der Umlaufsinn der Masche ist frei wählbar. Bei Maschen, die eine Quelle beinha
 
 Nach der Festlegung der Maschen werden die Widerstände in einer Matrix notiert. Auf der Hauptdiagonalen (von links oben nach rechts unten) werden die Widerstände der Maschen eingetragen. An Position 1-1 (links oben stehen die Widerstände der Masche 1, in der Mitte (Position 2-2) die Widerstände der Masche 2 und in der Position 3-3 die Widerstände der Masche 3.
 
-An den anderen Positionen werden die Koppelwiderstände notiert. Masche 1 und Masche 2 haben den Koppelwiderstand R3, da in beiden Maschen nur R3 gemeinsam ist. Das Vorzeichen für R3 ist von den Umlaufrichtungen der Maschen abhängig. Wenn die Umlaufrichtung (am betreffenden Widerstand / Ast) gleich ist, wird der Widerstand mit positiven Vorzeichen eingetragen. Wenn die Umlaufrichtungen gegenläufig sind, wird der Widerstand mit negativem Vorzeichen eingetragen.
+An den anderen Positionen werden die Koppelwiderstände notiert. Masche 1 und Masche 2 haben den Koppelwiderstand R3, da in beiden Maschen nur R3 gemeinsam ist. Das Vorzeichen für R3 ist von den Umlaufrichtungen der beteiligten Maschen abhängig. Wenn die Umlaufrichtung (am betreffenden Widerstand / Ast) gleich ist, wird der Widerstand mit positiven Vorzeichen eingetragen. Wenn die Umlaufrichtungen gegenläufig sind, wird der Widerstand mit negativem Vorzeichen eingetragen. In Zeile 1, Spalte 2 wird der Widerstand (oder die Widerstände) eingetragen, mit denen die Maschen 1 und 2 verbunden sind\footnote{Die Widerstände im Baum-Zweig / den Baum-Zweigen, die die beiden Maschen gemeinsam haben.} Zeile 1, Spalte 3 ist die Kopplung von Masche 1 und Masche 3. Allgemein kann man sagen die Zeile bestimmt die eine Masche, die einen gemeinsamen Baum-Zweig haben\footnote{es können auch mehrere Zweige im Baum sein.}. Die Spalte bestimmt die zweite Masche der Kopplung.
+
+Die "`untere Hälfte"' der Matrix (unten links von der Hauptdiagonalen) wird über die Hauptdiagonale gespiegelt. (Spalte 1, Zeile 3 wird von Zeile 1, Spalte 3 kopiert, etc.)
 
 Anschließend werden der Vektor für die Maschenströme (hier $\text{I}_{M1}$ bis $\text{I}_{M3}$) erstellt und - rechts vom Gleichheitszeichen - der Vektor mit den Spannungsquellen. Wenn in einer Masche keine Quelle vorhanden ist, wird dort 0 eingetragen. (siehe Gleichungssystem, unten)
 
@@ -1052,7 +1057,7 @@ Anschließend werden der Vektor für die Maschenströme (hier $\text{I}_{M1}$ bi
     \end{column}
     \begin{column}{.5\textwidth}
       Gleichungssystem
-
+>
         $\left( \begin{array}{rrrrrr}
           \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
           \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
