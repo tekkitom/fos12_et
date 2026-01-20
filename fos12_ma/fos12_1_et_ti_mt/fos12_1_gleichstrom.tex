@@ -1080,13 +1080,16 @@ $\label{LGSBrueckenschaltung1}
 
 Das Gleichungssystem kann per Hand gelöst werden. Alternativ ist eine Lösung mit einem geeigneten Taschenrechner oder z.B. octave auf dem Computer möglich. Octave ist open source.
 
-\only<presentation>{
+% \only<presentation>{
 \begin{frame}{Kreisstromverfahren - Gleichungssystem}
-        $\left( \begin{array}{rrrrrr}
-          \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2  \\
-          \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6   \\
-          \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6
-\end{array}\right) *
+       % $\left(
+       $\begin{array}{crrrrrr}
+        & \text{M1}& \text{M2}& \text{M3}\\
+        \text{M1}\  \vline & \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2 \vline \\
+        \text{M2} \ \vline & \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6 \vline \\
+        \text{M3} \ \vline & \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6 \vline
+\end{array}%\right) 
+*
 \left(\begin{array}{c}
   \text{I}_{M1}\\
   \text{I}_{M2}\\
@@ -1107,8 +1110,17 @@ LGS lösen:
  Matrix und Spannungsvektor eintippen.\\ Ergebnis ist Strom Vektor (von oben nach unten).
  \item mit dem PC z.B. octave (open source) - Eingabe vergleichbar mit Taschenrechner
 \end{itemize}
-\end{frame}}
+\end{frame}%}
 
+Die Eintragungen M1, M2 und M3 sind zusätzlich, als Hinweis eingetragen. Sie gehören nicht zum Gleichungssystem / der Matrix.
+An den Kreuzungen stehen zwei unterschiedliche Informationen: 
+
+\begin{itemize}
+ \item Hauptdiagonale (M1/M1, M2/M2, M3/M3): hier sind die Widerstände der jeweiligen Masche eingetragen.
+ \item Nebendiagonalen (z. B. M1/M2) hier sind die Widerstände eingetragen, die sich zwei Maschen teilen. Bei gleicher Stromrichtung an dem Widerstand wird der Widerstand mit positivem Vorzeichen eingetragen (z. B. M1/M2: R3), bei unterschiedlichen Stromrichtungen wird der Widerstand mit negativen Vorzeichen eingetragen (z. B. M2/M3: -R6).
+\end{itemize}
+
+Die Eintragungen der Nebendiagonalen sind an der Hauptdiagonalen gespiegelt. (M1/M2 ist identisch zu M2/M1).
 \section{Ersatzquellen}
 
 \begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle I}
@@ -1698,5 +1710,4 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
   \end{column}
 \end{columns}
 \end{frame}
-
 
