@@ -5,7 +5,7 @@
    viewBox="0 0 400 400"
    version="1.1"
    id="svg125"
-   sodipodi:docname="messbruecke1_1.svg"
+   sodipodi:docname="messbruecke2.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    inkscape:export-filename="messbruecke1_2.png"
    inkscape:export-xdpi="96"
@@ -567,8 +567,9 @@
        stroke="#000000"
        stroke-opacity="1"
        stroke-miterlimit="10"
-       d="M 270.13026,81.290577 V 132.08417"
-       id="path49" />
+       d="M 270.13026,81.290577 270,140"
+       id="path49"
+       sodipodi:nodetypes="cc" />
     <path
        fill-rule="evenodd"
        fill="#ffffff"
@@ -591,7 +592,7 @@
        stroke="#000000"
        stroke-opacity="1"
        stroke-miterlimit="10"
-       d="m 265,130 h 10.26053 v 30.78156 H 265 Z m 0,0"
+       d="m 225.78156,180 v 10.26054 H 194.99999 V 180 Z m 0,0"
        id="path119" />
     <text
        xml:space="preserve"
@@ -606,13 +607,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
-       x="278.6875"
-       y="155"
+       x="203.6875"
+       y="205"
        id="text1410-3"><tspan
          sodipodi:role="line"
          id="tspan1408-7"
-         x="278.6875"
-         y="155">R4</tspan></text>
+         x="203.6875"
+         y="205">R4</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
@@ -623,45 +624,21 @@
          id="tspan1408-9"
          x="158.6875"
          y="155">R2</tspan></text>
+    <path
+       fill-rule="evenodd"
+       fill="#ffffff"
+       fill-opacity="1"
+       stroke-width="2"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 75.390782,150.78156 c 0,8.501 -6.889776,15.39078 -15.390782,15.39078 -8.501005,0 -15.390781,-6.88978 -15.390781,-15.39078 0,-8.501 6.889776,-15.39078 15.390781,-15.39078 8.501006,0 15.390782,6.88978 15.390782,15.39078"
+       id="path35" />
     <g
-       id="g1928"
-       transform="translate(0,47.390782)">
-      <path
-         fill-rule="evenodd"
-         fill="#ffffff"
-         fill-opacity="1"
-         stroke-width="2"
-         stroke-linecap="butt"
-         stroke-linejoin="miter"
-         stroke="#000000"
-         stroke-opacity="1"
-         stroke-miterlimit="10"
-         d="m 75.390782,103.39078 c 0,8.501 -6.889776,15.39078 -15.390782,15.39078 -8.501005,0 -15.390781,-6.88978 -15.390781,-15.39078 C 44.609219,94.889774 51.498995,88 60,88 c 8.501006,0 15.390782,6.889774 15.390782,15.39078"
-         id="path35" />
-      <g
-         id="g3854"
-         transform="translate(-0.478958,0.436873)">
-        <path
-           fill="none"
-           stroke-width="2"
-           stroke-linecap="butt"
-           stroke-linejoin="miter"
-           stroke="#000000"
-           stroke-opacity="1"
-           stroke-miterlimit="10"
-           d="M 40.478958,87.563127 V 116.0501"
-           id="path105" />
-        <path
-           fill="none"
-           stroke-width="2"
-           stroke-linecap="butt"
-           stroke-linejoin="miter"
-           stroke="#000000"
-           stroke-opacity="1"
-           stroke-miterlimit="10"
-           d="m 37.913828,112.06813 2.56513,5.13026 2.565131,-5.13026"
-           id="path107" />
-      </g>
+       id="g3854"
+       transform="translate(-0.478958,47.827655)">
       <path
          fill="none"
          stroke-width="2"
@@ -670,20 +647,97 @@
          stroke="#000000"
          stroke-opacity="1"
          stroke-miterlimit="10"
-         d="M 60,87.609218 V 118.39078"
-         id="path123" />
-      <text
-         xml:space="preserve"
-         style="font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
-         x="9"
-         y="105"
-         id="text1416"><tspan
-           sodipodi:role="line"
-           id="tspan1414"
-           x="9"
-           y="105"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Uq1</tspan></text>
+         d="M 40.478958,87.563127 V 116.0501"
+         id="path105" />
+      <path
+         fill="none"
+         stroke-width="2"
+         stroke-linecap="butt"
+         stroke-linejoin="miter"
+         stroke="#000000"
+         stroke-opacity="1"
+         stroke-miterlimit="10"
+         d="m 37.913828,112.06813 2.56513,5.13026 2.565131,-5.13026"
+         id="path107" />
     </g>
+    <path
+       fill="none"
+       stroke-width="2"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 60,135 v 30.78156"
+       id="path123" />
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+       x="9"
+       y="152.39078"
+       id="text1416"><tspan
+         sodipodi:role="line"
+         id="tspan1414"
+         x="9"
+         y="152.39078"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Uq1</tspan></text>
+    <path
+       fill-rule="evenodd"
+       fill="#ffffff"
+       fill-opacity="1"
+       stroke-width="2"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 285.39078,150.39078 c 0,8.501 -6.88977,15.39078 -15.39078,15.39078 -8.50101,0 -15.39078,-6.88978 -15.39078,-15.39078 C 254.60922,141.88977 261.49899,135 270,135 c 8.50101,0 15.39078,6.88977 15.39078,15.39078"
+       id="path35-9" />
+    <g
+       id="g3854-73"
+       transform="translate(249.52104,47.827655)">
+      <path
+         fill="none"
+         stroke-width="2"
+         stroke-linecap="butt"
+         stroke-linejoin="miter"
+         stroke="#000000"
+         stroke-opacity="1"
+         stroke-miterlimit="10"
+         d="M 40.478958,87.563127 V 116.0501"
+         id="path105-6" />
+      <path
+         fill="none"
+         stroke-width="2"
+         stroke-linecap="butt"
+         stroke-linejoin="miter"
+         stroke="#000000"
+         stroke-opacity="1"
+         stroke-miterlimit="10"
+         d="m 37.913828,112.06813 2.56513,5.13026 2.565131,-5.13026"
+         id="path107-12" />
+    </g>
+    <path
+       fill="none"
+       stroke-width="2"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 270,134.60922 v 30.78156"
+       id="path123-9" />
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb"
+       x="295"
+       y="152.39078"
+       id="text1416-3"><tspan
+         sodipodi:role="line"
+         id="tspan1414-1"
+         x="295"
+         y="152.39078"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Uq2</tspan></text>
     <g
        id="g2257">
       <text
