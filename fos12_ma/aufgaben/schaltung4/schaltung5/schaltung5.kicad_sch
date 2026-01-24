@@ -126,221 +126,6 @@
 				)
 			)
 		)
-		(symbol "Simulation_SPICE:IDC"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.0254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "I"
-				(at 2.54 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "1"
-				(at 2.54 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Current source, DC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=+ 2=-"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Type" "DC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "I"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "simulation"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "IDC_0_0"
-				(polyline
-					(pts
-						(xy -1.27 0.254) (xy 1.27 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 -0.254) (xy -1.27 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 -0.254) (xy -0.254 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -0.254) (xy 0.762 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "IDC_0_1"
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.254 1.778) (xy 0 1.27) (xy 0.254 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "IDC_1_1"
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Simulation_SPICE:VDC"
 			(pin_numbers hide)
 			(pin_names
@@ -651,6 +436,12 @@
 		(uuid "1d52ed0f-b02b-48ae-b982-4c975c2d7211")
 	)
 	(junction
+		(at 114.3 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2f6adde5-27f5-49d7-b7c2-b9120632f009")
+	)
+	(junction
 		(at 69.85 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -673,12 +464,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "93aa8d31-437e-4ccf-8c87-0a1beab163f5")
-	)
-	(junction
-		(at 114.3 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b7875355-8619-43f7-bf17-30d2bdc1e41c")
 	)
 	(junction
 		(at 101.6 88.9)
@@ -704,16 +489,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 88.9) (xy 114.3 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17cb7c14-cbba-4901-b8c9-dd3f0b0b5c76")
-	)
-	(wire
-		(pts
 			(xy 82.55 77.47) (xy 82.55 88.9)
 		)
 		(stroke
@@ -724,13 +499,23 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 88.9) (xy 114.3 88.9)
+			(xy 101.6 88.9) (xy 114.3 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2dee3f0c-082f-4aa2-aa1e-06f3365126d6")
+	)
+	(wire
+		(pts
+			(xy 114.3 77.47) (xy 114.3 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2eb95dcb-e4ea-4c7b-bd76-96470c51bdde")
 	)
 	(wire
 		(pts
@@ -761,16 +546,6 @@
 			(type default)
 		)
 		(uuid "32067239-961c-47d9-9068-46ef1c3dd435")
-	)
-	(wire
-		(pts
-			(xy 101.6 69.85) (xy 101.6 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32da36c1-584f-4869-be7b-d0ee9832d9e7")
 	)
 	(wire
 		(pts
@@ -864,6 +639,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 88.9) (xy 146.05 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac4fc59e-876d-4356-974c-f5d760e95cf7")
+	)
+	(wire
+		(pts
 			(xy 38.1 60.96) (xy 69.85 60.96)
 		)
 		(stroke
@@ -914,16 +699,6 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 77.47) (xy 114.3 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dcaab2e2-8b63-443b-83ba-299160abbb66")
-	)
-	(wire
-		(pts
 			(xy 38.1 80.01) (xy 38.1 88.9)
 		)
 		(stroke
@@ -971,6 +746,16 @@
 			(type default)
 		)
 		(uuid "fe61d4f6-e5b8-4af1-916b-8cafe47f0909")
+	)
+	(text "U_CE=5 V,\nI_C=20 mA,\nI_B = 50 uA"
+		(exclude_from_sim no)
+		(at 131.826 73.406 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "adf2c744-29d6-42bf-b709-01d6ef0b3334")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1197,7 +982,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "70"
+		(property "Value" "250"
 			(at 116.84 74.9299 0)
 			(effects
 				(font
@@ -1487,17 +1272,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:IDC")
-		(at 101.6 74.93 0)
+		(lib_id "Simulation_SPICE:VDC")
+		(at 114.3 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ade558c9-abb1-4a56-af3d-e299b55aba6a")
-		(property "Reference" "I1"
-			(at 105.41 73.6599 0)
+		(uuid "b58403e6-2cb5-41fb-ac4d-6839bc0b88ac")
+		(property "Reference" "V3"
+			(at 118.11 82.4048 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1505,8 +1290,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "120mA"
-			(at 105.41 76.1999 0)
+		(property "Value" "5"
+			(at 118.11 84.9448 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1515,7 +1300,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 74.93 0)
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1524,7 +1309,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
-			(at 101.6 74.93 0)
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1532,8 +1317,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Current source, DC"
-			(at 101.6 74.93 0)
+		(property "Description" "Voltage source, DC"
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1542,7 +1327,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 101.6 74.93 0)
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1551,7 +1336,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 101.6 74.93 0)
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1559,25 +1344,26 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "I"
-			(at 101.6 74.93 0)
+		(property "Sim.Device" "V"
+			(at 114.3 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "4f92a94a-5da5-4146-8416-0bc9032f85d0")
 		)
 		(pin "1"
-			(uuid "3b05b330-34a6-4af5-9a16-83fe7d774747")
+			(uuid "043e566c-ab23-40aa-8791-cf7cad3eaf51")
+		)
+		(pin "2"
+			(uuid "3e05eff2-d5c1-46ca-a2bb-63c3afa54b66")
 		)
 		(instances
 			(project ""
 				(path "/e6463b6c-a4fb-4868-881c-bf66560d0c1d"
-					(reference "I1")
+					(reference "V3")
 					(unit 1)
 				)
 			)

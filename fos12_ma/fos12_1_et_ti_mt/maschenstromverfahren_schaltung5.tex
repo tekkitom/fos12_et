@@ -77,6 +77,13 @@
   % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Inhalt}
+    \tableofcontents
+  \end{frame}
+
+
+\section{Aufgabe}
 \begin{frame}{Aufgabenstellung}
 \begin{figure}
  \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_0.png}
@@ -91,6 +98,7 @@
 \end{figure}
 \end{frame}
 
+% \section{Transistor - Ersatzmodell}
 \begin{frame}{Transistor als Ersatzmodell}
 \begin{figure}
  \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_2transistor.png}
@@ -98,6 +106,7 @@
 \end{figure}
 \end{frame}
 
+% \section{Ströme in der Schaltung}
 \begin{frame}{Ströme in der Schaltung}
 \begin{figure}
  \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_3stroeme.png}
@@ -121,7 +130,144 @@ Aufgabe:
  \caption{Ergebnis der Simulation - Schaltung liegt als KICad-Datei in Github}
  \label{abb:Schatung5Simu}
 \end{figure}
+\end{frame}
 
+\section{Einzelschritte}
+\begin{frame}{Quelle umwandeln}
+ \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_4quelleUmgewandelt.png}
+ % schaltung5_4quelleUmgewandelt.png: 1087x473 px, 300dpi, 9.20x4.00 cm, bb=0 0 261 114
+ \label{abb:schaltung5_4quelleUmgewandelt}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{vollständigen Baum einzeichnen}
+ \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5baum.png}
+ \label{abb:Baum}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Maschen einzeichnen\\Masche 1}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche1.png}
+ \label{abb:Schaltung5_masche1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Maschen einzeichnen\\Masche 2}
+  \begin{figure}
+  \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche2.png}
+    \label{abb:Schaltung5_masche2}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Maschen einzeichnen\\Masche 3}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche3.png}
+ \label{abb:Schaltung5_masche3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Maschen einzeichnen\\Masche 4}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche4.png}
+ \label{abb:Schaltung5_masche4}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Gleichungssystem I}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche4.png}
+ \label{abb:Schaltung5_masche4_wdh}
+\end{figure}
+
+\[
+\left(
+\begin{array}{cccc}
+  R_2&&&\\
+  &R_2+r_{be}&&\\
+  &&R_2+R_1+R_{3C}+r_{ce}&\\
+  &&&R_1+R_2
+\end{array}
+\right) \cdot
+\left(
+\begin{array}{c}
+  I_{M1}\\I_{M2}\\I_{M3}\\I_{M4}
+\end{array}
+\right)=
+\left(
+\begin{array}{c}
+  U_{q1}\\
+  0\\
+  -U_{q3}\\
+  U_{q2}
+\end{array}
+\right)
+\]
+\end{frame}
+
+\begin{frame}{Gleichungssystem II}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche4.png}
+ \label{abb:Schaltung5_masche4_wdh2}
+\end{figure}
+
+\[
+\left(
+\begin{array}{cccc}
+  R_2&-R_2&-R_2&R_2\\
+  -R_2&R_2+r_{be}&R_2&-R_2\\
+  -R_2&R_2&R_2+R_1+R_{3C}+r_{ce}&-R_2-R_1\\
+  R_2&-R_2&-R_2-R_1&R_1+R_2
+\end{array}
+\right) \cdot
+\left(
+\begin{array}{c}
+  I_{M1}\\I_{M2}\\I_{M3}\\I_{M4}
+\end{array}
+\right)=
+\left(
+\begin{array}{c}
+  U_{q1}\\
+  0\\
+  -U_{q3}\\
+  U_{q2}
+\end{array}
+\right)
+\]
+\end{frame}
+
+\begin{frame}{Gleichungssystem III}
+  \begin{figure}
+ \includegraphics{schaltung5_transistor_emiterschaltung/schaltung5_5masche4.png}
+ \label{abb:Schaltung5_masche4_wdh3}
+\end{figure}
+
+\[
+\left(
+\begin{array}{cccc}
+  10\,k&-10\,k&-10\,k&10\,k\\
+  -10\,k&11\,k&10\,k&-10\,k\\
+  -10\,k&10\,k&61,95\,k&-57\,k\\
+  10\,k&-10\,k&-57\,k&57\,k
+\end{array}
+\right) \cdot
+\left(
+\begin{array}{c}
+  I_{M1}\\I_{M2}\\I_{M3}\\I_{M4}
+\end{array}
+\right)=
+\left(
+\begin{array}{c}
+  10\ mV\\
+  0\\
+  -5\,V\\
+  12\,V
+\end{array}
+\right)
+\]
 \end{frame}
 
 \label{lastpage}
