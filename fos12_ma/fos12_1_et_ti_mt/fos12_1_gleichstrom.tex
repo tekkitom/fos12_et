@@ -314,7 +314,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
       \begin{column}{.6\textwidth}
         \begin{figure}[htb]
           \begin{circuitikz}
-            \draw (0,0) to [vsource, l=$U_{q1}$] (0,3);
+            \draw (0,0) to [vsource, l=$U_{q1}$, voltage=straight] (0,3);
             \draw (0,3) to [R=$R_1$] (2,3) node[circ]{} node[above]{A} to [short, i>_=$I_2$] (2,2);
             \draw (2,2) to [R=$R_2$,  v=$U_2$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
             \draw (2,3) -- (3,3) to[short, -*] (4,3) to[short] (4,2)  to[R=$R_3$]
@@ -1088,7 +1088,7 @@ Das Gleichungssystem kann per Hand gelöst werden. Alternativ ist eine Lösung m
         \text{M1}\  \vline & \text{R}1+\text{R}2+\text{R}3 &     \text{R}3  & \text{R}2 \vline \\
         \text{M2} \ \vline & \text{R}3 & \text{R}3+\text{R}5+\text{R}6     & -\text{R}6 \vline \\
         \text{M3} \ \vline & \text{R}2  & -\text{R}6      &   \text{R}2+\text{R}4+\text{R}6 \vline
-\end{array}%\right) 
+\end{array}%\right)
 *
 \left(\begin{array}{c}
   \text{I}_{M1}\\
@@ -1113,7 +1113,7 @@ LGS lösen:
 \end{frame}%}
 
 Die Eintragungen M1, M2 und M3 sind zusätzlich, als Hinweis eingetragen. Sie gehören nicht zum Gleichungssystem / der Matrix.
-An den Kreuzungen stehen zwei unterschiedliche Informationen: 
+An den Kreuzungen stehen zwei unterschiedliche Informationen:
 
 \begin{itemize}
  \item Hauptdiagonale (M1/M1, M2/M2, M3/M3): hier sind die Widerstände der jeweiligen Masche eingetragen.

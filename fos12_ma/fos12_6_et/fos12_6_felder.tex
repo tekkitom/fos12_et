@@ -621,17 +621,57 @@ In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die
  \end{align}
 \end{frame}
 
+\begin{frame}{Aufgaben: Laden und Entladen des Kondensators}
+    \begin{columns}
+      \begin{column}{.5\textwidth}
+        \begin{figure}[htb]
+        \begin{tikzpicture}
+          \draw (0,0) to[vsource, l=$U_{0}$] (0,4) -- (2,4);
+          \draw (2,4) to[opening switch, l={t = $t_1$}] (4,4) -- (5,4) -- (5,3);
+          \draw (2,3) to[closing switch, l={t = $t_2$}] (4,3) --(5,3);
+          \draw (5,3) node[circ]{} to (5,2.5);
+          \draw (5,2.5) to [R=$R_1$] (5,1) to [C=$C_1$](5,0) -- (0,0);
+          \draw (2,3) to[R=$R_2$] (2,0);
+          \draw (2,0) node[circ]{};% to (5,2.5);
+        \end{tikzpicture}
+        \caption{Kondensator laden und entladen}
+        \label{fig:StromkreisCLadenEntladen1}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+    \begin{tabular}{|l|l|l|l|l|}
+      \hline
+     $\tau 1$& $\tau 2$ & $R_1$& $R_2$& $C_1$\\ \hline
+     &  & $1\, k\Omega$& $1,2\, k\Omega$& $100\mu F$\\ \hline
+     &  & $3,3\, k\Omega$& $15\, k\Omega$& $220\mu F$\\ \hline
+     &  & $47\, k\Omega$& $1\, k\Omega$& $470\mu F$\\ \hline
+    \end{tabular}
+
+    $U_0 = 12\,V$
+
+    \begin{itemize}
+     \item berechne $\tau$ für Ladung und Entladung
+     \item welche Spannung hat der Kondensator nach 0,3s, 0,5s, 5s, 10 s?
+     \item Wie lange dauert es, bis $3\tau$ erreicht sind?
+     \item Wie groß muss $R_2$ sein, damit die Entladezeit um den Faktor 0,75; 1,5; 2; 2,5; 3 verändert wird?
+    \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}{Beispiel: C laden "`ohne"' Vorwiderstand}
  Wie groß ist i(0+ = 1 ms), wenn folgendes gegeben ist:
  \begin{itemize}
-  \item ideale Spannungsquelle
+  \item ideale Spannungsquelle (liefert definierte Spannung und "`beliebigen"' Strom).
   \item R = $1\ m\Omega$
   \item C = $10\mu \text{F}$
   \pause
   \item $\tau = R\cdot C$
   \item $\tau = 1\cdot 10^{-9}s$
+  \pause
   \item $i_c(t) = -\frac{U_0}{R}\cdot e^{-\frac{t}{\tau}}$
   \item $i_c(t) = -\frac{5\, V}{1\ m\Omega}\cdot e^{-\frac{1\ ms}{1\  ns}}$
+  \pause
   \item $i_c (t= 1\, ms) \approx 5\ kA$
  \end{itemize}
 \end{frame}
