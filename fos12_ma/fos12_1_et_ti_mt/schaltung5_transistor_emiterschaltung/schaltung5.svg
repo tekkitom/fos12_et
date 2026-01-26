@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="true"
      inkscape:zoom="3.595385"
-     inkscape:cx="267.56523"
-     inkscape:cy="194.55497"
-     inkscape:current-layer="layer6">
+     inkscape:cx="203.87246"
+     inkscape:cy="194.55496"
+     inkscape:current-layer="layer7">
     <inkscape:grid
        type="xygrid"
        id="grid23897" />
@@ -53,8 +53,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="Layer 2"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        fill="none"
        stroke-width="48"
@@ -7411,40 +7410,9 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 90,215 5,5 5,-5 m -5,-10 v 15" />
     <path
-       id="path37328-2"
-       style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 305,240 5,5 5,-5 m -5,-10 v 15" />
-    <path
        id="path37328-3"
        style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 395,215 5,5 5,-5 m -5,-10 v 15" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;display:inline"
-       x="333.89215"
-       y="235.05344"
-       id="text7551"><tspan
-         sodipodi:role="line"
-         id="tspan7549"
-         x="333.89215"
-         y="235.05344">Uq3</tspan><tspan
-         sodipodi:role="line"
-         x="333.89215"
-         y="241.72009"
-         id="tspan7553">5 V</tspan></text>
-    <path
-       style="display:inline;fill:none;stroke:#000000;stroke-linejoin:round;stop-color:#000000"
-       id="path7544"
-       sodipodi:type="arc"
-       sodipodi:cx="324.03906"
-       sodipodi:cy="237.03304"
-       sodipodi:rx="7.5697341"
-       sodipodi:ry="7.5697341"
-       sodipodi:start="3.1516981"
-       sodipodi:end="3.1398648"
-       sodipodi:open="true"
-       sodipodi:arc-type="arc"
-       d="m 316.46971,236.95654 a 7.5697341,7.5697341 0 0 1 7.62345,-7.49305 7.5697341,7.5697341 0 0 1 7.51557,7.60125 7.5697341,7.5697341 0 0 1 -7.57898,7.53802 7.5697341,7.5697341 0 0 1 -7.56041,-7.55665" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -7610,6 +7578,37 @@
        style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linejoin:round;stop-color:#000000"
        d="M 280.08017,168.36132 323,168 v 15 l -8,2 v 40 h -12 v 21 h -25 z"
        sodipodi:nodetypes="ccccccccc" />
+    <path
+       id="path37328-2"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 305,240 5,5 5,-5 m -5,-10 v 15" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;display:inline"
+       x="333.89215"
+       y="235.05344"
+       id="text7551"><tspan
+         sodipodi:role="line"
+         id="tspan7549"
+         x="333.89215"
+         y="235.05344">Uq3</tspan><tspan
+         sodipodi:role="line"
+         x="333.89215"
+         y="241.72009"
+         id="tspan7553">5 V</tspan></text>
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-linejoin:round;stop-color:#000000"
+       id="path7544"
+       sodipodi:type="arc"
+       sodipodi:cx="324.03906"
+       sodipodi:cy="237.03304"
+       sodipodi:rx="7.5697341"
+       sodipodi:ry="7.5697341"
+       sodipodi:start="3.1516981"
+       sodipodi:end="3.1398648"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 316.46971,236.95654 a 7.5697341,7.5697341 0 0 1 7.62345,-7.49305 7.5697341,7.5697341 0 0 1 7.51557,7.60125 7.5697341,7.5697341 0 0 1 -7.57898,7.53802 7.5697341,7.5697341 0 0 1 -7.56041,-7.55665" />
   </g>
   <g
      inkscape:groupmode="layer"
