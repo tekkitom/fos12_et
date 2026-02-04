@@ -53,3 +53,15 @@ archive=true
 encoding=UTF-8
 highlight=LaTeX
 mode=LaTeX
+
+[item:radar_out_v1_2_nurTopCuAusschnitt.png]
+archive=true
+encoding=
+highlight=
+mode=
+
+[item:radar_out_v1_2_nurTopCuAusschnitt2.png]
+archive=true
+encoding=
+highlight=
+mode=

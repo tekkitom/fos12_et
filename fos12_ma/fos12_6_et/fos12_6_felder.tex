@@ -485,6 +485,7 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
 
 Ein Kondensator besteht aus zwei parallelen Platten. Der Zwischenraum zwischen den Platten ist mit Luft oder einem Dielektrikum gefüllt. Diese Füllung ist im Normalfall nicht leitend. Wenn ein sogenannter Durchbruch erfolgt wird das Dielektrikum in der Regel beschädigt, dies führt oft zur Beschädigung des Kondensators. Es kann auch sein, dass der Kondensator zerstört wird.
 
+\subsection{Kondensator laden}
 \begin{frame}{Ladung eines Kondensators I}
   \begin{columns}
     \begin{column}{0.5\textwidth}
@@ -609,6 +610,7 @@ In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die
 \end{itemize}
 \end{frame}
 
+\subsection{Kondensator entladen}
 \begin{frame}{Entladen des Kondensators}
  \begin{itemize}
    \item Spannung fällt von $U_{max}$ auf 0\,V
@@ -679,6 +681,90 @@ In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die
 Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kondensators) zerstören. Bei einem Vorwiderstand von 0 steigt der Strom direkt nach dem Einschalten (wenige Pico Sekunden) theoretisch ins Unendliche. In Realität würden weder die Leiterbahn(en) noch die beteiligten Bauteile diese Stoßbelastung überstehen. Zusätzlich würden diverse andere Effekte auftreten, die hier aus Gründen der Vereinfachung ignoriert werden sollen.
 
 \clearpage
+
+\section[Magnete]{magnetisches Feld}
+\begin{frame}{Beispiele Magnetfeld}
+ \begin{itemize}
+  \item Erdmagnetfeld
+  \item Leitung (Strom durch flossen)
+  \item Funk
+  \item Spule, Motor(-wicklungen)
+ \end{itemize}
+\end{frame}
+
+\subsection{magnetische Pole}
+\begin{frame}{magnetische Pole}
+ \begin{itemize}
+  \item magnetische Feldlinien haben Anfang und Ende.
+  \item Nordpol, Südpol
+  \item Bei Dauermagnet, elektrischem Magnetfeld
+ \end{itemize}
+\end{frame}
+
+\subsection{Unterschiede zum elektrischen Feld}
+\begin{frame}{Unterschiede zum elektrischen Feld}
+  \begin{description}
+   \item[Elektrisches Feld] geschlossene Linien
+   \item[Magnetisches Feld] Nordpol und Südpol
+   \item[bei Elektrischem Strom] Magnetfeld steht senkrecht auf elektrischem Feld.
+  \end{description}
+\end{frame}
+
+\subsection{Feldlinienbilder}
+\begin{frame}{Feldlinien}
+  \begin{columns}[c]
+    \begin{column}{.5\textwidth }
+      \begin{figure}
+        \includegraphics{radar_out_v1_2_nurTopCuAusschnitt.png}
+        % radar_out_v1_2_nurTopCuAusschnitt.png: 115x221 px, 300dpi, 0.97x1.87 cm, bb=0 0 28 53
+        \caption{Leiterbahn auf Platine 12 V (Versorgung)}
+        \label{abb:Leiterbahn1}
+      \end{figure}
+      \begin{figure}
+        \includegraphics%[scale=2]
+        {radar_out_v1_2_nurTopCuAusschnitt2.png}
+        % radar_out_v1_2_nurTopCuAusschnitt2.png: 119x187 px, 300dpi, 1.01x1.58 cm, bb=0 0 29 45
+        \caption{Leiterbahnen auf Platine (Relais-Ausgänge)}
+        \label{abb:LeiterbahnAufPlatine2}
+      \end{figure}
+   \end{column}
+    \begin{column}{.5\textwidth }
+    \begin{description}
+      \item[E-Feld] senkrecht, parallel zu Leiterbahn
+      \item[Magnetfeld] senkrecht zur sichtbaren Ebene.
+      \item[Massepotential] Gitter ist GND
+    \end{description}
+   \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Überlagerung von Magnetfeldern}
+  \begin{columns}
+    \begin{column}{.3\textwidth}
+     \includegraphics[scale=3]
+        {radar_out_v1_2_nurTopCuAusschnitt2.png}
+        % radar_out_v1_2_nurTopCuAusschnitt2.png: 119x187 px, 300dpi, 1.01x1.58 cm, bb=0 0 29 45
+   \end{column}
+    \begin{column}{.7\textwidth}
+    \begin{itemize}
+     \item Senkrechte Linie = Leiterbahn
+     \item Gitter ist GND (Masse)
+     \item Magnetfelder überlagern sich
+     \item Induktion durch magnetisches Feld anderer Leiterbahnen
+    \end{itemize}
+   \end{column}
+  \end{columns}
+\end{frame}
+\subsection{Formen von Magneten}
+\begin{frame}{Formen von Magneten}
+  \begin{itemize}
+  \item  Permanentmagnet
+  \item Elektromagnet
+  \end{itemize}
+\end{frame}
+
+\subsection{Magnetische Kraftwirkung (LORENTZ-Kraft, Selbstinduktion)}
+
 \section[noch offen]{Pflicht-Themen, die noch offen sind}
 \begin{frame}{Pflicht-Themen, die noch offen sind}
 Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
