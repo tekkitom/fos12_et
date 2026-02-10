@@ -10,10 +10,8 @@
 \usepackage{listings}
 %
 \lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
-% \MyLogo{\includegraphics[height=1cm]{../../../../bilder/bwslogo_3.png}}
-% % \includegraphics{../../bilder/bwslogo_3.png}
-% % bwslogo_3.png: 476x392 px, 300dpi, 4.03x3.32 cm, bb=
-%
+ \MyLogo{\includegraphics[height=1cm]{../../../../../bilder/bwslogo_3.png}}
+
 \only<article>{
   \usepackage[colorlinks=true,linkcolor=blue,filecolor=magenta,urlcolor=cyan]{hyperref}
 }
@@ -32,7 +30,9 @@
 
 \titlegraphic{Für eigene Teile gilt: \includegraphics[height=1cm]{cc_by-nc_eu.png}}
 
+
 \begin{document}
+
   \only<article>{
     \maketitle
     \tableofcontents
@@ -42,35 +42,23 @@
   \titlepage
   % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
 \end{frame}
-% \AtBeginSection[] % Do nothing for \section*
-% {
-%   \begin{frame}<beamer>
-%     \frametitle{Inhalt}
-%     \tableofcontents[currentsection]
-%   \end{frame}
-% }
 
-
-% \part{Themenfeld 12.6 - Elektrisches und magnetisches Feld}
-% \label{Teil_12_6}
-\begin{frame}
-  \partpage
-  %   \tableofcontents[hidesubsections]
+\begin{frame}{Übersicht}
+  \begin{description}
+   \item[Elektrisches Feld]
+   \item[Magnetisches Feld] \hyperlink{Teil_2MagnetischesFeld}{\beamergotobutton{Teil magnetisches Feld}}
+   \item[Lösungsvorschläge] \hyperlink{LoesungsVorschlaege}{\beamergotobutton{Lösungsvorschläge zu einigen Aufgaben}}
+  \end{description}
+  \hypertarget{Uebersicht}{}
 \end{frame}
 
-\begin{frame}
-  \partpage
-\end{frame}
+\part{Elektrisches Feld}
+\begin{frame}\partpage\end{frame}
+
+
 \begin{frame}<beamer>
   \frametitle{Inhalt}
-
-  \begin{columns}
-    \column{.5\textwidth}
-    \tableofcontents[sections={7-12}]%currentsection]
-    \column{.5\textwidth}
-    \tableofcontents[sections={13-}]%currentsection]
-  \end{columns}
-
+    \tableofcontents
 \end{frame}
 
 \section{Ladungen, Kräfte}
@@ -680,9 +668,38 @@ In der Tabelle auf Folie "`Ladung eines Kondensators IV"' 8siehe unten) sind die
 ! Nicht ausprobieren!\\
 Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kondensators) zerstören. Bei einem Vorwiderstand von 0 steigt der Strom direkt nach dem Einschalten (wenige Pico Sekunden) theoretisch ins Unendliche. In Realität würden weder die Leiterbahn(en) noch die beteiligten Bauteile diese Stoßbelastung überstehen. Zusätzlich würden diverse andere Effekte auftreten, die hier aus Gründen der Vereinfachung ignoriert werden sollen.
 
-\clearpage
+% \clearpage
+\part{Magnetisches Feld}
+\begin{frame}
+  \partpage
+  \hypertarget{Teil_2MagnetischesFeld}{}
+  \hyperlink{Uebersicht}{\beamerreturnbutton{Zur Übersicht}}
+\end{frame}
 
-\section[Magnete]{magnetisches Feld}
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+    \tableofcontents
+     Folgt noch:\\
+    \begin{itemize}
+     \item Induktion (P) (Magnetischer Fluss (Phi) (P), Flussdichte (B) (P))
+    \item Spule (P) (Ein- und Ausschaltvorgang) (P)
+    \end{itemize}
+    P = Prüfungsrelevant (Obligatorische Inhalte für die Prüfung)
+\end{frame}
+
+% \begin{frame}{Überblick Magnetisches Feld}
+%   \begin{description}
+%     \item[Magnetisches Feld] allgemein, magnetische Pole, Unterschiede zum elektrischen Feld
+%     \item[Feldlinienbilder] Feldlinien
+%     \item[Formen von Magneten]
+%     \item[Magnetische Kraftwirkung]
+%     LORENTZ-Kraft
+%     \item[Selbstinduktion] Magnetischer Fluss (Phi), Flussdichte (B)
+%     \item[Spule] Ein- und Ausschaltvorgang
+%   \end{description}
+% \end{frame}
+
+\section[Magnete]{Magnetisches Feld}
 \begin{frame}{Beispiele Magnetfeld}
  \begin{itemize}
   \item Erdmagnetfeld
@@ -692,7 +709,7 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
  \end{itemize}
 \end{frame}
 
-\subsection{magnetische Pole}
+\subsection{Magnetische Pole}
 \begin{frame}{magnetische Pole}
  \begin{itemize}
   \item magnetische Feldlinien haben Anfang und Ende.
@@ -710,7 +727,7 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
   \end{description}
 \end{frame}
 
-\subsection{Feldlinienbilder}
+\section{Feldlinienbilder}
 \begin{frame}{Feldlinien}
   \begin{columns}[c]
     \begin{column}{.5\textwidth }
@@ -765,7 +782,8 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
    \end{column}
   \end{columns}
 \end{frame}
-\subsection{Formen von Magneten}
+
+\section[Formen]{Formen von Magneten}
 \begin{frame}{Formen von Magneten}
   \begin{itemize}
   \item Permanentmagnet (z.B. Eisen)
@@ -773,28 +791,78 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
   \end{itemize}
 \end{frame}
 
-\subsection{Magnetische Kraftwirkung (LORENTZ-Kraft, Selbstinduktion)}
-
-\section[noch offen]{Pflicht-Themen, die noch offen sind}
-\begin{frame}{Pflicht-Themen, die noch offen sind}
-Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
-  \begin{itemize}
-%     \item Kondensator
-%     \\ Auf- und Entladung
-    \item Induktion
-    \\ Magnetischer Fluss (Phi)
-    \\ Flussdichte (B)
-    \item Spule
-    \\ Ein- und Ausschaltvorgang
-  \end{itemize}
-
-  Die Themen folgen demnächst hier.
+\section[Mag. Kraft]{Magnetische Kraftwirkung (LORENTZ-Kraft, Selbstinduktion)}
+\begin{frame}{Magnetische Kraftwirkung}
+\begin{itemize}
+ \item Kraftwirkung ähnlich E-Feld
+ \item Wirkung auf magnetische Metalle
+ \item Wirkung auf Elektromagnete
+ \item Bei Leitung\footnote{Stromdurchflossene Leitung}: senkrecht zu Leitung
+ \item gleiche Richtung = Anziehung
+\end{itemize}
 \end{frame}
 
-\appendix
-\section{Lösungsvorschläge zu Aufgaben}
+\begin{frame}{LORENTZ-Kraft}
+\begin{itemize}
+ \item Wirkung von Stromdurchflossener Leitung
+ \item Wirkung auf andere leitungen (Stromdurchflossen
+ \item Wirkung auf andere Magnete
+\end{itemize}
+Berechnung erfolgt mit Kreuzprodukt der Vektoren.
+\end{frame}
+
+% % \begin{frame}{Selbstinduktion}
+% %
+% % \end{frame}
+
+
+% \section[noch offen]{Pflicht-Themen, die noch offen sind}
+% \begin{frame}{Pflicht-Themen, die noch offen sind}
+% Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
+%   \begin{itemize}
+%     \item Kondensator
+%     \\ Auf- und Entladung
+%     \item Induktion
+%     \\ Magnetischer Fluss (Phi)
+%     \\ Flussdichte (B)
+%     \item Spule
+%     \\ Ein- und Ausschaltvorgang
+%   \end{itemize}
+
+%   Die Themen folgen demnächst hier.
+% \end{frame}
+
+% % \section{Selbstinduktion}
+% % \begin{frame}
+% %
+% % \end{frame}
+% %
+% % \subsection{Magnetischer Fluss (Phi)}
+% % \begin{frame}
+% %
+% % \end{frame}
+% % \subsection{Flussdichte (B)}
+% % \begin{frame}
+% %
+% % \end{frame}
+% % \section{Spule}
+% % \begin{frame}
+% %
+% % \end{frame}
+% % \subsection{Ein- und Ausschaltvorgang}
+% % \begin{frame}
+% %
+% % \end{frame}
+
+% \appendix
+\part{Lösungsvorschläge zu Aufgaben}
+\section{Lösungsvorschläge zu Elektrisches Feld (Kräfte, Felder)}
 \begin{frame}
+  \hypertarget{LoesungsVorschlaege}{}
   \centering{\Huge{Anhang}}
+
+
+  \hyperlink{Uebersicht}{\beamerreturnbutton{Zur Übersicht}}
 \end{frame}
 
 
@@ -966,7 +1034,7 @@ $|F_{31}| = 0,64 N$. Da $Q_1, Q_2 \ \text{und} \ Q_3$ gleich groß sind und der 
 \end{columns}
 \end{frame}
 \clearpage
-\subsection{Kondensator}
+\section{Kondensator}
 \begin{frame}{Aufgaben - Laden des Kondensators}
   \subtitle{Lösungen}
   \label{AufgabenLadenC-Lsg}
