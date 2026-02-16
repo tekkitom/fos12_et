@@ -18,6 +18,12 @@ src_extensions=.tex .ltx .latex .dtx .ins
 MakeIndex=
 QuickBuild=
 
+[item:../../../../../bilder/bwslogo_3.png]
+archive=true
+encoding=
+highlight=
+mode=
+
 [item:cc_by-nc_eu.png]
 archive=true
 encoding=

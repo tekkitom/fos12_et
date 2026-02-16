@@ -709,7 +709,7 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
  \end{itemize}
 \end{frame}
 
-\subsection{Magnetische Pole}
+% \subsection{Magnetische Pole}
 \begin{frame}{magnetische Pole}
  \begin{itemize}
   \item magnetische Feldlinien haben Anfang und Ende.
@@ -718,7 +718,7 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
  \end{itemize}
 \end{frame}
 
-\subsection{Unterschiede zum elektrischen Feld}
+% \subsection{Unterschiede zum elektrischen Feld}
 \begin{frame}{Unterschiede zum elektrischen Feld}
   \begin{description}
    \item[Elektrisches Feld] geschlossene Linien
@@ -804,55 +804,133 @@ Ein Strom von ca. 5\,kA würde das Netzteil und die Schaltung (inklusive des Kon
 
 \begin{frame}{LORENTZ-Kraft}
 \begin{itemize}
- \item Wirkung von Stromdurchflossener Leitung
- \item Wirkung auf andere leitungen (Stromdurchflossen
+ \item Wirkung von stromdurchflossener Leitung
+ \item Wirkung auf andere Leitungen (Stromdurchflossen)
  \item Wirkung auf andere Magnete
 \end{itemize}
 Berechnung erfolgt mit Kreuzprodukt der Vektoren.
 \end{frame}
 
-% % \begin{frame}{Selbstinduktion}
-% %
-% % \end{frame}
+\begin{frame}{Info Kreuzprodukt (Vektoren)}
+ Berechnung: Ein Vektor, der senkrecht auf der Ebene aus zwei anderen Vektoren steht.
+ \begin{align}
+ a\times b &= c \\
+ \left(
+ \begin{array}{c}
+ 2\\3\\0
+ \end{array}
+ \right)\times
+  \left(
+ \begin{array}{c}
+ 5\\4\\0
+ \end{array}
+ \right) &=
+ (c)\\
+  \left(
+ \begin{array}{c}
+ 2\\3\\0
+ \end{array}
+ \right)\times
+  \left(
+ \begin{array}{c}
+ 5\\4\\0
+ \end{array}
+ \right) &=
+ \left(
+ \begin{array}{c}
+  3*0-0*4\\
+  0*5-0*2\\
+  2*4-3*5
+ \end{array}
+ \right)=
+ \left(
+ \begin{array}{c}
+  0\\
+  0\\
+  -7
+ \end{array}
+ \right)
+ \end{align}
+\end{frame}
 
+\begin{frame}{Magnetisches Feld}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item Magnetische Feldstärke (auch Erregung)
+        \item Formelzeichen H
+        \item $H=\frac{I}{2\pi \cdot r}$
+        \item Einheit $\frac{A}{m}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[scale=.5]{magFeld_h_2.png}
+    \end{column}
+  \end{columns}
+\end{frame}
 
-% \section[noch offen]{Pflicht-Themen, die noch offen sind}
-% \begin{frame}{Pflicht-Themen, die noch offen sind}
-% Folgende Themen sind gemäß Prüfungserlass für die Prüfung 2026 Pflicht, aber noch nicht ausgearbeitet.
-%   \begin{itemize}
-%     \item Kondensator
-%     \\ Auf- und Entladung
-%     \item Induktion
-%     \\ Magnetischer Fluss (Phi)
-%     \\ Flussdichte (B)
-%     \item Spule
-%     \\ Ein- und Ausschaltvorgang
-%   \end{itemize}
+\section{Induktion}
 
-%   Die Themen folgen demnächst hier.
-% \end{frame}
+% \subsection{Magnetischer Fluss (Phi)}
+\begin{frame}{Magnetischer Fluss (Phi, $\Phi$)}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item Beschreibung magnetisches Feld (im Raum)
+        \item Qualitative Angabe zu Feldlinien (nicht quantitativ)
+        \item analog zu elektrischem Strom
+        \item Magnetischer Widerstand (Abhängig von
+        \begin{itemize}
+        \item $\mu = \mu_0 + \mu_r$ Magnetische Feldkonstante oder Permeabilitätskonstante
+        \item A (Fläche)
+        \end{itemize}
+        $\mu_0=\mu_0 = 1,2566 \cdot 10^{-6} \frac{N}{A^2}$
+        \item magnetische Spannung $V_m = R_m \cdot \Phi$
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[scale=.5]{magFeld_b_2.png}
+    \end{column}
+  \end{columns}
+\end{frame}
 
-% % \section{Selbstinduktion}
-% % \begin{frame}
-% %
-% % \end{frame}
-% %
-% % \subsection{Magnetischer Fluss (Phi)}
-% % \begin{frame}
-% %
-% % \end{frame}
-% % \subsection{Flussdichte (B)}
-% % \begin{frame}
-% %
-% % \end{frame}
-% % \section{Spule}
-% % \begin{frame}
-% %
-% % \end{frame}
-% % \subsection{Ein- und Ausschaltvorgang}
-% % \begin{frame}
-% %
-% % \end{frame}
+$\mu$ und $\mu_0$ sind nicht gleich dem Formelzeichen für Mikro ($\mu$ als Vorsatz zu einer Einheit).
+
+% \subsection{Magnetische Flussdichte (B)}
+\begin{frame}{Magnetische Flussdichte (B)}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item Magnetische Flussdichte
+        \item magn. Feldlinien pro Fläche
+        \item $B = \frac{\mu_0\cdot I}{2\cdot\pi\cdot x}$\\
+        $\mu_0=$Magnetische Feldkonstante oder Permeabilitätskonstante im Vakuum. $\mu_0 = 1,2566 \cdot 10^{-6} \frac{N}{A^2}$,
+        I =Strom durch den Leiter, x = Abstand zum Leiter
+        \item Richtung: willkürlich festgelegt (rechts-Schrauben-Regel)
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[scale=.5]{magFeld_b_3.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \subsection{Selbstinduktion}
+\begin{frame}{Selbstinduktion}
+ \begin{itemize}
+  \item Vor allem bei Spule
+  \item Auswirkung vom magn. Feld auf Stromfluss
+  \item Verzögerung bei Anstieg $I(t) = I_0 \cdot \left( 1-e^{-\frac{R}{L}\cdot t}\right)$\\ Abfall $I(t) = I_0 \cdot e^{-\frac{R}{L}\cdot t}$
+ \end{itemize}
+ Simulation:
+ https://www.leifiphysik.de/elektrizitaetslehre/elektromagnetische-induktion/grundwissen/ein-und-ausschalten-von-rl-kreisen
+\end{frame}
+
+\end{frame}
+% \subsection{Ein- und Ausschaltvorgang}
+\begin{frame}{Ein- und Ausschaltvorgang}
+
+\end{frame}
 
 % \appendix
 \part{Lösungsvorschläge zu Aufgaben}
