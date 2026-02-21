@@ -26,7 +26,7 @@
 }
 
 
-\title{Arbeitsunterlagen zu FOS Elektrotechnik, Technische Informatik, Mechatronik Themenfeld 12.1}
+\title{Arbeitsunterlagen zu FOS Elektrotechnik, technische Informatik, Mechatronik Themenfeld 12.1}
 \subtitle{Gleichstromnetzanalyse}
 \date{V 0.2.1 - im Aufbau\\ Stand: \today}%\\
 
@@ -443,7 +443,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
   $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. Die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 \subsection{Aufgaben zu Überlagerung}
 Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
-für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
+Für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
 
   %   \subsection{Schaltung 2}
   \begin{frame}{Schaltung 2}
@@ -920,11 +920,13 @@ $\\
 Mit dem gaußschen Eliminationsverfahren kann ich die Matrix (links der senkrechten Linie) in eine Dreiecks-Form bringen. Dazu kann ich jeweils zwei Zeilen vertauschen oder durch Multiplikation von Faktoren zwei Zeilen addieren, sodass in einzelnen Spalten 0-Werte gebildet werden. Ziel der Umrechnung ist, dass die Matrix etwa die Form
 
 \begin{frame}{Stufenform - Beispiel}
-$\left( \begin{array}{rrr}
+$\left(
+\begin{array}{rrr}
  1 & 2 & 3 \\
  0 & 3 & 2 \\
  0 & 0 & 3
-\end{array}\right)$
+\end{array}
+\right)$
 \end{frame}
 
 erreicht. Das gaußsche Eliminationsverfahren stelle ich an dieser Stelle nicht vertieft dar. Bei Wikipedia ist ein ausführlicher Artikel zum Algorithmus des Verfahrens zu finden.
@@ -985,7 +987,7 @@ Die Bilder sind in der Präsentation. Der Abschnitt ist im Artikel leer. Die Bil
 \end{frame}
 }
 
-\section{Kreisstromverfahren}
+\section[MaschenV]{Kreisstromverfahren}
 Bei diesem Verfahren werden virtuelle Ströme berechnet. In Teilen der Schaltung, in denen nur ein Kreisstrom fließt, ist der Strom des Zweigs identisch zum Kreisstrom der Masche. Wenn mehrere virtuelle Kreisströme durch denselben Zweig fließen, müssen sie entsprechend der Zählrichtung addiert werden. Wenn die Zählrichtung beider Ströme identisch ist, werden sie addiert, sonst subtrahiert. Wenn ein Strom negativ ist, bedeutet dies, dass die Zählrichtung der Masche entgegen der tatsächlichen Stromrichtung ist.
 
 \begin{frame}{Kreisstromverfahren - Baum I}
@@ -1282,11 +1284,77 @@ Die Eintragungen der Nebendiagonalen sind an der Hauptdiagonalen gespiegelt. (M1
 \end{frame}
 
 
-% \section{Knotenspannungsverfahren}
-% \begin{frame}
-%  - Abschnitt folgt noch -
-% \end{frame}
+\section[KnotenV]{Knotenspannungsverfahren}
+\begin{frame}{Knotenspannungsverfahren (Teil 1)}
+  \subtitle{alternative Benennung: Knotenpotentialverfahren}
+  \begin{itemize}
+    \item Ein Knoten wird Bezug (z. B. Masse)
+    \item Alle Widerstände in Leitwerte umwandeln ($G = \frac{1}{R}$)
+    \item Spannungsquellen in Stromquellen umwandeln
+    \item Knoten durchnummerieren ($\varphi_1 .. \varphi_n$)
+    \item Gleichungen aufstellen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Knotenspannungsverfahren (Teil 2)}
+  \begin{columns}
+    \begin{column}{.65\textwidth}
+      \begin{itemize}
+   \item Hauptdiagonale: Alle Leitwerte am Knoten (pos. Vorzeichen)
+   \item Nebendiagonalen: Alle Verbindungen zwischen Knoten i (Zeile) und j (Spalte) wichtig: neg. Vorzeichen
+  \end{itemize}
+  \begin{align}
+   \left(
+   \begin{array}{ccc|c}
+     G1+G3+G5 & -G3 & -G5 & I_{q1}\\
+     -G3 & G2+G3+G6 & -G6 & 0\\
+     -G5 & -G6 & G4+G5+G6 & 0
+   \end{array}
+   \right)
+  \end{align}
+   \end{column}
+   \begin{column}{.3\textwidth}
+    \includegraphics[scale=.7]{messbruecke3_1.png}
+   \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Knotenspannungsverfahren (Teil 3)}
+   \begin{align}
+   \left(
+   \begin{array}{ccc}
+     G1+G3+G5 & -G3 & -G5 \\
+     -G3 & G2+G3+G6 & -G6 \\
+     -G5 & -G6 & G4+G5+G6
+   \end{array}
+   \right)
+   \cdot
+    \left(
+   \begin{array}{c}
+    \varphi_1\\
+    \varphi_2\\
+    \varphi_3
+   \end{array}
+    \right)
+   =
+   \left(
+   \begin{array}{c}
+    I_{q1}\\
+    0\\
+    0
+   \end{array}
+    \right)
+  \end{align}
+
+  $\varphi_n$ = Spannungen der Knoten zum Bezugsknoten hier $\varphi = 0$
+\end{frame}
+
+
+
+%% ==================================================================
+%% ==================================================================
 \appendix
+%\part{Lösungen}
 \section{Lösungen}
 \subsection{Ersatzwiderstand}
 \label{lsg:Ersatzwiderstand}
@@ -1374,7 +1442,7 @@ Da ich die Spannung an R3 berechnen soll, kann ich die Schaltung nur bis Bild \r
 \label{fig:SchaltungZweiLsgVorschlagTeil1_11}
 \end{figure}
 
-In Schritt 1 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_11}) ist die Quelle 2 entfernt worden. Nur Quelle 1 ist jetzt aktiv. Dies ergibt die Teilspannung $U_3'$. Später berechne ich die Teilspanung $U_3''$ und addiere die beiden Teilspannungen. Wenn drei oder mehr Quellen in der Schaltung sind, muss ich das verfahren für jede Quelle anwenden. Dabei ist immer nur eine Quelle zur selben Zeit aktiv. Ich muss jeweils die Schaltung zusammenfassen, um die gesuchte (Teil-)Spannung (hier $\text{U}_3$ an $\text{R}_3$) berechnen zu können.
+In Schritt 1 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_11}) ist die Quelle 2 entfernt worden. Nur Quelle 1 ist jetzt aktiv. Dies ergibt die Teilspannung $U_3'$. Später berechne ich die Teilspannung $U_3''$ und addiere die beiden Teilspannungen. Wenn drei oder mehr Quellen in der Schaltung sind, muss ich das verfahren für jede Quelle anwenden. Dabei ist immer nur eine Quelle zur selben Zeit aktiv. Ich muss jeweils die Schaltung zusammenfassen, um die gesuchte (Teil-)Spannung (hier $\text{U}_3$ an $\text{R}_3$) berechnen zu können.
 
 \begin{figure}[htbp]
 \begin{circuitikz}
@@ -1710,4 +1778,3 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
   \end{column}
 \end{columns}
 \end{frame}
-
