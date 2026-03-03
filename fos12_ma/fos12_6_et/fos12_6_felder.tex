@@ -23,7 +23,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik Themenfeld 12.6}
 \subtitle{Elektrisches und magnetisches Feld}
-\date{V 0.2.0 - im Aufbau\\ Stand: \today}%\\
+\date{V 0.3.0 - im Aufbau\\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -926,10 +926,93 @@ $\mu$ und $\mu_0$ sind nicht gleich dem Formelzeichen für Mikro ($\mu$ als Vors
  https://www.leifiphysik.de/elektrizitaetslehre/elektromagnetische-induktion/grundwissen/ein-und-ausschalten-von-rl-kreisen
 \end{frame}
 
-% \end{frame}
-% \subsection{Ein- und Ausschaltvorgang}
-\begin{frame}{Ein- und Ausschaltvorgang}
+\begin{frame}{Spule}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item Spule = Draht
+        \item (viele) Wicklungen
+        \item Kern (z. B. Fe ist optional)
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
 
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \end{frame}
+\section[on/off L]{Ein- und Ausschaltvorgang (Spule)}
+\begin{frame}{Einschaltvorgang der Spule}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item<1-> Spannung springt von 0\, V auf 5\, V
+        \item<2-> Magnetfeld wird sofort aufgebaut
+        \item<2-> Strom will fließen
+        \item<2-> Magnetfeld wirkt Stromfluss entgegen.
+        \item<3-> Spannung an Spule fällt ab
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \only<1>{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_1\_1.png}}
+      \only<2>{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_1\_2.png}}
+      \only<3->{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_1\_3.png}}
+      Ausschnitte aus Bild von Henrik Schumacher via Wikipedia (Spule (Elektrotechnik)) Stand: 03.03.2026
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Formeln}
+  Aufladung der Spule
+   \begin{align}
+   U(t) &= U_0\cdot e^{-\frac{t}{\tau}}\\
+   I(t) &= I_0\cdot(1-e^{-\frac{t}{\tau}})
+ \\
+   \tau = \frac{L}{R}
+   \end{align}
+
+   Entladung der Spule
+  \begin{align}
+    U(t) &= -U_0\cdot e^{-\frac{t}{\tau}}\\
+    I(t) &= I_0\cdot e^{-\frac{t}{\tau}}
+  \end{align}
+\end{frame}
+
+\begin{frame}{Ausschaltvorgang Spule}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item Spannung (Versorgung) springt von 5\, V auf 0\, V
+        \item Magnetfeld bricht sofort zusammen
+        \item Strom will fließen
+        \item Magnetfeld bewirkt negative Spannung.
+        \item Spannung an Spule fällt ab
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \only<1>{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_2\_3.png}}
+      \only<2>{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_2\_1.png}}
+      \only<3->{\includegraphics[scale=.45]{Auf-\_und\_Entladung\_Spule\_2\_2.png}}
+      Ausschnitte aus Bild von Henrik Schumacher via Wikipedia (Spule (Elektrotechnik)) Stand: 03.03.2026
+    \end{column}
+  \end{columns}\end{frame}
+
+\begin{frame}{Aufgaben - Ein- Ausschalten Spule}
+\begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+ $U_0$  & $U_L$    & $\tau$    & t &            R &  L\\ \hline
+ 12\, V & $U_L(t)$ &           & 10\, s, 22\, s, $3\tau$, 120\, s  & $100 \Omega$ & $220\ mH$\\ \hline
+ 12\, V & $U_L(t)$ & $391\ \mu $s & $2\tau$, 1,5\, ms, 2\, ms  &  & $470\ mH$\\ \hline
+ 12\, V & $U_L(t)$ & $254\, \mu $s & $0,5\tau$, $\tau$, $500\, \mu $s & $2,2\ k\Omega$ & \\ \hline
+%         & 8,56\, V & & 600 ms & $1,2\ k\Omega$ & $560 \mu F$ \\ \hline
+\end{tabular}
+\begin{itemize}
+  \item berechnen die fehlenden Parameter($\tau$, R, L, $U_0$) und $U_L(t)$
+ \item Bei Widerstandswerten und Spulenwerten sind jeweils Werte der E12-Reihe zu bestimmen.
+ \item $U_L(t)$ = berechne alle Spannungen für $U_L$ zu den angegebenen Zeitpunkten t.
+ \item Als weitere Übungsmöglichkeit: $U_0$ = 15\, V; 18\, V; 20\, V; 24\, V.
+\end{itemize}
 \end{frame}
 
 % \appendix
