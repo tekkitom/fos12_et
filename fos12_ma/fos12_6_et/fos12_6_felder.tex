@@ -209,7 +209,7 @@ Die Berechnung der Schaltungen von Kondensatoren ist gegenüber der Berechnung v
 \subsection{Spannung am Kondensator}
 Ein Kondensator ist für eine maximale Spannung ausgelegt. Die zulässige Betriebsspannung ist in der Regel aufgedruckt. Die Spannung ist unter anderem vom Abstand der Platten und dem verwendeten Dielektrikum (Isolierstoff) abhängig. Wenn die maximale Spannung überschritten wird, kann es zu einem Überschlag (Blitz) kommen. Dadurch wird in der Regel das Dielektrikum und die Platten beschädigt. Ob ein Durchschlag zur Zerstörung des Kondensators führt, ist von der mechanischen Bauart abhängig. Selbstheilende Kondensatoren verlieren bei einem Durchschlag an der Stelle ein wenig einer Metallfolie, dadurch verringert sich die Kapazität des Kondensators. Grundsätzlich bleibt der Kondensator weiterhin funktionsfähig.
 
-Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen auf den Platten gleichmäßig (siehe Bild \ref{fig:2CsInReihe}).
+Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen auf den Platten gleichmäßig (siehe Bild \ref{fig:2CsInReihe})\footnote{Die Aufteilung erfolgt in der Realität nicht absolut gleichmäßig. "`Randeffekte"' werden in diesen Arbeitsmaterialien ausgeblendet}.
 
 % \begin{figure}[htb]
 %     \begin{tikzpicture}
@@ -220,6 +220,33 @@ Wenn man mehrere Kondensatoren in Reihe schaltet, verteilen sich die Ladungen au
 Die rechte Platte des linken Kondensators ($C_1$) ist elektrisch direkt mit der linken Platte des rechten Kondensators ($C_2$) verbunden. Sie bilden quasi eine Einheit. Im städtischen Fall (wenn sich alle Ladungen verteilt haben) kann jeder Kondensator mit seiner maximalen Spannung betrieben werden. Somit kann bei mehreren Kondensatoren, die in Reihe geschaltet sind und die die gleiche Spannung haben, die Spannung addiert werden.
 
 Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt. Daher kann es passieren, dass einer der Kondensatoren mit einer Spannung beaufschlagt wird, die die zulässige Betriebsspannung überschreitet. Dies kann zu einer Überlastung - und damit potenziell einer Zerstörung - des betreffenden Kondensators führen.
+
+\subsection{Aufgaben zu Schaltung von Kondensatoren}
+\begin{frame}
+    \begin{figure}[htb]
+    Berechnen Sie die Gesamtkapazität der Schaltung mit den Werten aus a und b.\\
+      \begin{circuitikz}
+        %\draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+        \draw (0,2) node[ocirc]{} to[C=$C_1$] (4,2) node[circ]{} -- (4,1.5) to[C=$C_3$] (4,0) node[circ]{};
+        \draw (4,1.5) node[circ]{} -- (2.5,1.5) to[C=$C_2$] (2.5,0) node[circ]{};
+%        to[C=$C_2$] (2,0) node[circ]{}  -- (0,0);
+        %\draw (2,2) -- (4,2) node[circ]{} to[C=$C_3$]
+        %(4,0) node[circ]{}  --  (2,0);
+        \draw (4,2) to[C=$C_4$] (6,2);
+        \draw (6,2) to[C=$C_5$] (6,0) --
+        %(6,2) to[vsource, l=$U_2$] (6,0) --
+        (6,0) -- (4,0) -- (2.5,0) -- (0,0)node[ocirc]{};
+      \end{circuitikz}
+      %       \caption{Schaltung 1}
+      \label{fig:AufgabeSchaltung Cs1}
+    \end{figure}
+    \begin{description}
+        \item[a)] $\text{C}_1 = 220 \mu F, \text{C}_2 = 330 \mu F, \text{C}_3 = 470\mu F, \text{C}_4 = 22 \mu F, \text{C}_5 = 47 \mu F$ 
+        \item[b)] $\text{C}_1 = 220 nF, \text{C}_2 = 330 nF,  \text{C}_3 = 470nF, \text{C}_4 = 22 \mu F, \text{C}_5 = 47 \mu F$
+\end{description}
+    Das Ergebnis soll jeweils in $\mu F$ und $nF$ angegeben werden. Lösen Sie die Schaltung von innen nach außen schrittweise auf. berechnen Sie die Ersatz-Werte für die Zwischenschritte und runden Sie auf 2 Nachkommastellen. Verwenden Sie später die berechneten Werte in der nächsten Stufe der Schaltung.
+\end{frame}
+
 \section{Vektoren}
 \only<presentation>{
   \begin{frame}<beamer>
