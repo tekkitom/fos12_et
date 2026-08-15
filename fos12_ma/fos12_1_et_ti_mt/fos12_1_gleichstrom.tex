@@ -28,7 +28,7 @@
 
 \title{Arbeitsunterlagen zu FOS Elektrotechnik, technische Informatik, Mechatronik Themenfeld 12.1}
 \subtitle{Gleichstromnetzanalyse}
-\date{V 0.5.0 \\ Stand: \today}%\\
+\date{V 0.5.1 \\ Stand: \today}%\\
 
 \institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
 \author{Thomas Maul}
@@ -78,7 +78,7 @@
   \end{frame}
 \section{Einleitung}
 Dass die Welt kompliziert ist ist eine Information, die man regelmäßig hören kann. In der Schule versuchen wir physikalische Phänomene zu vereinfachen. Das bedeutet, dass einige Dinge linear sind, ob wohl es in der Realität z.B. bei einem Kondensator oder einer Spule Randeffekte gibt. Bei Schaltungen setzen wir den Leitungswiderstand in der Regel auf $0\, \Omega$ . Das bedeutet, dass die Natur nicht \glq einfach\grq \ ist, sondern, dass wir nichtlineare Teile an einigen Stellen ignorieren.
-  
+
   \section[Zweipole]{Zweipoltheorie (Pflicht)}
   In der Elektrotechnik werden Bauteile, die zwei Abschlüsse haben als Zweipole bezeichnet. Dies können jeweils einzelne Widerstände, Spulen und Kondensatoren sein. Manchmal ist es praktisch eine (Teil-)Schaltung als einen Zweipol darzustellen und in Berechnungen als ein virtuelles Bauteil zu verwenden. Man spricht hier auch von einem Ersatzbauteil.
   \begin{frame}{Zweipole}
@@ -86,7 +86,7 @@ Dass die Welt kompliziert ist ist eine Information, die man regelmäßig hören 
     \begin{figure}[htb]
       \begin{circuitikz}
         \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
-        \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A} 
+        \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
         \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%  node[circ]{} node[below]{B}
         \draw (3,2) node[ocirc]{} node[above]{C} -- (4,2) to[R=$R_3$]
         (4,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
@@ -115,7 +115,7 @@ Dass die Welt kompliziert ist ist eine Information, die man regelmäßig hören 
         \begin{figure}[htb]
       \begin{circuitikz}
         \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
-        \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A} 
+        \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
         \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%  node[circ]{} node[below]{B}
         \draw (3,2) node[ocirc]{} node[above]{C} -- (4,2) to[R=$R_3$]
         (4,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
@@ -151,7 +151,7 @@ Dass die Welt kompliziert ist ist eine Information, die man regelmäßig hören 
         \begin{figure}[htb]
           \begin{circuitikz}
             \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
-            \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A} 
+            \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
             \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%   (2,0) node[circ]{} node[below]{B}  -- (0,0);
             \draw (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_{3||45}$]
             (3.5,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
@@ -176,7 +176,7 @@ Dass die Welt kompliziert ist ist eine Information, die man regelmäßig hören 
     \begin{figure}[htb]
       \begin{circuitikz}
         \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
-        \draw (0,2) -- (1,2) node[circ]{} to[R=$R_1$] (1,0);% node[circ]{} node[above]{A} 
+        \draw (0,2) -- (1,2) node[circ]{} to[R=$R_1$] (1,0);% node[circ]{} node[above]{A}
         \draw (1,2) to[R=$R_2$] (3,2);% node[circ]{} node[below]{B}  -- (0,0);
         \draw  (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
@@ -204,7 +204,7 @@ Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
         \draw (0,2) -- (1,2) node[circ]{} to[R=$R_1$] (1,0) node[circ]{};
         \draw (1,2) to[R=$R_2$] (3,2);
         \draw (3,2) node[ocirc]{} node[above]{C};
-        \draw (5,2) to[R=$R_3$] (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+        \draw (5,2) to[R=$R_3$] (3,0) node[ocirc]{} node[below]{D};
         \draw (3,2) to[R=$R_4$] (5,2);
         \draw (5,2) to[R=$R_5$] (5,0);
         \draw (5,2) node[circ]{} ;
