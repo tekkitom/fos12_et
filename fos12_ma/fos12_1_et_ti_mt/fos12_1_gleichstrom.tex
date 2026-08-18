@@ -107,7 +107,7 @@ In der Elektrotechnik werden Bauteile, die zwei Abschlüsse haben als Zweipole b
     \label{fig:InfoZweipole1}
   \end{figure}
 \end{frame}
-Es soll so aussehen, als ob nur ein Widerstand rechts von den Punkten C und D wäre. Durch Reihenschaltung von $\text{R}_4$ und $\text{R}_5$ zu $\text{R}_{45}$ und anschließender Parallelschaltung mit $\text{R}_3$ kann ich dies erreichen (siehe Bild \ref{fig:BerechnungErsatzR}). Der Widerstand $\text{R}_{3||45}$ verhält sich für die Schaltung wie die Widerstände $\text{R}_3$, $\text{R}_4$ und $\text{R}_5$.
+Es soll so aussehen, als ob nur ein Widerstand rechts von den Punkten C und D wäre. Durch Reihenschaltung von $\text{R}_4$ und $\text{R}_5$ zu $\text{R}_{4+5}$ und anschließender Parallelschaltung mit $\text{R}_3$ kann ich dies erreichen (siehe Bild \ref{fig:BerechnungErsatzR}). Der Widerstand $\text{R}_{3||4+5}$ verhält sich für die Schaltung wie die Widerstände $\text{R}_3$, $\text{R}_4$ und $\text{R}_5$.
 
 Ich lege für die Widerstände folgende Werte fest:\\
 
@@ -137,20 +137,20 @@ Ich lege für die Widerstände folgende Werte fest:\\
       \end{figure}
     \end{column}
   \end{columns}
-  %       Jetzt kann ich den Gesamtwiderstand $R_{3||45}$ berechnen.
+  %       Jetzt kann ich den Gesamtwiderstand $R_{3||4+5}$ berechnen.
 \end{frame}
 \begin{frame}{Berechnung des Ersatzwiderstands}
   \begin{columns}[t]
     \begin{column}{4cm}
       \begin{align}
-        \text{R}_{45} &= \text{R}_4 + \text{R}_5\\
-        \text{R}_{45} &= 40 \Omega + 50 \Omega \\
-        \text{R}_{45} &= 90 \Omega\\
+        \text{R}_{4+5} &= \text{R}_4 + \text{R}_5\\
+        \text{R}_{4+5} &= 40 \Omega + 50 \Omega \\
+        \text{R}_{4+5} &= 90 \Omega\\
         % \end{align}
         % \begin{align}
-        \frac{1}{\text{R}_{3||45}} &= \frac{1}{\text{R}_3} + \frac{1}{\text{R}_45}\\
-        \frac{1}{\text{R}_{3||45}} &= \frac{1}{30\Omega} + \frac{1}{90\Omega}\\
-        \text{R}_{3||45} &= 22,5\Omega
+        \frac{1}{\text{R}_{3||4+5}} &= \frac{1}{\text{R}_3} + \frac{1}{\text{R}_{4+5}}\\
+        \frac{1}{\text{R}_{3||4+5}} &= \frac{1}{30\Omega} + \frac{1}{90\Omega}\\
+        \text{R}_{3||4+5} &= 22,5\Omega
         \label{eq:zweipolr345}
       \end{align}
     \end{column}
@@ -160,7 +160,7 @@ Ich lege für die Widerstände folgende Werte fest:\\
           \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
           \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
           \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%   (2,0) node[circ]{} node[below]{B}  -- (0,0);
-          \draw (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_{3||45}$]
+          \draw (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_{3||4+5}$]
           (3.5,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
         \end{circuitikz}
         \caption{Berechnung des Ersatzwiderstands}
@@ -169,9 +169,9 @@ Ich lege für die Widerstände folgende Werte fest:\\
     \end{column}
   \end{columns}
 \end{frame}
-Jetzt kann ich den Gesamtwiderstand $\text{R}_{3||45}$ berechnen. Ich kann jedoch nicht mehr einzelne Spannungen oder Ströme messen oder darstellen.
+Jetzt kann ich den Gesamtwiderstand $\text{R}_{3||4+5}$ berechnen. Ich kann jedoch nicht mehr einzelne Spannungen oder Ströme messen oder darstellen.
 
-Der virtuelle Widerstand $\text{R}_{3||45}$ ersetzt die Schaltung der drei Widerstände. Das Gleiche ist mit allen passiven Bauteilen möglich. Auch aktive Bauteile (Quellen, Transistor, FET, \dots) kann man durch einen Zweipol ersetzen.
+Der virtuelle Widerstand $\text{R}_{3||4+5}$ ersetzt die Schaltung der drei Widerstände. Das Gleiche ist mit allen passiven Bauteilen möglich. Auch aktive Bauteile (Quellen, Transistor, FET, \dots) kann man durch einen Zweipol ersetzen.
 
 \begin{frame}{Übungen zu Zweipole I}
   Berechnen Sie jeweils den Ersatzwiderstand zwischen den Klemmen C und D zur Schaltung unten.
@@ -197,6 +197,7 @@ Der virtuelle Widerstand $\text{R}_{3||45}$ ersetzt die Schaltung der drei Wider
 
   \label{fig:UebZweipole1}
 \end{frame}
+
 Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
 \begin{frame}{Übungen zu Zweipole II}
   Berechnen Sie jeweils den Ersatzwiderstand zwischen den Klemmen C und D zur Schaltung unten.
@@ -294,7 +295,8 @@ Gegen sei der Spannungsteiler aus Bild \ref{fig:Spannungsteiler}. Berechnen Sie 
     & 470 & 1,5k &  3,3 mA &   \\
   \end{tabular}
 \end{frame}
-Die Lösungen sind auf \pageref{Lsg:Spannungsteiler}
+
+Die Lösungen sind auf Seite \pageref{Lsg:Spannungsteiler}
 
 
 
@@ -358,7 +360,7 @@ Mit einem Messgerät kann ich die Spannung an $\text{R}_2$ messen, den Strom, de
 \end{frame}
 
 
-$\text{R}_2$ wird jetzt mit dem Ersatzwiderstand $\text{R}_{3||45}$ parallel geschaltet.
+$\text{R}_2$ wird jetzt mit dem Ersatzwiderstand $\text{R}_{3||4+5}$ parallel geschaltet.
 \begin{frame}{Berechnung Ersatzwiderstand I}
   \begin{align}
     \text{U}_{2'} &= \text{I}_2 * \text{R}_2||\text{R}_3||\text{R}_4+\text{R}_5\\
@@ -370,19 +372,19 @@ Zur Berechnung müssten jedoch entweder $\text{I}_2$ oder $\text{U}_2$ bekannt s
 \begin{frame}{Berechnung Ersatzwiderstand II}
   \begin{align}
     \text{U}_{q1} &= \text{U}_1 + \text{U}_2\\
-    \text{U}_2 &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{45}}{\text{R}_1+ \text{R}_2||\text{R}_3||\text{R}_{45}}
+    \text{U}_2 &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{4+5}}{\text{R}_1+ \text{R}_2||\text{R}_3||\text{R}_{4+5}}
   \end{align}
 \end{frame}
-In der Festlegung \ref{comp:WiderstaendeSchaltung1} (Seite \pageref{comp:WiderstaendeSchaltung1}) habe ich die Werte für die Widerstände und die Spannungen der Quellen festgelegt. In Formel (\ref{eq:zweipolr345}, Seite \pageref{eq:zweipolr345}) habe ich den Ersatzwiderstand für $R_{3||45}$ berechnet. Hier setze ich die Werte in die Formeln ein:
+In der Festlegung \ref{comp:WiderstaendeSchaltung1} (Seite \pageref{comp:WiderstaendeSchaltung1}) habe ich die Werte für die Widerstände und die Spannungen der Quellen festgelegt. In Formel (\ref{eq:zweipolr345}, Seite \pageref{eq:zweipolr345}) habe ich den Ersatzwiderstand für $R_{3||4+5}$ berechnet. Hier setze ich die Werte in die Formeln ein:
 \begin{frame}{Einsetzen I}
   \begin{align}
-    \text{U}_{2'} &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{45}}{\text{R}_1 + \text{R}_2||\text{R}_3||\text{R}_{45}}\\
+    \text{U}_{2'} &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{4+5}}{\text{R}_1 + \text{R}_2||\text{R}_3||\text{R}_{4+5}}\\
     \text{U}_{2'} &= \text{U}_{q1}*\frac{\frac{1}{\frac{1}{\text{R}_2}+\frac{1}{\text{R}_3}+\frac{1}{\text{R}_4+\text{R}_5}}}{\text{R}_1 + \frac{1}{\frac{1}{\text{R}_2}+\frac{1}{\text{R}_3}+\frac{1}{\text{R}_4+\text{R}_5}}}\\
   \end{align}
 \end{frame}
 \begin{frame}{Einsetzen II}
   \begin{align*}
-    \text{U}_{2'} &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{45}}{\text{R}_1 + \text{R}_2||\text{R}_3||\text{R}_{45}}\\
+    \text{U}_{2'} &= \text{U}_{q1}*\frac{\text{R}_2||\text{R}_3||\text{R}_{4+5}}{\text{R}_1 + \text{R}_2||\text{R}_3||\text{R}_{4+5}}\\
     \text{U}_{2'} &= \text{U}_{q1}*\frac{\frac{1}{\frac{1}{\text{R}_2}+\frac{1}{\text{R}_3}+\frac{1}{\text{R}_4+\text{R}_5}}}{\text{R}_1 + \frac{1}{\frac{1}{\text{R}_2}+\frac{1}{\text{R}_3}+\frac{1}{\text{R}_4+\text{R}_5}}}\\
   \end{align*}
   \begin{align}
@@ -1392,9 +1394,9 @@ Die Eintragungen der Nebendiagonalen sind an der Hauptdiagonalen gespiegelt. (M1
 \label{lsg:Ersatzwiderstand}
 \subsubsection{Übungen zu Zweipole I}
 \begin{description}
-  \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||45} = 173,12 \Omega$
-  \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||45} = 178,14 \Omega$
-  \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||45} = 85,71 \Omega$
+  \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$ \ $\text{R}_{3||4+5} = 173,12 \Omega$
+  \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$ \ $\text{R}_{3||4+5} = 178,14 \Omega$
+  \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$ \ $\text{R}_{3||4+5} = 85,71 \Omega$
 \end{description}
 \subsubsection{Übungen zu Zweipole II}
 \begin{description}
