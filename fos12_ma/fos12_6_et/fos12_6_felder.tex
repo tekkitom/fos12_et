@@ -58,13 +58,13 @@
 \part{Elektrisches Feld}
 \begin{frame}\partpage\end{frame}
 
-
+\section{Ladungen, Kräfte}
 \begin{frame}<beamer>
   \frametitle{Inhalt}
-    \tableofcontents
+  \tableofcontents[hideothersubsections]
+%   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 
-\section{Ladungen, Kräfte}
 \only<presentation>{
   \begin{frame}{Elektronen und Atome}
     \begin{itemize}
@@ -249,6 +249,13 @@ Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt
 \end{frame}
 
 \section{Elektrisches Feld}
+\subsection{Ladung, E-Feld}
+
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \tableofcontents[hideothersubsections]
+%   \tableofcontents[currentsection,currentsubsection]
+\end{frame}
 
 \begin{frame}{Ladungen, elektrisches Feld}
  Recherchieren Sie die folgenden Begriffe und notieren sich eine eigene Erklärung (Umfang je ca. 2 - 4 Sätze).
@@ -261,7 +268,123 @@ Im Zustand der Ladung sind die Ladungen jedoch noch nicht gleichmäßig verteilt
 Hinweis: Die Verwendung von LLM (ChatGPT, \dots) ist zur Sammlung von Stichworten gut geeignet. LLMs halluzinieren teilweise. Eine Recherche bei vertrauenswürdigen Seiten ist besser.
 \end{frame}
 
+\subsection{E-Feld, Spannung}
+\only<presentation>{
+  \begin{frame}{Kraft als Vektor, Spannung}
+    \begin{columns}
+      \column{.5\textwidth}
+    \begin{itemize}
+      \item Spannung $\widehat{=}$ Potenzial zwischen 2 Punkten\\
+      \dots \ auch im Raum (E-Feld)
+      \item Spannung, Kraft
+      \item Kraft $\widehat{=}$ Vektor
+      \item Richtung, Betrag
+      \item Addition ($\vec{v}_3 = \vec{v}_1 + \vec{v}_2$), jeweils x, y, z-Komponente
+    \end{itemize}
+  \column{.3\textwidth}
+ \begin{figure}
+   \only<1>{
+  \begin{tikzpicture}
+      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
+      \draw[->] (-.5,0) -- (5,0);
+      \draw[->] (0,-.5) -- (0,4);
+      %\draw node[circ] at (0,0){};
+      \filldraw[white] (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw node at (1,1) {+};
+      \draw node at (2,2) {+};
+      \draw node at (3,.95) {-};
+      \draw node at (0.5,1) {$Q_1$};
+      \draw node at (2.5,1) {$Q_2$};
+      \draw node at (1.5,2) {$Q_3$};
+%       \draw[<->] (1.2,1.2) -- (1.8,1.8);
+%       \draw[>-<] (2.8,1.2) -- (2.2,1.8);
+  \end{tikzpicture}
+}
+   \only<2->{
+  \begin{tikzpicture}
+      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
+      \draw[->] (-.5,0) -- (5,0);
+      \draw[->] (0,-.5) -- (0,4);
+      %\draw node[circ] at (0,0){};
+      \filldraw[white] (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw node at (1,1) {+};
+      \draw node at (2,2) {+};
+      \draw node at (3,.95) {-};
+      \draw node at (0.5,1) {$Q_1$};
+      \draw node at (2.5,1) {$Q_2$};
+      \draw node at (1.5,2) {$Q_3$};
+      \draw[<->] (1.2,1.2) -- (1.8,1.8);
+      \draw[>-<] (2.8,1.2) -- (2.2,1.8);
+  \end{tikzpicture}
+}
+\end{figure}
+\end{columns}
+  \end{frame}
+}
 
+\begin{frame}{Kraft auf Ladung}
+  \begin{itemize}
+    \item Abhängig von Ladung Q und Abstand zur Ladung
+    \item $\vec{F} = \frac{1}{4 \cdot \pi \cdot \varepsilon}\frac{Q_1 \cdot Q_2}{r^2}$
+    \item $\vec{F} = \frac{Q_1 \cdot Q_2}{4 \cdot \pi \cdot \varepsilon \cdot r^2}\vec{e}^2$ \\
+$\vec{e}$ = Einheitsvektor (Länge = 1, für Richtung relevant)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Kraft auf eine Ladung}
+\label{KraftAufLadungAufgabe1}
+ \framesubtitle{Aufgaben}
+\begin{columns}
+    \column{.3\textwidth}
+ \begin{figure}
+  \begin{tikzpicture}
+      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
+      \draw[->] (-.5,0) -- (5,0);
+      \draw[->] (0,-.5) -- (0,4);
+      %\draw node[circ] at (0,0){};
+      \filldraw[white] (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw (1,1) circle [radius=5pt]
+                 (3,1) circle [radius=5pt]
+                 (2,2) circle [radius=5pt];
+      \draw node at (1,1) {+};
+      \draw node at (2,2) {+};
+      \draw node at (3,.95) {-};
+      \draw node at (0.5,1) {$Q_1$};
+      \draw node at (2.5,1) {$Q_2$};
+      \draw node at (1.5,2) {$Q_3$};
+      \draw[<->] (1.2,1.2) -- (1.8,1.8);
+      \draw[>-<] (2.8,1.2) -- (2.2,1.8);
+  \end{tikzpicture}
+\end{figure}
+\column{.7\textwidth}
+
+ Gegeben seien drei Ladungen $Q_1, Q_2\ \text{und} \ Q_3$. Alle Ladungen sind ideal punktförmig und haben den Wert $10\mu C$.
+
+  Die Ladungen befinden sich an folgenden Punkten: $Q_1= \left(\begin{array}{c} 0 \\
+2 \end{array}\right)$,
+  $Q_2= \left(\begin{array}{c} 2 \\ 2 \end{array}\right)$,
+  $Q_3= \left(\begin{array}{c} 1 \\ 3 \end{array}\right)$. Das Koordinatensystem ist im m skaliert (eine Einheit = 1\,m). $\varepsilon = \varepsilon_0 = 8,85 -10^{-12}\frac{As}{Vm}$
+  Berechnen Sie die resultierende Kraft auf $Q_3$, die von $Q_1 \ \text{und}\ Q_2$ ausgeht.
+\end{columns}
+\end{frame}
+
+% \begin{frame}{Kraft auf Ladung}
+%
+%
+%
+% \end{frame}
 \subsection{Vektoren}
 \only<presentation>{
   \begin{frame}<beamer>
@@ -277,8 +400,9 @@ Die Länge des Vektors, der sogenannte Betrag, wird mit der $\sqrt{\Delta x^2 + 
 \begin{frame}{Vektoren}
   \begin{figure}[htb]
     \begin{tikzpicture}
-      \draw (-2,0) -- (2,0);
-      \draw (0,-2) -- (0,2);
+      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
+      \draw[->] (-.5,0) -- (4.5,0);
+      \draw[->] (0,-.5) -- (0,3.5);
       %\draw node[circ] at (0,0){};
       \draw[->] (0,0) -- (1,2);
       \draw[->] (0,0) -- (2,1);
@@ -302,8 +426,9 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
 \begin{frame}{Addition von Vektoren}
   \begin{figure}[htb]
     \begin{tikzpicture}
-      \draw (-2,0) -- (2,0);
-      \draw (0,-2) -- (0,2);
+      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
+      \draw[->] (-.5,0) -- (4.5,0);
+      \draw[->] (0,-.5) -- (0,3.5);
       %\draw node[circ] at (0,0){};
       \draw[->] (0,0) -- (1,2);
       \draw[->] (0,0) -- (2,1);
@@ -345,74 +470,14 @@ Vektoren können addiert werden, dabei werden jeweils die X-Komponenten, Y-Kompo
   \end{figure}
 \end{frame}}
 
-\only<presentation>{
-  \begin{frame}{Kraft als Vektor, Spannung}
-    \begin{itemize}
-      \item Kraft $\widehat{=}$ Vektor
-      \item Richtung, Betrag
-      \item Addition ($\vec{v}_3 = \vec{v}_1 + \vec{v}_2$), jeweils x, y, z-Komponente
-      \item Spannung $\widehat{=}$ Potenzial zwischen 2 Punkten\\
-      \dots \ auch im Raum (E-Feld)
-    \end{itemize}
-  \end{frame}
-}
-
-\begin{frame}{Kraft auf Ladung}
-  \begin{itemize}
-    \item Abhängig von Ladung Q und Abstand zur Ladung
-    \item $\vec{F} = \frac{1}{4 \cdot \pi \cdot \varepsilon}\frac{Q_1 \cdot Q_2}{r^2}$
-    \item $\vec{F} = \frac{Q_1 \cdot Q_2}{4 \cdot \pi \cdot \varepsilon \cdot r^2}\vec{e}^2$ \\
-$\vec{e}$ = Einheitsvektor (Länge = 1, für Richtung relevant)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Kraft auf eine Ladung}
-\label{KraftAufLadungAufgabe1}
- \framesubtitle{Aufgaben}
-\begin{columns}
-    \column{.3\textwidth}
- \begin{figure}
-  \begin{tikzpicture}
-      \draw[step=.5 cm, gray!50, very thin] (0,0) grid (4,3);
-      \draw[->] (-.5,0) -- (5,0);
-      \draw[->] (0,-.5) -- (0,4);
-      %\draw node[circ] at (0,0){};
-      \filldraw[white] (1,1) circle [radius=5pt]
-                 (3,1) circle [radius=5pt]
-                 (2,2) circle [radius=5pt];
-      \draw (1,1) circle [radius=5pt]
-                 (3,1) circle [radius=5pt]
-                 (2,2) circle [radius=5pt];
-      \draw node at (1,1) {+};
-      \draw node at (2,2) {+};
-      \draw node at (3,.95) {-};
-      \draw node at (0.5,1) {$Q_1$};
-      \draw node at (2.5,1) {$Q_2$};
-      \draw node at (1.5,2) {$Q_3$};
-      \draw (1.2,1.2) -- (1.8,1.8);
-      \draw (2.8,1.2) -- (2.2,1.8);
-  \end{tikzpicture}
-\end{figure}
-\column{.7\textwidth}
-
- Gegeben seien drei Ladungen $Q_1, Q_2\ \text{und} \ Q_3$. Alle Ladungen sind ideal punktförmig und haben den Wert $10\mu C$.
-
-  Die Ladungen befinden sich an folgenden Punkten: $Q_1= \left(\begin{array}{c} 0 \\
-2 \end{array}\right)$,
-  $Q_2= \left(\begin{array}{c} 2 \\ 2 \end{array}\right)$,
-  $Q_3= \left(\begin{array}{c} 1 \\ 3 \end{array}\right)$. Das Koordinatensystem ist im m skaliert (eine Einheit = 1\,m). $\varepsilon = \varepsilon_0 = 8,85 -10^{-12}\frac{As}{Vm}$
-  Berechnen Sie die resultierende Kraft auf $Q_3$, die von $Q_1 \ \text{und}\ Q_2$ ausgeht.
-\end{columns}
-\end{frame}
-
-% \begin{frame}{Kraft auf Ladung}
-%
-%
-%
+\subsection{Elektrische Feldstärke}
+% \begin{frame}<beamer>
+%   \frametitle{Inhalt}
+%   \tableofcontents[hideothersubsections]
+% %   \tableofcontents[currentsection,currentsubsection]
 % \end{frame}
 
 
-\section[E-Feld]{Elektrische Feldstärke}
 %   \only<presentation>{
 %     \begin{frame}
 %       \frametitle{Inhalt}
@@ -449,7 +514,7 @@ $\vec{e}$ = Einheitsvektor (Länge = 1, für Richtung relevant)
   $\vec{F} = \frac{Q_2}{4 \cdot \pi \cdot \varepsilon \cdot r^2} Q_1 $
 \end{frame}
 
-\section[Überlagerung E]{Überlagerung von elektrischen Feldern}
+\subsection[Überlagerung E]{Überlagerung von elektrischen Feldern}
 % \only<presentation>{
 %   \begin{frame}
 %     \frametitle{Inhalt}
@@ -501,6 +566,11 @@ $P_5 =\left( \begin{array}{c}1\,m \\ 2\, m\end{array} \right)$
 \end{frame}
 
 \section[Kondensator]{Kondensator Auf- und Entladung}
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \tableofcontents[hideothersubsections]
+%   \tableofcontents[currentsection,currentsubsection]
+\end{frame}
 
 \begin{frame}{Kondensator - Eigenschaften}
  \begin{itemize}
