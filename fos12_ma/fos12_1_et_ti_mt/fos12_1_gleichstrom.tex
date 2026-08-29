@@ -468,6 +468,46 @@ In diesem Fall ist $\text{R}_2$ parallelgeschaltet mit $\text{R}_1$ und $\text{R
 $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. Die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 \subsection{Aufgaben zu Überlagerung}
 Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5. Für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
+\begin{frame}{Schaltung 1}
+    \begin{columns}
+        \begin{column}{.6\textwidth}
+            \begin{tikzpicture}[transform shape]
+            	% Paths, nodes and wires:
+            	\draw (3, 4.5) to[european current source, i=$Iq1$] (3, 0);
+            	\draw (0, 4.5) to[european voltage source, v=$Uq1$] (0, 0);
+            	\draw (7, 2) to[european voltage source, v=$Uq2$] (7, 0);
+            	\draw (0, 4.5) to[european resistor, l={$R1$}] (3, 4.5);
+            	\draw (3, 4.5) to[european resistor, l={$R2$}] (7, 4.5);
+            	\draw (7, 4.5) to[european resistor, l={$R3$}] (7, 2);
+            	\draw (4, 3.5) to[european resistor, l={$R5$}] (4, 1);
+            	\draw (1.75, 3.5) to[european resistor, l={$R4$}] (1.75, 0);
+            	\draw (5.25, 3.5) to[european resistor, l={$R6$}] (5.25, 1);
+            	\draw (4, 1) -| (4, 0);
+            	\draw (5.25, 1) -- (4, 1);
+            	\node[rground] at (1, 0){};
+            	\node[circ] at (0, 3.5){};
+            	\node[circ] at (3, 3.5){};
+            	\node[circ] at (4, 3.5){};
+            	\node[circ] at (4, 1){};
+            	\node[circ] at (1.75, 0){};
+            	\node[circ] at (1, 0){};
+            	\node[circ] at (3, 0){};
+            	\node[circ] at (4, 0){};
+            	\node[circ] at (3, 4.5){};
+            	\draw (0, 3.5) -- (1.75, 3.5);
+            	\draw (5.25, 3.5) -| (3, 3.5);
+            	\draw (0, 0) -| (7, 0);
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            $\text{R}_1 = 100 \Omega ,\ \text{R}_2 = 220 \Omega$ 
+            $\text{R}_3 = 270 \Omega ,\ \text{R}_4 = 470 \Omega$ 
+            $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ \\
+            $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$\\ $\text{I}_{q1}=24\ mA$\\
+            Bestimme die Spannungen an R5 und R1.
+        \end{column}
+    \end{columns}
+\end{frame}
 
 %   \subsection{Schaltung 2}
 \begin{frame}{Schaltung 2}
@@ -488,6 +528,7 @@ Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
         \caption{Überlagerung, Schaltung 2}
         \label{fig:SchaltungZwei}
       \end{figure}
+      Ein Lösungsvorschlag ist im Anhang\ref{lsg:Schaltung2}
     \end{column}
     \begin{column}{.4\textwidth}
       $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180\ \Omega$ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
@@ -1459,6 +1500,7 @@ Gegeben seien die Werte: $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\t
 Da ich die Spannung an R3 berechnen soll, kann ich die Schaltung nur bis Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_14} / \ref{fig:SchaltungZweiLsgVorschlagTeil2_24} zusammenfassen.
 
 \subsubsection{Schaltung 2 - nur Quelle 1 aktiv}
+\label{lsg:Schaltung2}
 \begin{figure}[htbp]
 \begin{circuitikz}
 \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
