@@ -240,7 +240,7 @@ Die Summe aller Spannungen in einem Stromkreis, man spricht auch von einem Umlau
         \begin{circuitikz}
           \draw (0,0) to[vsource, l=$U$] (0,4.5);
           \draw (0,4.5) to (2,4.5);
-          \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$,  v=$U_{1}$, voltage=straight] (2,2) node[circ]{} to [short, -o] (3,2);
+          \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$, voltage=straight] (2,2) node[circ]{} to [short, -o] (3,2);
           \draw (2,2) to [R=$R_2$,  v=$U_{2}$, voltage=straight] (2,0) node[circ]{} to [short, -o] (3,0);
           \draw (2,0) to (0,0);
         \end{circuitikz}
@@ -467,8 +467,47 @@ In diesem Fall ist $\text{R}_2$ parallelgeschaltet mit $\text{R}_1$ und $\text{R
 \end{frame}
 $\text{U}_{2'}$ ist die Teilspannung, die von der Quelle $U\text{}_{Q1}$ kommt, $\text{U}_{2''}$ ist von $\text{U}_{2''}$. $\text{U}_2$ ist die gesamte  Spannung, die an Widerstand $\text{R}_2$ abfällt. Man spricht hier auch von der resultierenden Spannung. Die Spannung $\text{U}_2$ ist in der Schaltung messbar. Die Teilspannungen $\text{U}_{2'}$ und $\text{U}_{2''}$ sind nicht direkt messbar. Oft sind Quellen in Schaltungen keine echten Spannungsquellen, sondern Bauteile, die eine Spannung liefern (Transistor, Operationsverstärker, Ausgang eines Logik-ICs, \dots)
 \subsection{Aufgaben zu Überlagerung}
-Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5.
-Für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
+Berechnen Sie die Ströme und Spannungen an den Widerständen R1, R3, R4 und R5. Für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
+\begin{frame}{Schaltung 1}
+    \begin{columns}
+        \begin{column}{.6\textwidth}
+            \begin{tikzpicture}[transform shape]
+            	% Paths, nodes and wires:
+            	\draw (3, 4.5) to[european current source, i=$Iq1$] (3, 0);
+            	\draw (0, 4.5) to[european voltage source, v=$Uq1$] (0, 0);
+            	\draw (7, 2) to[european voltage source, v=$Uq2$] (7, 0);
+            	\draw (0, 4.5) to[european resistor, l={$R1$}] (3, 4.5);
+            	\draw (3, 4.5) to[european resistor, l={$R2$}] (7, 4.5);
+            	\draw (7, 4.5) to[european resistor, l={$R3$}] (7, 2);
+            	\draw (4, 3.5) to[european resistor, l={$R5$}] (4, 1);
+            	\draw (1.75, 3.5) to[european resistor, l={$R4$}] (1.75, 0);
+            	\draw (5.25, 3.5) to[european resistor, l={$R6$}] (5.25, 1);
+            	\draw (4, 1) -| (4, 0);
+            	\draw (5.25, 1) -- (4, 1);
+            	\node[rground] at (1, 0){};
+            	\node[circ] at (0, 3.5){};
+            	\node[circ] at (3, 3.5){};
+            	\node[circ] at (4, 3.5){};
+            	\node[circ] at (4, 1){};
+            	\node[circ] at (1.75, 0){};
+            	\node[circ] at (1, 0){};
+            	\node[circ] at (3, 0){};
+            	\node[circ] at (4, 0){};
+            	\node[circ] at (3, 4.5){};
+            	\draw (0, 3.5) -- (1.75, 3.5);
+            	\draw (5.25, 3.5) -| (3, 3.5);
+            	\draw (0, 0) -| (7, 0);
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            $\text{R}_1 = 100 \Omega ,\ \text{R}_2 = 220 \Omega$ 
+            $\text{R}_3 = 270 \Omega ,\ \text{R}_4 = 470 \Omega$ 
+            $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180 \Omega$ \\
+            $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$\\ $\text{I}_{q1}=24\ mA$\\
+            Bestimme die Spannungen an R5 und R1.
+        \end{column}
+    \end{columns}
+\end{frame}
 
 %   \subsection{Schaltung 2}
 \begin{frame}{Schaltung 2}
@@ -489,6 +528,7 @@ Für die Schaltung in Abbildung \ref{fig:SchaltungEins-zweiQuellenAktiv}.
         \caption{Überlagerung, Schaltung 2}
         \label{fig:SchaltungZwei}
       \end{figure}
+      Ein Lösungsvorschlag ist im Anhang\ref{lsg:Schaltung2}
     \end{column}
     \begin{column}{.4\textwidth}
       $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \text{R}_4 = 470 \Omega$ $\text{R}_5 = 560 \Omega,\ \text{R}_6 = 180\ \Omega$ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
@@ -1388,7 +1428,7 @@ Die Eintragungen der Nebendiagonalen sind an der Hauptdiagonalen gespiegelt. (M1
 %% ==================================================================
 %% ==================================================================
 \appendix
-%\part{Lösungen}
+% \part{Lösungen}
 \section{Lösungen}
 \subsection{Ersatzwiderstand}
 \label{lsg:Ersatzwiderstand}
@@ -1460,6 +1500,7 @@ Gegeben seien die Werte: $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\t
 Da ich die Spannung an R3 berechnen soll, kann ich die Schaltung nur bis Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_14} / \ref{fig:SchaltungZweiLsgVorschlagTeil2_24} zusammenfassen.
 
 \subsubsection{Schaltung 2 - nur Quelle 1 aktiv}
+\label{lsg:Schaltung2}
 \begin{figure}[htbp]
 \begin{circuitikz}
 \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
@@ -1476,7 +1517,7 @@ Da ich die Spannung an R3 berechnen soll, kann ich die Schaltung nur bis Bild \r
 \label{fig:SchaltungZweiLsgVorschlagTeil1_11}
 \end{figure}
 
-In Schritt 1 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_11}) ist die Quelle 2 entfernt worden. Nur Quelle 1 ist jetzt aktiv. Dies ergibt die Teilspannung $U_3'$. Später berechne ich die Teilspannung $U_3''$ und addiere die beiden Teilspannungen. Wenn drei oder mehr Quellen in der Schaltung sind, muss ich das verfahren für jede Quelle anwenden. Dabei ist immer nur eine Quelle zur selben Zeit aktiv. Ich muss jeweils die Schaltung zusammenfassen, um die gesuchte (Teil-)Spannung (hier $\text{U}_3$ an $\text{R}_3$) berechnen zu können.
+In Schritt 1 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_11}) ist die Quelle 2 entfernt worden. Nur Quelle 1 ist jetzt aktiv. Dies ergibt die Teilspannung $U_3'$. Später berechne ich die Teilspannung $U_3''$ und addiere die beiden Teilspannungen. Wenn drei oder mehr Quellen in der Schaltung sind, muss ich das Verfahren für jede Quelle anwenden. Dabei ist immer nur eine Quelle zur selben Zeit aktiv. Ich muss jeweils die Schaltung zusammenfassen, um die gesuchte (Teil-)Spannung (hier $\text{U}_3$ an $\text{R}_3$) berechnen zu können.
 
 \begin{figure}[htbp]
 \begin{circuitikz}
@@ -1501,7 +1542,7 @@ In Schritt 1.2 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_12}) werden die Wid
 \begin{circuitikz}
 \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
 \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-\draw (2,2) to [R=$R_3$,  v=$U_3$] (2,0) node[circ]{} node[below]{B}  -- (0,0);
+\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
 \draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);
 \draw (4,0) -- (2,0);
 \draw (6,4) to [R=$R_{5+6}$] (6,2);
@@ -1517,6 +1558,21 @@ In Schritt 1.2 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_12}) werden die Wid
 
 In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Widerstände $\text{R}_3$ und $\text{R}_4$ zusammengefasst, da in der Parallelschaltung dieselbe Spannung anliegt. $\text{R}_2$ kann nicht mit dem neuen Widerstand $\text{R}_{3||4}$ zusammengefasst werden, da die Spannung an $\text{R}_3$ gesucht wird. Bei einer Zusammenfassung von $\text{R}_2$ und $\text{R}_{3||4}$ kann die Teilspannung nicht mehr direkt bestimmt werden. Ich müsste dann mithilfe der Spannungsteiler-Regel die Teilspannung bestimmen.
 
+Die Formel für den Gesamtwiderstand lautet: \begin{equation}R_{ges}=R_1+\frac{1}{\frac{1}{R_2+\frac{1}{\frac{1}{R_3}+\frac{1}{R_4}}+\frac{1}{R_5+R_6}}}\label{Schaltung2GesR}\end{equation}
+
+Ich lasse das Programm octave die Gleichung nach R3 auflösen:
+\begin{equation}
+R_3 = \frac{-R_4\cdot(R_1\cdot R_5+R_1\cdot R_6+ R_2\cdot R_5 + R_2\cdot R_6 +1)}{R_1\cdot R_5 +R_1\cdot R_6+R_2\cdot R_5+R_2\cdot R_6 +R_4\cdot R_5+R_4\cdot R_6 +1}
+\label{Schaltung2R3}
+\end{equation}
+
+Anschließend wende ich die Spannungsteiler-Formel an: $\frac{U_3}{U_{ges}}=\frac{R_3}{R_{ges}}$. R3 ist hier die Formel \ref{Schaltung2R3}, R-Gesamt entspricht der Formel \ref{Schaltung2GesR}. Damit lässt sich die Schaltung -- mit einigem Rechenaufwand -- direkt lösen.
+
+Alternativ versuche ich stufenweise die Schaltung zu lösen. Ich gehe dabei von außen nach innen vor. Wenn ich die Schaltung von der Quelle Uq1 aus betrachte, kann ich einen Spannungsteiler zwischen R1 und dem Rest der Schaltung sehen. Mit diesem Schritt kann ich die Spannung an der Parallelschaltung aus R2+R3||R4 und R5+R6 bestimmen. Diese Spanung ist mit dem Punkten A und B gekennzeichnet, wobei B dem Masse-Niveau (m englischen ground, GND) entspricht.
+
+Im zweiten Schritt bestimme ich dann die Spannung an R3 mit einer weiteren Anwendung der Spannungsteiler-Formel zwischen R2 und der Parallelschaltung aus R3 und R4.
+
+Für die Schaltung, in der nur Quelle 2 aktiv ist, gehe ich ebenso vor.
 
 \begin{figure}[ht]
 \begin{circuitikz}
@@ -1552,7 +1608,7 @@ In Schritt 1.3 (Bild \ref{fig:SchaltungZweiLsgVorschlagTeil1_13}) werden die Wid
         \only<3->{\draw (6,4) to [R=$R_{5+6}$] (6,2);
           \draw (2,4) -- (6,4);}
         \draw (6,2) -- (6,0) -- (6,0);
-        \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);}
+        \only<4>{\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);}
         \only<1-3>{\draw (6,0) to [short, -*] (4,0);}
         \only<4>{\draw (6,0) -- (4,0);}
         \only<2>{\draw[red, thick] (4,2.3) rectangle
@@ -1597,7 +1653,7 @@ $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \
     \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
     \draw (0,4) -- (0,0);
     \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$] (2,2) ;
-    \draw (2,2) to [R=$R_3$, v=$U_3$] (2,0) node[circ]{} node[below]{B} -- (0,0);
+    \draw (2,2) to [R=$R_3$, v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B} -- (0,0);
     \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2) to[R=$R_4$] (4,0);}
     \draw (4,0) -- (2,0);
     \only<1-2>{ \draw (2,4) -- (4,4) to [R=$R_5$] (6,4);}
@@ -1636,19 +1692,20 @@ $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \
 \draw (6,1.5) to [vsource, l=$U_{q2}$] (6,0) -- (6,0);
 \draw (0,4) -- (0,0);
 \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to [R=$R_2$] (2,2.5) to [short, i>_=$I_2$]  (2,2) ;
-\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight] (2,0) node[circ]{} node[below]{B}  -- (0,0);
-\only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
+%\draw (2,2) to [R=$R_3$,  v=$U_3$, voltage=straight]
+\draw (2,0) node[circ]{} node[below]{B}  -- (0,0);
+% \only<1-3>{\draw (2,2) node[circ]{} -- (3,2) -- (4,2) to[short] (4,2)  to[R=$R_4$] (4,0);}
 \draw (4,0) -- (2,0);
 \draw (6,4) to [R=$R_{5+6}$] (6,2);
 \draw (2,4) -- (6,4);
 \draw (6,2) -- (6,0) -- (6,0);
-\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$] (2,0);
+\draw (2,2) to [R=$R_{3||4}$,  v=$U_3$, voltage=straight] (2,0);
 \draw (6,0) -- (4,0);
 \end{circuitikz}
 \caption{Überlagerung, Schaltung 2 (Schritt 2.4)}
 \label{fig:SchaltungZweiLsgVorschlagTeil2_24}
-
 \end{figure}
+
 
 
 \clearpage
@@ -1664,7 +1721,7 @@ $\text{R}_1 = 100\Omega ,\ \text{R}_2 = 220 \Omega$ $\text{R}_3 = 270\Omega ,\ \
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
         \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
         \only<4->{\draw (2,1.5) -- (2,2);}
-        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
         \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
         \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
         \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
@@ -1708,7 +1765,7 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
     \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
     \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
     \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-    \draw (2,1.5)to [R=$R_{4}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+    \draw (2,1.5)to [R=$R_{4}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
     \draw (2,4) to [R=$R_2$] (4,4);
     \draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);
     \draw (2,2) node[circ]{} -- (4,2);
@@ -1727,7 +1784,7 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
     \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
     \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
     \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
-    \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+    \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
     \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
     \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
     \only<1-3>{\draw (2,2) node[circ]{} -- (4,2)};
@@ -1746,7 +1803,7 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
     \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
     \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
     \only<4->{\draw (2,1.5) -- (2,2);}
-    \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+    \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
     \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
     \only<4>{\draw (4,4) node[circ]{} node[above]{C} -- (4,3)
       to [R=$R_5$] (2,3) node[circ]{};}
@@ -1763,7 +1820,7 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
   \begin{circuitikz}
     \draw (0,0) to [vsource, l=$U_{q1}$] (0,4);
     \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
-    \draw (2,2)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+    \draw (2,2)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
     \only<5->{\draw (2,4) -- (4,4) to [R=$R_{(2||5)+3+7}$] (4,0);}
     \only<4->{\draw (4,0) -- (3,0) -- (2,0);}
   \end{circuitikz}
@@ -1780,7 +1837,7 @@ $\text{U}_{q1} = 12\,V, \text{U}_{q2} = 15\,V$
         \draw (0,4) to [R=$R_1$] (2,4) node[circ]{} node[above]{A} to (2,2);
         \only<1-3>{\draw (2,2) node[left]{B} to [short, i>_=$I_4$]  (2,1.5);}
         \only<4->{\draw (2,1.5) -- (2,2);}
-        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
+        \draw (2,1.5)to [R=$R_{4||6}$,  v=$U_4$, voltage=straight] (2,0) node[circ]{} node[below]{GND}  -- (0,0);
         \only<1-4>{\draw (2,4) to [R=$R_2$] (4,4);}
         \only<5->{\draw (2,4) -- (6,4) to [R=$R_{(2||5)+3+7}$] (6,2);}
         \only<1-3>{\draw (4,4) node[circ]{} node[above]{C} to [R=$R_5$] (4,2);}
