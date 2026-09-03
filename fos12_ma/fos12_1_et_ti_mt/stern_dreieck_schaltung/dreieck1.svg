@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="9cm" height="10cm" viewBox="-141 163 162 188" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-120" y="220" width="20" height="40"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-120" y="220" width="20" height="40"/>
+    </g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-110" y1="220" x2="-110" y2="170"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-110" y1="310" x2="-110" y2="260"/>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="0" y="220" width="20" height="40"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="220" width="20" height="40"/>
+    </g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="10" y1="220" x2="10" y2="170"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="10" y1="310" x2="10" y2="260"/>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-70" y="300" width="40" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-70" y="300" width="40" height="20"/>
+    </g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-70" y1="310" x2="-110" y2="310"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="10" y1="310" x2="-30" y2="310"/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-140" y1="170" x2="10" y2="170"/>
+  <g>
+    <ellipse style="fill: #000000" cx="-110" cy="170" rx="5" ry="5"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="-110" cy="170" rx="5" ry="5"/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-110" y1="310" x2="-110" y2="350"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="10" y1="310" x2="10" y2="350"/>
+  <g>
+    <ellipse style="fill: #000000" cx="-105" cy="305" rx="5" ry="5"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="-105" cy="305" rx="5" ry="5"/>
+  </g>
+</svg>
