@@ -1,0 +1,140 @@
+\documentclass[a4paper,10pt,pdftex,pagesize]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[german]{babel}
+\usepackage[OT1,T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage[siunitx,european]{circuitikz}
+\usepackage[pdftex]{hyperref}
+
+\author{Thomas Maul}
+\title{Übung zu Überlagerung von elektrischen Feldern mit Lösungsvorschlag}
+\date{22.09.26}
+
+\begin{document}
+% \maketitle
+
+\section{Aufgabe 1}
+Gegeben sind zwei Ladungen $\text{Q}_1$
+und
+$\text{Q}_2$ . Mit dem Koordinaten:
+\\ $\text{Q}_1 \left( \begin{array}{c} 1\\ 1\end{array} \right), \text{Q}_2 \left( \begin{array}{c} 5\\2                                                  \end{array}
+\right)$
+\\
+Die Ladungen haben die Werte:
+$\text{Q}_1 = 1,2\ nC, \text{Q}_2 = -15\ nC$.\\
+Am Punkt Pn (siehe \ref{subsecMesspunkte}) befindet sich eine Ladung $\text{Q}_3$ von $33\ nC$.
+\subsection{Aufgaben}
+\begin{enumerate}
+ \item Zeichne je ein Koordinatensystem mit den Punkten Q1, Q2 und Pn. Pn ist je ein Punkt aus der Liste P1 bis P5.
+ \item bestimme jeweils den Abstand der Ladungen Q1 und Q2 zur Ladung Pn.
+ \item berechne die Feldstärke, die Q1 in Pn verursacht.
+ \item berechne die Feldstärke, die Q2 in Pn verursacht.
+ \item überlagere die Felder rechnerisch und bestimmen damit das resultierende Feld.
+ \item bestimme die Kraft von Q1 auf Pn.
+ \item bestimme die Kraft von Q2 auf Pn.
+ \item bestimme die resultierende Kraft von Q1 und Q2 auf Pn mit Betrag und Winkel gegenüber der X-Achse.
+ \item bestimme die resultierende Kraft von Q1 und Q2 auf Pn in x-Richtung und in y-Richtung.
+\end{enumerate}
+
+Alle Längenangaben sind in Meter.
+
+\subsection{Messpunkte}
+\label{subsecMesspunkte}
+Für Pn soll jeweils einer folgenden Punkte verwendet werden:
+\begin{align*}
+\text{P}_1 \left( \begin{array}{c} 2\\ 2\end{array} \right),
+\text{P}_2 \left( \begin{array}{c} 3\\ 3\end{array} \right),
+\text{P}_3 \left( \begin{array}{c} 1\\ 4\end{array} \right),
+\text{P}_4 \left( \begin{array}{c} 5\\ 3\end{array} \right),
+\text{P}_5 \left( \begin{array}{c} 5\\ 7\end{array} \right)
+\end{align*}
+\end{document}
+\clearpage
+\section{Lösungsvorschlag}
+
+\begin{figure}[h!]
+  \begin{tikzpicture}
+      \draw[step=.5 cm, gray!90, very thin] (0,0) grid (6,3);
+      \draw[->] (-.5,0) -- (7,0);
+      \draw[->] (0,-.5) -- (0,4);
+      %\draw node[circ] at (0,0){};
+      \filldraw[white] (1,1) circle [radius=5pt]
+                       (2,2) circle [radius=5pt]
+                       (5,2) circle [radius=5pt];
+      \draw (1,1) circle [radius=5pt]
+            (2,2) circle [radius=5pt]
+            (5,2) circle [radius=5pt];
+      \draw node at (1,1) {+};
+      \draw node at (2,2) {+};
+      \draw node at (5,1.95) {-};
+      %\draw node at (3,.95) {-};
+      \draw node at (0.5,1) {$Q_1$};
+      \draw node at (5.5,2) {$Q_2$};
+      \draw node at (1.5,2) {$P_1$};
+%       \draw[<->] (1.2,1.2) -- (1.8,1.8);
+    %  \draw[>-<] (2.8,1.2) -- (2.2,1.8);
+%       \draw[->] (2,2.3) -- (2,3);
+%       \draw[->] (2.3,2) -- (3,2);
+  \end{tikzpicture}
+  \caption{Abstände Q1, Q2 zu P1 (Ein Kästchen = 0,5 m)}
+\end{figure}
+
+\subsection{Abstand}
+\subsubsection{Abstand Q1 - P1}
+\begin{align}
+  |P_1-Q_1| &= \sqrt{(P_{1x}-Q_{1x})^2 + (P_{1y}-Q_{1y})^2}\\
+  |P_1-Q_1| &= \sqrt{(2-1)^2 + (2-1)^2}\\
+  &=\sqrt{2}\, m \approx 1,41\, m
+\end{align}
+
+\subsubsection{Abstand Q2 - P1}
+\begin{align}
+  |P_1-Q_2| &= \sqrt{(P_{1x}-Q_{2x})^2 + (P_{1y}-Q_{2y})^2}\\
+  |P_1-Q_2| &= \sqrt{(2-5)^2 + (2-2)^2}\\
+  |P_1-Q_2| &= \sqrt{3^2 + 0^2}\\
+  &=3\, m
+\end{align}
+
+\subsection{Elektrisches Feld}
+\begin{align}
+\vec{E}_{Pn} &= \frac{Q_n}{4\pi \varepsilon_0 r^2}\\
+\vec{E}_{Q1P1} &= \frac{1,2 nC}{4\pi \varepsilon_0 \sqrt{2}}\\
+   &= 7,63\ \frac{V}{m}\\
+\vec{E}_{Q2P1} &= \frac{-15\ nC}{4\pi \varepsilon_0 3}\\
+ &= -44,94\ \frac{V}{m}\\
+\end{align}
+\subsubsection{resultierendes Feld}
+\begin{align}
+ \vec{E}_{ges} &= \vec{E}_{Q1P1} + \vec{E}_{Q2P1}\\
+  &= 7,63\frac{V}{m} -44,94\ \frac{V}{m}\\
+  &= -37,31\ \frac{V}{m}
+\end{align}
+
+\subsection{Kraft auf Q3 am Punkt P1}
+\begin{align}
+  \vec{F}_{QnPn} &= \frac{Q_n\cdot Q_{P_n}}{4\pi \varepsilon_0 r^2}\\
+\vec{F}_{Q1P1} &= \frac{1,2\ nC\cdot 33\ nC}{4\pi \varepsilon_0 \sqrt{2}}\\
+   &= 251,66\, nN\\
+\vec{E}_{Q2P1} &= \frac{-15\ nC\cdot 33\ nC}{4\pi \varepsilon_0 3}\\
+ &= -1,48\ \mu N\\
+\end{align}
+\subsubsection{resultierende Kraft}
+\begin{align}
+ \vec{E}_{ges} &= \vec{E}_{Q1P1} + \vec{E}_{Q2P1}\\
+  &= 251,66 \ nN -1,48\ \mu N\\
+  &= -1,23\ \mu N
+\end{align}
+
+\subsection{Winkel Q1-P1}
+$sin(45^\circ) = 0,71$\\
+$cos(45^\circ) = 0,71$
+
+\subsection{Winkel Q2-P1}
+$sin(0^\circ) = 0$\\
+$cos(0^\circ) = 1$
+
+
