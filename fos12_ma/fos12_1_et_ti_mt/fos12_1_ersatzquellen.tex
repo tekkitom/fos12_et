@@ -1,0 +1,275 @@
+\documentclass[aspectratio=169, ignorenonframetext]{beamer}
+\usepackage{pgf}
+
+\mode<article>{
+  \usepackage{fullpage}
+
+}
+
+\mode<presentation>
+{
+%   \usetheme{Madrid}
+%   \useinnertheme{circles}
+  \setbeamertemplate{navigation symbols}{}
+%   \usetheme[hideothersubsections, width=2.4cm]{Hannover}
+%   \usetheme{Antibes}
+%   \usetheme{Montpellier}
+%   \usetheme{Singapore}
+  \usetheme{Darmstadt}
+%   \usecolortheme{seahorse}
+%   \usecolortheme{orchid}
+  \setbeamertemplate{footline}
+  {%
+%     \begin{beamercolorbox}{section in head/foot}
+%       \usebeamercolor{bg}
+       \hskip 1em \footnotesize \insertframenumber{} / \inserttotalframenumber%\hskip 41em \includegraphics[height = .5cm]{../../../../bilder/cc_by-nc_eu.png}
+% % cc_by-nc_eu.png: 403x141 px, 72dpi, 14.22x4.97 cm, bb=0 0 403 141
+%
+% % bwslogo_3.png: 476x392 px, 300dpi, 4.03x3.32 cm, bb=0 0 114 94
+%
+%       %\hskip 5em
+%       %       \input{../bilder/cc_by.png}
+%       %\includegraphics[height=.5cm]{../../../../bilder/bwslogo_3.png}
+%     \end{beamercolorbox}%
+  }
+  \usepackage{beamerfoils}
+}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{pgf}
+\usepackage{pgfpages}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[siunitx,european]{circuitikz}
+\usepackage{ulem}
+\usepackage{listings}
+\usepackage{svg}
+%
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, language = C++, alsolanguage=XML}
+% \MyLogo{\includegraphics[height=1cm]{../../../../bilder/bwslogo_3.png}}
+% % \includegraphics{../../bilder/bwslogo_3.png}
+% % bwslogo_3.png: 476x392 px, 300dpi, 4.03x3.32 cm, bb=
+%
+\only<article>{
+  \usepackage[colorlinks=true,linkcolor=blue,filecolor=magenta,urlcolor=cyan]{hyperref}
+}
+
+\only<presentation>{
+  \usepackage{hyperref}
+}
+
+
+\title{Arbeitsunterlagen zu FOS Elektrotechnik, technische Informatik, Mechatronik Themenfeld 12.1}
+\subtitle{Gleichstromnetzanalyse - Teil 1}
+\date{V 0.5.1 \\ Stand: \today}%\\
+
+\institute[BWS Hofheim]{Brühlwiesenschule, Hofheim}
+\author{Thomas Maul}
+
+\titlegraphic{Für eigene Teile gilt: \includegraphics[height=1cm]{cc_by-nc_eu.png}}
+
+\begin{document}
+  \only<article>{
+    \maketitle
+    \tableofcontents
+    \clearpage
+  }
+  \begin{frame}<beamer>
+    \titlepage
+    % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
+  \end{frame}
+  % \AtBeginSection[] % Do nothing for \section*
+  % {
+  %   \begin{frame}<beamer>
+  %     \frametitle{Inhalt}
+  %     \tableofcontents[currentsection]
+  %   \end{frame}
+  % }
+% \begin{frame}{Was bisher geschah}
+%     \begin{itemize}
+%         \item Atome und Elektronen
+%         \item Ladungen im Sinne der Elektrotechnik
+%         \item Gleichstrom und Wechselstrom
+%         \item Widerstand, Strom, Spannung, Leistung
+%     \end{itemize}
+% \end{frame}
+
+
+% \part{Themenfeld 12.1 - Gleichstromnetzanalyse}
+\begin{frame}
+  \partpage
+  %   \tableofcontents[hidesubsections]
+\end{frame}
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \begin{columns}
+    \column{.5\textwidth}
+    \tableofcontents[sections={1-4},hidesubsections]%currentsection]
+    ZAP = In der Themenliste der Abschlussprüfung genannt.
+    \column{.5\textwidth}
+    \tableofcontents[sections={5-},hidesubsections]%currentsection]
+  \end{columns}
+\end{frame}
+\section{Ersatzquellen}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle I}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item liefert definierten, konstanten Strom
+     \item Spannung ist unerheblich
+     \item Innenwiderstand ($R_i$) ist parallel geschaltet.
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Stromquelle $\rightarrow$ Spannungsquelle II}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Stromquelle in Spannungsquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt,
+     \item $R_i$ geht in Reihe zu $U_q$
+     \item Spannung: $U_l = I_k \cdot R_i$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$I_{q1}$] (0,2) ;
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (0,2) to[R=$R_i$] (2,2) -- (3,2);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:Spannungsquelle1}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Umwandlung Spannungsquelle $\rightarrow$ Stromquelle}
+ \begin{columns}
+   \begin{column}{.5\textwidth}
+      Spannungsquelle in Stromquelle
+     \begin{itemize}
+     \item Wert von $R_i$ bleibt
+     \item $R_i$ ist jetzt parallel zu $I_q$
+     \item Strom: $I_k = \frac{U_l}{R_i}$
+    \end{itemize}
+   \end{column}
+   \begin{column}{.5\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) -- (2,2);
+        \draw (1,2) node[circ]{} -- (2,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_i$] (1,0) node[circ]{} -- (0,0);
+        \draw (2,2) to[R=$R_1$] (4,2) -- (4,0)  -- (0,0);
+        \draw (2,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:Stromquelle2}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Stromquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Stromquelle
+     \begin{itemize}
+     \item $R_i$ ist parallel zu $I_q$
+     \only<2>{\item R2 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[isource, l=$I_{q1}$] (0,2) ;
+        \draw (0,2) to[R=$R_2$] (2,2);
+        \draw (2,2) node[circ]{} -- (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (2,2) to[R=$R_3$] (2,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Stromquelle}
+    \end{figure}
+    \label{fig:StromquelleMitZusR}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Spannungsquelle mit "`zusätzlichem"' Widerstand}
+ \begin{columns}
+   \begin{column}{.3\textwidth}
+      Ideale Spannungsquelle
+     \begin{itemize}
+     \item $R_i$ ist in Reihe zu $U_q$
+     \only<2>{\item R3 ist irrelevant}
+    \end{itemize}
+   \end{column}
+   \begin{column}{.7\textwidth}
+    \begin{figure}[htb]
+      \begin{circuitikz}
+        \draw (0,0) to[vsource, l=$U_{q1}$] (0,2) -- (1,2);
+        \draw (1,2) to[R=$R_2$] (3,2);
+        \draw (1,2) node[circ]{};
+        \draw (3,2) node[ocirc]{} node[above]{A} ;
+        \draw (1,2) to[R=$R_3$] (1,0) node[circ]{} -- (0,0);
+        \draw (3,2) to[R=$R_1$] (5,2) -- (5,0)  -- (0,0);
+        \draw (3,0) node[ocirc]{} node[below]{B};
+%         \draw (2,2) -- (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+%         (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (2,0);
+%         \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+%         \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+%         \draw (6,2) to[R=$R_5$] (6,0);
+      \end{circuitikz}
+      \caption{Spannungsquelle}
+    \end{figure}
+    \label{fig:SpannungsquelleMitZusR}
+   \end{column}
+ \end{columns}
+\end{frame}
+\end{document}

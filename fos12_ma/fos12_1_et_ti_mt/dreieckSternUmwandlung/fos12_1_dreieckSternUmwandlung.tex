@@ -1,0 +1,184 @@
+% \mode*
+\section[Dreieck <-> Stern]{Dreieck <-> Stern-Umwandlung (ZAP)}
+Dieser Abschnitt befasst sich mit der Problematik, dass einige Schaltungen nicht alleine durch Reihenschaltung oder Parallelschaltung berechnet werden können. Im Bild \ref{fig:Messbruecke1} ist eine Messbrücke gezeichnet. Diese Brückenschaltung wir verwendet, um Spannungsänderungen an einem Sensor (z. B. Temperatursensor PT1000, DMS, \dots) sehr kein sind. $\text{R}_4$ wäre zum Beispiel der Messwiederstand. $\text{R}_6$ wäre der Innenwiderstand des Messgeräts oder ein Widerstand, an dem der Spannungsabfall gemessen wird, um ihn durch Digitalisierung in einem Computer/Controller\footnote{Auf einer Arduino R3-Platine ist ein AT\_Mega32-IC. Dieser hat einen Eingang, der analoge Spannungen digitalisieren kann.} zu verarbeiten. Durch eine Umwandlung zwischen einer Anordnung der Bauteile (hier Widerstände) im Dreieck und einer Anordnung in einem Stern können äquivalente Werte berechnet werden. Dadurch ist es möglich die entstandene Schaltung mithilfe von Reihenschaltung und Parallelschaltung zu berechnen. Nach der Umrechnung ist es nicht direkt möglich die Ströme und Spannungen der ursprünglichen Teilschaltung (hier $\text{R}_3. \text{R}_5. \text{R}_6$) zu berechnen. Es ist lediglich möglich die Ströme und Spannungen an $\text{R}_1, \text{R}_2$ und $\text{R}_4$ zu bestimmen.
+
+\begin{frame}<beamer>
+  \frametitle{Inhalt}
+  \tableofcontents[currentsection, hideothersubsections]
+\end{frame}
+
+\begin{frame}%[label=messbrueckeFrame]
+\frametitle{Messbrücke}
+\begin{figure}[htb]
+  \begin{circuitikz}
+    \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+    \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+    \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+    \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+    \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+    \draw (4,2) to[R=R4] (4,0) -- (0,0);
+    \draw (2,2) to[R=R6] (4,2);
+    \only<2>{\draw[red, thick] (1.6,1.7) rectangle
+      (4.9,4.2);}
+  \end{circuitikz}
+  \caption{Messbrücke}
+  \label{fig:Messbruecke1}
+\end{figure}
+\end{frame}
+
+Bild \ref{fig:Messbruecke1aMarkierung} stellt dieselbe Schaltung dar, wie Bild \ref{fig:Messbruecke1}.
+\begin{frame}{Messbrücke - Stern-Dreieck}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+          \draw (0,4) to[R=R1] (2,4) to[short, -*] node[above]{C} (3,4);
+          \draw (2,2) to[R=$R_{AC}$] (3,4);
+          \draw (2,2) node[circ]{} node[left]{A};
+          \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+          \draw (3,4) to[R=$R_{BC}$] (4,2) to[short, -*] node[right]{B} (4,2);
+          \draw (4,2) to[R=R4] (4,0) -- (0,0);
+          \draw (2,2) to[R=$R_{AB}$] (4,2);
+        \end{circuitikz}
+        \caption{Messbrücke}
+        \label{fig:Messbruecke1aMarkierung}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{align*}
+        \text{R}_{AC} &= \text{R}_3\\ \text{R}_{AB} &= \text{R}_6 \\ \text{R}_{BC} &= \text{R}_5
+      \end{align*}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+In Bild \ref{fig:Messbruecke2bMarkierung} wurden die Widerstände des Dreiecks in Widerstände in einer sternförmigen-Anordnung umgerechnet. Die Ströme und Spannungen an den Punkten A, B, und C sind bei beiden Anordnungen identisch.
+
+\begin{frame}{Umwandlung Dreieck $\rightarrow$ Stern}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to [vsource, l=$U_{q}$] (0,5);
+          \draw (0,5) to[R=R1] (2,5) -- (3.5,5) node[above]{C};
+          \draw (3.5,3) to[R=$R_C$] (3.5,5);
+          \draw (3.5,3) node[circ]{} ;
+          \draw (2,2) to[R=R2] (2,0) to[short, -*](2,0);
+          \draw (3.5,3) to[R=$R_B$] node[right]{B} (5,2) ;
+          \draw (5,2) to[R=R4] (5,0) -- (0,0);
+          \draw (2,2) to[R=$R_A$] (3.5,3);
+          \draw (2,2)  node[left]{A};
+          %       \draw[red, thick] (1.7,1.7) rectangle
+          %       (4.3,5.2);
+        \end{circuitikz}
+        \caption{Messbrücke}
+        \label{fig:Messbruecke2bMarkierung}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \only<2>{
+        \begin{align*}
+          \text{R}_A &= \frac{\text{R}_{AC}\cdot\text{R}_{AB}}{\text{R}_{AC}+\text{R}_{AB}+\text{R}_{BC}}\\[.5\baselineskip]
+          \text{R}_B &= \frac{\text{R}_{AB}\cdot\text{R}_{BC}}{\text{R}_{AC}+\text{R}_{AB}+\text{R}_{BC}}\\[.5\baselineskip]
+          \text{R}_C &= \frac{\text{R}_{AC}\cdot\text{R}_{BC}}{\text{R}_{AC}+\text{R}_{AB}+\text{R}_{BC}}
+        \end{align*}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+In den folgenden Bildern ist der umgekehrte Weg von einem Stern zu einem Dreieck dargestellt. Die Herleitung der Formeln habe ich nicht geschrieben, sie ist auf der Seite https://de.wikipedia.org/wiki/Stern-Dreieck-Transformation zu finden.
+\begin{frame}{Umwandlung - Stern $\rightarrow$ Dreieck}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+          \draw (0,4) to[R=R1] (2,4) to[short, -*] node[above]{C} (3,4);
+          \draw (2,2) to[R=$R_{AC}$] (3,4);
+          \draw (2,2) node[circ]{} node[left]{A};
+          \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+          \draw (3,4) to[R=$R_{BC}$] (4,2) to[short, -*] node[right]{B} (4,2);
+          \draw (4,2) to[R=R4] (4,0) -- (0,0);
+          \draw (2,2) to[R=$R_{AB}$] (4,2);
+        \end{circuitikz}
+        \caption{Messbrücke}
+        \label{fig:SternNachDreieck}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \only<2>{
+        \begin{align*}
+          \text{R}_{AB} &= \frac{\text{R}_{A}\cdot\text{R}_{B}}{\text{R}_{C}}+\text{R}_{A}+\text{R}_{B}\\[.5\baselineskip]
+          \text{R}_{AC} &= \frac{\text{R}_{A}\cdot\text{R}_{C}}{\text{R}_{B}}+\text{R}_{A}+\text{R}_{C}\\[.5\baselineskip]
+          \text{R}_{BC} &= \frac{\text{R}_{B}\cdot\text{R}_{C}}{\text{R}_{A}}+\text{R}_{B}+\text{R}_{C}
+        \end{align*}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}<presentation>
+  \only<1>{\frametitle{Aufgabe: Messbrücke}}
+  \only<2>{\frametitle{Lösung zu Messbrücke}}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+          \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+          \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+          \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+          \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+          \draw (4,2) to[R=R4] (4,0) -- (0,0);
+          \draw (2,2) to[R=R6] (4,2);
+        \end{circuitikz}
+        \caption{Messbrücke}
+        \label{fig:AufgabeMessbruecke1}
+      \end{figure}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{align*}
+        \text{R}_{1} &= 220\ \Omega \\
+        \text{R}_{2} &= 470\ \Omega \\
+        \text{R}_{3} &= 330\ \Omega \\
+        \text{R}_{4} &= 330\ \Omega \\
+        \text{R}_{5} &= 560\ \Omega \\
+        \text{R}_{6} &= 390\ \Omega \\
+        \text{U}_q &= 5\,V
+      \end{align*}\only<1>{
+        $\text{R}_4 = \text{R}_{Mess}$ \\gesucht: Strom und Spannung an $\text{R}_6, \text{R}_4\  \text{und} \ \text{R}_5$\\}
+        \only<2>{
+          \begin{tabular}{lll}
+            $\text{I}_4 = 4,2\ mA,$ & $\text{I}_5 = 3,3\ mA,$ & $\text{I}_6 = 890\ \mu A$\\
+            $\text{U}_4 = 1,4\,V,$ & $\text{U}_5 = 3,6\,V,$ & $\text{U}_6 = 0,35\,V$
+          \end{tabular}
+        }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to [vsource, l=$U_{q}$] (0,4);
+      \draw (0,4) to[R=R1] (2,4) to[short, -*] (2,4) -- (4,4) ;
+      \draw (2,4) to[R=R3] (2,2) to[short, -*] (2,2);
+      \draw (2,2) to[R=R2] (2,0) to[short, -*] (2,0);
+      \draw (4,4) to[R=R5] (4,2) to[short, -*] (4,2);
+      \draw (4,2) to[R=R4] (4,0) -- (0,0);
+      \draw (2,2) to[R=R6] (4,2);
+    \end{circuitikz}
+    \caption{Messbrücke}
+    \label{fig:AufgabeMessbruecke1}
+  \end{figure}
+
+  \begin{align*}
+    \text{R}_{1} &= 220\ \Omega \\
+    \text{R}_{2} &= 470\ \Omega \\
+    \text{R}_{3} &= 330\ \Omega \\
+    \text{R}_{4} &= 330\ \Omega \\
+    \text{R}_{5} &= 560\ \Omega \\
+    \text{R}_{6} &= 390\ \Omega \\
+    \text{U}_q &= 5\,V
+  \end{align*}
+
+  $\text{R}_4 = \text{R}_{Mess}$ \\gesucht: Strom und Spannung an $\text{R}_6, \text{R}_4\  \text{und} \ \text{R}_5$\\

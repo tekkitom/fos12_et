@@ -1,0 +1,230 @@
+% \begin{document}
+%   \only<article>{
+%     \maketitle
+%     \tableofcontents
+%     \clearpage
+%   }
+%   \begin{frame}<beamer>
+%     \titlepage
+%     % \hyperlink{Teil_2}{\beamerbutton{Go part 2}}
+%   \end{frame}
+% \mode*
+\section{Einleitung}
+Dass die Welt kompliziert ist, ist eine Information, die man regelmäßig hören kann. In der Schule versuchen wir physikalische Phänomene zu vereinfachen. Das bedeutet, dass einige Dinge linear sind, obwohl es in der Realität z.B. bei einem Kondensator oder einer Spule Randeffekte gibt. Bei Schaltungen setzen wir den Leitungswiderstand in der Regel auf $0\, \Omega$ . Das bedeutet, dass die Natur nicht \glq einfach\grq \ ist, sondern, dass wir nicht lineare Teile an einigen Stellen ignorieren.
+
+\only<article>{
+\subsection*{Hinweis:}
+ZAP = In der Themenliste der Abschlussprüfung genannt.
+}
+
+\section[Zweipole]{Zweipoltheorie (ZAP)}
+In der Elektrotechnik werden Bauteile, die zwei Abschlüsse haben als Zweipole bezeichnet. Dies können jeweils einzelne Widerstände, Spulen und Kondensatoren sein. Manchmal ist es praktisch eine (Teil-)Schaltung als einen Zweipol darzustellen und in Berechnungen als ein virtuelles Bauteil zu verwenden. Man spricht hier auch von einem Ersatzbauteil.
+
+\begin{frame}{Zweipole}
+  In der Schaltung unten sollen die Widerstände $\text{R}_3$ bis $\text{R}_5$ als Ersatzwiderstand (virtuelles Bauteil) dargestellt werden.
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+      \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
+      \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%  node[circ]{} node[below]{B}
+      \draw (3,2) node[ocirc]{} node[above]{C} -- (4,2) to[R=$R_3$]
+      (4,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
+      \draw (4,2) to[R=$R_4$] (6,2);
+      \draw (4,2) node[circ]{} (4,0) node[circ]{};
+      \draw (6,2) to[R=$R_5$] (6,0) --
+      %(6,2) to[vsource, l=$U_2$] (6,0) --
+      (6,0) -- (4,0);
+    \end{circuitikz}
+    %       \caption{Schaltung 1}
+    \label{fig:InfoZweipole1}
+  \end{figure}
+\end{frame}
+Es soll so aussehen, als ob nur ein Widerstand rechts von den Punkten C und D wäre. Durch Reihenschaltung von $\text{R}_4$ und $\text{R}_5$ zu $\text{R}_{4 + 5}$ und anschließender Parallelschaltung mit $\text{R}_3$ kann ich dies erreichen (siehe Bild \ref{fig:BerechnungErsatzR}). Der Widerstand $\text{R}_{3||4 + 5}$ verhält sich für die Schaltung wie die Widerstände $\text{R}_3$, $\text{R}_4$ und $\text{R}_5$.
+
+Ich lege für die Widerstände folgende Werte fest:\\
+
+\begin{frame}{Werte für Berechnung}
+  \begin{columns}[t]
+    \begin{column}{2cm}
+      $\text{R}_1 = 10 \Omega$\\ $\text{R}_2 = 20 \Omega$\\ $ \text{R}_3 = 30 \Omega$\\ $ \text{R}_4 = 40 \Omega$\\ $ \text{R}_5 = 50 \Omega$\\ $U_{q1} = 5V,$ \\
+      $U_{q2} = 12V$
+      \label{comp:WiderstaendeSchaltung1}
+    \end{column}
+    \begin{column}{7cm}
+      \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+      \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
+      \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%  node[circ]{} node[below]{B}
+      \draw (3,2) node[ocirc]{} node[above]{C} -- (4,2) to[R=$R_3$]
+      (4,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
+      \draw (4,2) to[R=$R_4$] (6,2);
+      \draw (4,2) node[circ]{} (4,0) node[circ]{};
+      \draw (6,2) to[R=$R_5$] (6,0) --
+      %(6,2) to[vsource, l=$U_2$] (6,0) --
+      (6,0) -- (4,0);
+    \end{circuitikz}
+        %         \caption{Schaltung 1}
+        \label{fig:InfoZweipole2}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  %       Jetzt kann ich den Gesamtwiderstand $R_{3||4 + 5}$ berechnen.
+\end{frame}
+\begin{frame}{Berechnung des Ersatzwiderstands}
+  \begin{columns}[t]
+    \begin{column}{4cm}
+      \begin{align}
+        \text{R}_{4 + 5} &= \text{R}_4 + \text{R}_5\\
+        \text{R}_{4 + 5} &= 40 \Omega + 50 \Omega \\
+        \text{R}_{4 + 5} &= 90 \Omega\\
+        % \end{align}
+        % \begin{align}
+        \frac{1}{\text{R}_{3||4 + 5}} &= \frac{1}{\text{R}_3} + \frac{1}{\text{R}_{4+5}}\\
+        \frac{1}{\text{R}_{3||4 + 5}} &= \frac{1}{30\Omega} + \frac{1}{90\Omega}\\
+        \text{R}_{3||4 + 5} &= 22,5\Omega
+        \label{eq:zweipolr345}
+      \end{align}
+    \end{column}
+    \begin{column}{4cm}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+          \draw (1,2) node[circ]{} to[R=$R_2$] (3,2);% node[circ]{} node[above]{A}
+          \draw (0,2) -- (1,2) to[R=$R_1$] (1,0) node[circ]{} -- (0,0);%   (2,0) node[circ]{} node[below]{B}  -- (0,0);
+          \draw (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_{3||4 + 5}$]
+          (3.5,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
+        \end{circuitikz}
+        \caption{Berechnung des Ersatzwiderstands}
+        \label{fig:BerechnungErsatzR}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+Jetzt kann ich den Gesamtwiderstand $\text{R}_{3||4 + 5}$ berechnen. Ich kann jedoch nicht mehr einzelne Spannungen oder Ströme messen oder darstellen.
+
+Der virtuelle Widerstand $\text{R}_{3||4 + 5}$ ersetzt die Schaltung der drei Widerstände. Das Gleiche ist mit allen passiven Bauteilen möglich. Auch aktive Bauteile (Quellen, Transistor, FET, \dots) kann man durch einen Zweipol ersetzen.
+
+\begin{frame}{Übungen zu Zweipole I}
+  Berechnen Sie jeweils den Ersatzwiderstand zwischen den Klemmen C und D zur Schaltung unten.
+  \begin{description}
+    \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$
+    \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$
+    \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$
+  \end{description}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+      \draw (0,2) -- (1,2) node[circ]{} to[R=$R_1$] (1,0);% node[circ]{} node[above]{A}
+      \draw (1,2) to[R=$R_2$] (3,2);% node[circ]{} node[below]{B}  -- (0,0);
+      \draw  (3,2) node[ocirc]{} node[above]{C} -- (3.5,2) to[R=$R_3$]
+      (6,0) -- (3,0) node[ocirc]{} node[below]{D} -- (1,0);
+      \draw (1,0) node[circ]{} -- (0,0);
+      \draw (3.5,2) -- (4,2) to[R=$R_4$] (6,2);
+      \draw (3.5,2) node[circ]{} (6,0) node[circ]{};
+      \draw (6,2) to[R=$R_5$] (6,0);
+    \end{circuitikz}
+    \caption{Schaltung zu Übung Ersatzzweipol - Teil 1}
+  \end{figure}
+
+  \label{fig:UebZweipole1}
+\end{frame}
+Die Lösungen sind auf Seite \pageref{lsg:Ersatzwiderstand}
+\begin{frame}{Übungen zu Zweipole II}
+  Berechnen Sie jeweils den Ersatzwiderstand zwischen den Klemmen C und D zur Schaltung unten.
+  \begin{description}
+    \item[a] $\text{R}_1 = \text{R}_2 = 220 \Omega \ \text{R}_3 = \text{R}_5 = 230 \Omega \ \text{R}_4 = 470 \Omega$
+    \item[b] $\text{R}_1 = \text{R}_2 = \text{R}_3 = 150 \Omega \ \text{R}_5 = 230 \Omega \ \text{R}_4 = 560 \Omega$
+    \item[c] $\text{R}_1 = \text{R}_2 = \text{R}_4 = \text{R}_5 = 150 \Omega \ \text{R}_3 = 120 \Omega$
+  \end{description}
+  \begin{figure}[htb]
+    \begin{circuitikz}
+      \draw (0,0) to[vsource, l=$U_{q1}$] (0,2);
+      \draw (0,2) -- (1,2) node[circ]{} to[R=$R_1$] (1,0) node[circ]{};
+      \draw (1,2) to[R=$R_2$] (3,2);
+      \draw (3,2) node[ocirc]{} node[above]{C};
+      \draw (5,2) to[R=$R_3$] (3,0) node[ocirc]{} node[below]{D};
+      \draw (3,2) to[R=$R_4$] (5,2);
+      \draw (5,2) to[R=$R_5$] (5,0);
+      \draw (5,2) node[circ]{} ;
+      \draw (5,0) -- (0,0);
+    \end{circuitikz}
+    \caption{Schaltung zu Übung Ersatzzweipol - Teil 2}
+  \end{figure}
+
+  \label{fig:UebZweipole2}
+\end{frame}
+
+\section{Spannungsteiler}
+
+Bei einem Spannungsteiler wird eine anliegende Spannung in mehrere Teilspannungen aufgeteilt.
+
+Dies kann zum Beispiel mit Widerständen passieren. Der Strom I muss in Bild \ref{fig:Spannungsteiler} durch alle Widerstände fließen. Es gibt keine Knoten, an denen er sich aufteilt. Die Spannung U der Quelle fällt an allen Widerständen ab. An jedem Widerstand fällt ein Teil der Spannung ab. Die Spannung an den Widerständen ist nur von der Größe des Widerstands abhängig, da der Strom in allen Widerstände identisch ist.
+
+Dabei muss die Summe aller Spannungen in einem Stromkreis, man spricht auch von einem Umlauf, null sein. Die Richtung der Spannung an der Spannungsquelle wird hier in umgekehrter Richtung zu den Spannungen an den Widerständen gezählt (Formel \ref{eq:umlaufIstNull}).
+
+\begin{frame}
+  \frametitle{Spannungsteiler}
+  \begin{columns}[t]
+    %      \begin{column}{2cm}
+    \begin{column}{.33\textwidth}
+      \begin{figure}[htb]
+        \begin{circuitikz}
+          \draw (0,0) to[vsource, l=$U$] (0,4.5);
+          \draw (0,4.5) to (2,4.5);
+          \draw (2,4.5) to [short, i>_=$I$] (2,4) to [R=$R_1$, voltage=straight] (2,2) node[circ]{} to [short, -o] (3,2);
+          \draw (2,2) to [R=$R_2$,  v=$U_{2}$, voltage=straight] (2,0) node[circ]{} to [short, -o] (3,0);
+          \draw (2,0) to (0,0);
+        \end{circuitikz}
+        %       \caption{Schaltung 1}
+        \label{fig:Spannungsteiler}
+      \end{figure}
+    \end{column}
+    \begin{column}{.3\textwidth}
+      \begin{equation}\label{eq:umlaufIstNull}
+        \text{U} = \text{U}_1 + \text{U}_2
+      \end{equation}
+      \begin{equation}\label{eq:GesRGleicSummeRs}
+        \text{I} = \frac{\text{U}}{\text{R}_{ges}} = \frac{\text{U}}{\text{R}_1+\text{R}_2}
+      \end{equation}
+
+      % I &= \frac{U_1}{R_!}\\
+      % I &= \frac{U_2}{R_2}\\
+      \begin{equation}\label{eq:VerhaeltnisUszuRs}
+        \text{I} = \frac{\text{U}_1}{\text{R}_1} =\frac{\text{U}_2}{\text{R}_2}
+      \end{equation}
+    \end{column}
+    \begin{column}{.3\textwidth}
+      \begin{align}\label{eq:u2ZuUges}
+        \text{U}_2 &= \text{I} * \text{R}_2\\
+        \text{U}_2 &= \frac{\text{U}}{\text{R}_{ges}}*R_2\\
+        \text{U}_2 &= \frac{\text{U}}{\text{R}_1+\text{R}_2}*R_2\\
+        \frac{\text{U}_2}{\text{U}} &= \frac{\text{R}_2}{\text{R}_1+\text{R}_2}
+      \end{align}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+Formel \ref{eq:GesRGleicSummeRs} ist hier für die beiden Teilwiderstände der Schaltung aufgestellt. Bei einem Spannungsteiler mit mehreren Widerständen wären hier alle Widerstände genannt.
+
+Formel \ref{eq:VerhaeltnisUszuRs} stellt den Zusammenhang zwischen dem gemeinsamen Strom und den Widerständen und Spannungen dar. Wenn man nur den zweiten und dritten Teil der Gleichung betrachtet, ergibt sich ein Verhältnis. Das Verhältnis aus $\text{U}_1$ zu $\text{R}_1$ entspricht dem Verhältnis aus $\text{U}_2$ zu $\text{I}_2$. Mit dem Formeln \ref{eq:u2ZuUges} kann ich das Verhältnis aus der Gesamtspannung U und der Teilspannung - hier $\text{U}_2$ bestimmen. Dabei gilt: Die Teilspannung steht im Verhältnis zur Gesamtspannung, wie der Teilwiderstand zum Gesamtwiderstand.
+
+Der Spannungsteiler in diesem Beispiel ist unbelastet, das bedeutet, dass außer den beiden Widerständen, die die Spannung U aufteilen keine weiteren Widerstände vorhanden sind. Wenn parallel zu $\text{R}_2$ ein weiterer Widerstand geschaltet wäre, wäre zu prüfen, wie groß der Widerstand ist, der parallel geschaltet ist. Falls der parallele Widerstand viel größer ist (Faktor 100 und mehr) kann er vernachlässigt werden, da der Strom, der durch den Parallelwiderstand fließt, sehr kein ist im Verhältnis zu $\text{R}_2$. Wenn die Widerstände annähernd die gleiche Größe hätten, würde man von einem belasteten Spannungsteiler sprechen. In diesem Fall müsste die Parallelschaltung unbedingt für die Berechnung berücksichtigt werden.
+
+\subsection{Übungen}
+\label{Aufg:Spannungsteiler}
+Gegen sei der Spannungsteiler aus Bild \ref{fig:Spannungsteiler}. Berechnen Sie die fehlenden Werte in der Tabelle unten.\\
+
+\begin{frame}{Übungsaufgaben zu Spannungsteiler}
+  \begin{tabular}{l|ll|ll}
+    U [V] & $\text{R}_1 [\Omega]$& $\text{R}_2 [\Omega]$& $\text{I}_{R1}$ & $\text{I}_{R2}$\\ \hline
+    5  & 220 & 330 &       & \\
+    12 & 220 & 470 &       & \\
+    12 & 220 &     & 12 mA & \\
+    12 & 470 &     &       & 10,4 mA  \\
+    & 560 & 120 & 22 mA &   \\
+    & 470 & 1,5k &  3,3 mA &   \\
+  \end{tabular}
+\end{frame}
+
+Die Lösungen sind auf Seite \pageref{Lsg:Spannungsteiler}
